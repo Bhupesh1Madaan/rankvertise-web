@@ -152,13 +152,13 @@ const AboutPage = () => {
             <section style={{
                 textAlign: 'center',
                 padding: '100px 20px 80px',
-                background: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)'
+                background: 'linear-gradient(135deg, #b49b90 0%, #eadccc 100%)'
             }}>
                 <h1 style={{
                     fontSize: '3.5rem',
                     fontWeight: 'bold',
                     marginBottom: '30px',
-                    background: 'linear-gradient(135deg, #1e293b, #714B38)',
+                    background: 'linear-gradient(135deg, #4d3427, #714B38)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                     backgroundClip: 'text'
@@ -167,7 +167,7 @@ const AboutPage = () => {
                 </h1>
                 <p style={{
                     fontSize: '1.2rem',
-                    color: '#64748b',
+                    color: '#000',
                     maxWidth: '800px',
                     margin: '0 auto 40px',
                     lineHeight: '1.8'
@@ -258,7 +258,7 @@ const AboutPage = () => {
             {/* Our Story Section */}
             <section style={{
                 padding: '80px 20px',
-                background: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)'
+                background: 'linear-gradient(135deg, #eadccc 0%, #b49b90 100%)'
             }}>
                 <div style={{
                     maxWidth: '1200px',
@@ -273,13 +273,13 @@ const AboutPage = () => {
                             fontSize: '2.5rem',
                             fontWeight: 'bold',
                             marginBottom: '30px',
-                            color: '#1e293b'
+                            color: '#4d3427'
                         }}>
                             Our Story: From Melbourne Startup to National Leader
                         </h2>
                         <p style={{
                             fontSize: '1.1rem',
-                            color: '#64748b',
+                            color: '#000',
                             marginBottom: '20px',
                             lineHeight: '1.8'
                         }}>
@@ -290,7 +290,7 @@ const AboutPage = () => {
                         </p>
                         <p style={{
                             fontSize: '1.1rem',
-                            color: '#64748b',
+                            color: '#000',
                             lineHeight: '1.8'
                         }}>
                             We understand the unique challenges Australian businesses face - from
@@ -331,7 +331,7 @@ const AboutPage = () => {
                         fontSize: '2.5rem',
                         fontWeight: 'bold',
                         marginBottom: '20px',
-                        color: '#1e293b'
+                        color: '#4d3427'
                     }}>
                         Our Values Drive Everything We Do
                     </h2>
@@ -375,7 +375,7 @@ const AboutPage = () => {
                                 fontSize: '1.3rem',
                                 fontWeight: 'bold',
                                 marginBottom: '15px',
-                                color: '#1e293b'
+                                color: '#4d3427'
                             }}>
                                 {value.title}
                             </h3>
@@ -393,14 +393,14 @@ const AboutPage = () => {
             {/* Team Section */}
             <section style={{
                 padding: '80px 20px',
-                background: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)'
+                background: 'linear-gradient(135deg, #b49b90 0%, #eadccc 100%)'
             }}>
                 <div style={{ textAlign: 'center', marginBottom: '60px' }}>
                     <h2 style={{
                         fontSize: '2.5rem',
                         fontWeight: 'bold',
                         marginBottom: '20px',
-                        color: '#1e293b'
+                        color: '#4d3427'
                     }}>
                         Meet Our Expert Team
                     </h2>
@@ -453,7 +453,7 @@ const AboutPage = () => {
                                 fontSize: '1.3rem',
                                 fontWeight: 'bold',
                                 marginBottom: '5px',
-                                color: '#1e293b'
+                                color: '#4d3427'
                             }}>
                                 {member.name}
                             </h3>
@@ -504,7 +504,7 @@ const AboutPage = () => {
                         fontSize: '2.5rem',
                         fontWeight: 'bold',
                         marginBottom: '20px',
-                        color: '#1e293b'
+                        color: '#4d3427'
                     }}>
                         Our Journey Through the Years
                     </h2>
@@ -547,7 +547,7 @@ const AboutPage = () => {
                                     fontSize: '1.4rem',
                                     fontWeight: 'bold',
                                     marginBottom: '10px',
-                                    color: '#1e293b'
+                                    color: '#4d3427'
                                 }}>
                                     {item.title}
                                 </h3>
@@ -566,14 +566,14 @@ const AboutPage = () => {
             {/* Achievements Section */}
             <section style={{
                 padding: '80px 20px',
-                background: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)'
+                background: 'linear-gradient(135deg, #b49b90 0%, #eadccc 100%)'
             }}>
                 <div style={{ textAlign: 'center', marginBottom: '60px' }}>
                     <h2 style={{
                         fontSize: '2.5rem',
                         fontWeight: 'bold',
                         marginBottom: '20px',
-                        color: '#1e293b'
+                        color: '#4d3427'
                     }}>
                         Achievements & Certifications
                     </h2>
@@ -613,7 +613,7 @@ const AboutPage = () => {
                                     fontSize: '1.2rem',
                                     fontWeight: 'bold',
                                     marginBottom: '8px',
-                                    color: '#1e293b'
+                                    color: '#4d3427'
                                 }}>
                                     {achievement.title}
                                 </h3>
@@ -655,7 +655,7 @@ const AboutPage = () => {
                             fontSize: '2.5rem',
                             fontWeight: 'bold',
                             marginBottom: '30px',
-                            color: '#1e293b'
+                            color: '#4d3427'
                         }}>
                             Why Australian Businesses Choose DigitalAu
                         </h2>
