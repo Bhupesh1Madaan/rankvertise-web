@@ -148,7 +148,7 @@ const DigitalAuServices = () => {
     ];
 
     return (
-        <div style={{ backgroundColor: 'white', minHeight: '100vh' }}>
+        <div style={{ backgroundColor: '#eadccc', minHeight: '100vh' }}>
             <Header />
             {/* Hero Section */}
             <section style={{
@@ -518,7 +518,7 @@ const DigitalAuServices = () => {
                         gap: '2rem'
                     }}>
                         <div style={{
-                            backgroundColor: 'white',
+                            backgroundColor: '#eadccc',
                             color: '#333',
                             padding: '2rem',
                             borderRadius: '8px',
@@ -548,7 +548,7 @@ const DigitalAuServices = () => {
                         </div>
 
                         <div style={{
-                            backgroundColor: 'white',
+                            backgroundColor: '#eadccc',
                             color: '#333',
                             padding: '2rem',
                             borderRadius: '8px',
@@ -578,7 +578,7 @@ const DigitalAuServices = () => {
                         </div>
 
                         <div style={{
-                            backgroundColor: 'white',
+                            backgroundColor: '#eadccc',
                             color: '#333',
                             padding: '2rem',
                             borderRadius: '8px',

@@ -131,7 +131,7 @@ const AboutPage = () => {
     ];
 
     return (
-        <div style={{ backgroundColor: 'white', minHeight: '100vh' }}>
+        <div style={{ backgroundColor: '#eadccc', minHeight: '100vh' }}>
             <Header />
             {/* About DigitalAu Badge
             <div style={{
@@ -203,7 +203,7 @@ const AboutPage = () => {
             {/* Stats Section */}
             <section style={{
                 padding: '80px 20px',
-                background: 'white'
+                // background: 'white'
             }}>
                 <div style={{
                     display: 'grid',
@@ -324,7 +324,7 @@ const AboutPage = () => {
             {/* Values Section */}
             <section style={{
                 padding: '80px 20px',
-                background: 'white'
+                // background: 'white'
             }}>
                 <div style={{ textAlign: 'center', marginBottom: '60px' }}>
                     <h2 style={{
@@ -422,7 +422,7 @@ const AboutPage = () => {
                         <div
                             key={index}
                             style={{
-                                background: 'white',
+                                // background: 'white',
                                 borderRadius: '15px',
                                 padding: '30px',
                                 textAlign: 'center',
@@ -497,7 +497,7 @@ const AboutPage = () => {
             {/* Timeline Section */}
             <section style={{
                 padding: '80px 20px',
-                background: 'white'
+                // background: 'white'
             }}>
                 <div style={{ textAlign: 'center', marginBottom: '60px' }}>
                     <h2 style={{
@@ -595,7 +595,7 @@ const AboutPage = () => {
                         <div
                             key={index}
                             style={{
-                                background: 'white',
+                                // background: 'white',
                                 borderRadius: '15px',
                                 padding: '30px',
                                 display: 'flex',
@@ -633,7 +633,7 @@ const AboutPage = () => {
             {/* Final CTA Section */}
             <section style={{
                 padding: '80px 20px',
-                background: 'white'
+                // background: 'white'
             }}>
                 <div style={{
                     maxWidth: '1200px',

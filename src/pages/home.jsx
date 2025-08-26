@@ -25,7 +25,7 @@ const Home = () => {
     };
 
     return (
-        <div style={{ backgroundColor: 'white', minHeight: '100vh' }}>
+        <div style={{ backgroundColor: '#eadccc', minHeight: '100vh' }}>
 
             <Header />
 
@@ -941,7 +941,7 @@ const Home = () => {
                     </div>
 
                     <div style={{
-                        backgroundColor: 'white',
+                        backgroundColor: '#eadccc',
                         padding: '2rem',
                         borderRadius: '8px',
                         color: '#333'

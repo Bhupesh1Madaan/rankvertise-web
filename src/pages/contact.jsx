@@ -32,11 +32,11 @@ export default function ContactPage() {
     const styles = {
         container: {
             minHeight: '100vh',
-            backgroundColor: '#f9fafb',
+            backgroundColor: '#eadccc',
             fontFamily: 'Arial, sans-serif'
         },
         header: {
-            backgroundColor: '#ffffff',
+            backgroundColor: '#eadccc',
             boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
             padding: '16px 0'
         },
@@ -55,7 +55,7 @@ export default function ContactPage() {
         },
         headerButton: {
             backgroundColor: '#714b38',
-            color: '#ffffff',
+            color: '#eadccc',
             padding: '8px 16px',
             borderRadius: '8px',
             border: 'none',
@@ -98,7 +98,7 @@ export default function ContactPage() {
         },
         primaryButton: {
             backgroundColor: '#714b38',
-            color: '#ffffff',
+            color: '#eadccc',
             padding: '16px 32px',
             borderRadius: '8px',
             border: 'none',
@@ -120,7 +120,7 @@ export default function ContactPage() {
         },
         section: {
             padding: '64px 0',
-            backgroundColor: '#ffffff'
+            backgroundColor: '#eadccc'
         },
         sectionGray: {
             padding: '64px 0',
@@ -161,7 +161,7 @@ export default function ContactPage() {
             textAlign: 'center'
         },
         cardWhite: {
-            backgroundColor: '#ffffff',
+            backgroundColor: '#eadccc',
             padding: '32px',
             borderRadius: '16px',
             boxShadow: '0 10px 25px rgba(0, 0, 0, 0.1)'
@@ -244,14 +244,14 @@ export default function ContactPage() {
             borderRadius: '8px',
             fontSize: '16px',
             outline: 'none',
-            backgroundColor: '#ffffff',
+            backgroundColor: '#eadccc',
             cursor: 'pointer',
             boxSizing: 'border-box'
         },
         submitButton: {
             width: '100%',
             backgroundColor: '#714b38',
-            color: '#ffffff',
+            color: '#eadccc',
             padding: '16px',
             borderRadius: '8px',
             border: 'none',
@@ -316,7 +316,7 @@ export default function ContactPage() {
         },
         processNumber: {
             backgroundColor: '#714b38',
-            color: '#ffffff',
+            color: '#eadccc',
             width: '24px',
             height: '24px',
             borderRadius: '50%',
@@ -374,7 +374,7 @@ export default function ContactPage() {
             borderRadius: '20px',
             fontSize: '14px',
             fontWeight: '600',
-            color: '#ffffff'
+            color: '#eadccc'
         },
         purpleBadge: {
             backgroundColor: '#714b38'
@@ -405,7 +405,7 @@ export default function ContactPage() {
             border: 'none',
             cursor: 'pointer',
             fontWeight: '600',
-            color: '#ffffff',
+            color: '#eadccc',
             transition: 'background-color 0.3s'
         },
         purpleButton: {
@@ -430,7 +430,7 @@ export default function ContactPage() {
             gap: '32px'
         },
         businessInfoCard: {
-            backgroundColor: '#ffffff',
+            backgroundColor: '#eadccc',
             padding: '24px',
             borderRadius: '8px'
         },
@@ -458,7 +458,7 @@ export default function ContactPage() {
         ctaSection: {
             background: 'linear-gradient(to right, #714b38, #b49b90)',
             padding: '64px 0',
-            color: '#ffffff',
+            color: '#eadccc',
             textAlign: 'center'
         },
         ctaTitle: {
@@ -493,7 +493,7 @@ export default function ContactPage() {
         },
         ctaButtonTransparent: {
             backgroundColor: '#b49b90',
-            color: '#ffffff',
+            color: '#eadccc',
             padding: '16px 32px',
             borderRadius: '8px',
             border: '1px solid #60a5fa',
@@ -524,7 +524,7 @@ export default function ContactPage() {
     };
 
     return (
-        <div style={{ backgroundColor: 'white', minHeight: '100vh' }}>
+        <div style={{ backgroundColor: '#eadccc', minHeight: '100vh' }}>
             <Header />
             {/* Hero Section */}
             <section style={styles.heroSection}>
@@ -547,7 +547,7 @@ export default function ContactPage() {
                         <button
                             style={styles.secondaryButton}
                             onMouseEnter={(e) => {
-                                e.target.style.backgroundColor = '#ffffff';
+                                e.target.style.backgroundColor = '#eadccc';
                                 e.target.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
                             }}
                             onMouseLeave={(e) => {
