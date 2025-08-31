@@ -9,10 +9,10 @@ export function HeroSection() {
         }}>
             <div style={{ flex: 1, paddingRight: '20px' }}>
                 <h2 style={{ fontSize: '2.5em', fontWeight: 'bold' }}>
-                    Grow Your Australian Business with <span style={{ color: '#007bff' }}>Digital Marketing</span>
+                    Grow Your Indian Business with <span style={{ color: '#007bff' }}>Digital Marketing</span>
                 </h2>
                 <p style={{ fontSize: '1.2em' }}>
-                    We help Australian businesses increase their online presence, drive qualified leads, and grow revenue through proven digital marketing strategies.
+                    We help Indian businesses increase their online presence, drive qualified leads, and grow revenue through proven digital marketing strategies.
                 </p>
                 <div style={{ marginTop: '20px' }}>
                     <button style={{

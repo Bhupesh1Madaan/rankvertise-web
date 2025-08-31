@@ -12,7 +12,7 @@ const Header = () => {
                 alignItems: 'center'
             }}>
                 <div style={{ color: '#2563EB', fontWeight: 'bold', fontSize: '24px' }}>
-                    📊 DigitalAu
+                    📊 Rankvertise
                 </div>
 
                 <nav style={{ display: 'flex', gap: '32px', alignItems: 'center', /* Use media queries later for responsiveness */ }}>

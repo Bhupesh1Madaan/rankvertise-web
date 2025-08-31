@@ -12,7 +12,7 @@ export function StatSection() {
                 textAlign: 'center',
                 fontSize: '1.2em',
             }}>
-                150+<br />Australian Clients
+                150+<br />Indian Clients
             </div>
             <div style={{
                 border: '1px solid #ddd',

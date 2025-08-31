@@ -34,11 +34,11 @@ const Home = () => {
                 <div style={{ maxWidth: '1120px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px', alignItems: 'center' }}>
                     <div>
                         <h1 style={{ fontSize: '48px', fontWeight: '700', marginBottom: '24px', color: '#111827' }}>
-                            Grow Your Australian <br />
+                            Grow Your Indian <br />
                             Business with <span style={{ color: '#2563EB' }}>Digital Marketing</span>
                         </h1>
                         <p style={{ fontSize: '18px', color: '#4B5563', marginBottom: '32px' }}>
-                            We help Australian businesses increase their online presence, drive qualified leads, and grow revenue through proven digital marketing strategies.
+                            We help Indian businesses increase their online presence, drive qualified leads, and grow revenue through proven digital marketing strategies.
                         </p>
                         <div style={{ display: 'flex', gap: '16px' }}>
                             <button style={{
@@ -117,7 +117,7 @@ const Home = () => {
                             </div>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                                 <Mail size={20} />
-                                <span>hello@digitalau.com.au</span>
+                                <span>hello@Rankvertise.com.au</span>
                             </div>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                                 <MapPin size={20} />
@@ -261,14 +261,14 @@ const Home = () => {
                         marginBottom: '1rem',
                         lineHeight: '1.2'
                     }}>
-                        Grow Your Australian Business with <span style={{ color: '#714B38' }}>Digital Marketing</span>
+                        Grow Your Indian Business with <span style={{ color: '#714B38' }}>Digital Marketing</span>
                     </h1>
                     <p style={{
                         fontSize: '1.1rem',
                         color: '#666',
                         marginBottom: '2rem'
                     }}>
-                        We help Australian businesses increase their online presence, drive qualified leads, and grow revenue through proven digital marketing strategies.
+                        We help Indian businesses increase their online presence, drive qualified leads, and grow revenue through proven digital marketing strategies.
                     </p>
                     <div style={{ display: 'flex', gap: '1rem' }}>
                         <button style={{
@@ -324,7 +324,7 @@ const Home = () => {
                 }}>
                     <div>
                         <h3 style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#714B38', margin: '0' }}>150+</h3>
-                        <p style={{ color: '#666', margin: '0.5rem 0 0 0' }}>Australian Clients</p>
+                        <p style={{ color: '#666', margin: '0.5rem 0 0 0' }}>Indian Clients</p>
                     </div>
                     <div>
                         <h3 style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#714B38', margin: '0' }}>400%</h3>
@@ -360,7 +360,7 @@ const Home = () => {
                     color: '#666',
                     marginBottom: '3rem'
                 }}>
-                    Comprehensive digital marketing solutions designed specifically for Australian businesses
+                    Comprehensive digital marketing solutions designed specifically for Indian businesses
                 </p>
 
                 <div style={{
@@ -510,14 +510,14 @@ const Home = () => {
                             fontWeight: 'bold',
                             marginBottom: '1.5rem'
                         }}>
-                            About DigitalAu
+                            About Rankvertise
                         </h2>
                         <p style={{
                             fontSize: '1.1rem',
                             color: '#666',
                             marginBottom: '2rem'
                         }}>
-                            We're a team of digital marketing specialists with deep expertise in the Australian market. Our mission is to help local businesses thrive online through data-driven strategies and cutting-edge digital marketing techniques.
+                            We're a team of digital marketing specialists with deep expertise in the Indian market. Our mission is to help local businesses thrive online through data-driven strategies and cutting-edge digital marketing techniques.
                         </p>
                         <ul style={{
                             listStyle: 'none',
@@ -530,7 +530,7 @@ const Home = () => {
                                 color: '#28a745'
                             }}>
                                 <span style={{ marginRight: '0.5rem' }}>✓</span>
-                                Australian Business Number (ABN): 12 345 678 901
+                                Indian Business Number (ABN): 12 345 678 901
                             </li>
                             <li style={{
                                 display: 'flex',
@@ -557,7 +557,7 @@ const Home = () => {
                                 color: '#28a745'
                             }}>
                                 <span style={{ marginRight: '0.5rem' }}>✓</span>
-                                5+ Years Serving Australian Businesses
+                                5+ Years Serving Indian Businesses
                             </li>
                         </ul>
                     </div>
@@ -597,7 +597,7 @@ const Home = () => {
                         color: '#666',
                         marginBottom: '3rem'
                     }}>
-                        Real results from real Australian businesses
+                        Real results from real Indian businesses
                     </p>
 
                     <div style={{
@@ -621,7 +621,7 @@ const Home = () => {
                                 marginBottom: '1.5rem',
                                 fontStyle: 'italic'
                             }}>
-                                "Our online sales increased by 150% within 6 months of working with this team. Their understanding of the Australian market is exceptional."
+                                "Our online sales increased by 150% within 6 months of working with this team. Their understanding of the Indian market is exceptional."
                             </p>
                             <div>
                                 <h4 style={{ fontSize: '1.1rem', fontWeight: 'bold', margin: '0' }}>Sarah Johnson</h4>
@@ -671,7 +671,7 @@ const Home = () => {
                                 marginBottom: '1.5rem',
                                 fontStyle: 'italic'
                             }}>
-                                "Professional, reliable, and results-driven. They helped us establish a strong digital presence across Western Australia."
+                                "Professional, reliable, and results-driven. They helped us establish a strong digital presence across Western India."
                             </p>
                             <div>
                                 <h4 style={{ fontSize: '1.1rem', fontWeight: 'bold', margin: '0' }}>Emma Williams</h4>
@@ -705,7 +705,7 @@ const Home = () => {
                         color: '#666',
                         marginBottom: '3rem'
                     }}>
-                        Stay updated with the latest trends in Australian digital marketing
+                        Stay updated with the latest trends in Indian digital marketing
                     </p>
 
                     <div style={{
@@ -746,13 +746,13 @@ const Home = () => {
                                     fontWeight: 'bold',
                                     marginBottom: '1rem'
                                 }}>
-                                    Top SEO Strategies for Australian E-commerce in 2024
+                                    Top SEO Strategies for Indian E-commerce in 2024
                                 </h3>
                                 <p style={{
                                     color: '#666',
                                     fontSize: '0.95rem'
                                 }}>
-                                    Discover the latest SEO techniques that are driving results for Australian online retailers.
+                                    Discover the latest SEO techniques that are driving results for Indian online retailers.
                                 </p>
                             </div>
                         </div>
@@ -790,7 +790,7 @@ const Home = () => {
                                     fontWeight: 'bold',
                                     marginBottom: '1rem'
                                 }}>
-                                    Instagram Marketing Tips for Australian Small Businesses
+                                    Instagram Marketing Tips for Indian Small Businesses
                                 </h3>
                                 <p style={{
                                     color: '#666',
@@ -834,7 +834,7 @@ const Home = () => {
                                     fontWeight: 'bold',
                                     marginBottom: '1rem'
                                 }}>
-                                    Maximising Google Ads ROI in Competitive Australian Markets
+                                    Maximising Google Ads ROI in Competitive Indian Markets
                                 </h3>
                                 <p style={{
                                     color: '#666',
@@ -902,7 +902,7 @@ const Home = () => {
                                 marginBottom: '0.75rem'
                             }}>
                                 <Mail size={20} style={{ marginRight: '0.75rem' }} />
-                                <span>hello@digitalau.com.au</span>
+                                <span>hello@Rankvertise.com.au</span>
                             </div>
 
                             <div style={{
@@ -1130,7 +1130,7 @@ const Home = () => {
                                     fontSize: '1rem',
                                     fontWeight: '500',
                                     cursor: 'pointer'
-                                }}
+                                }} 
                             >
                                 Send Message
                             </button>

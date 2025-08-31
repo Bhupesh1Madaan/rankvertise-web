@@ -7,9 +7,9 @@ const Footer = () => {
             <div style={{ maxWidth: '1120px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '32px' }}>
 
                 <div>
-                    <div style={{ color: '#3B82F6', fontWeight: 'bold', fontSize: '24px', marginBottom: '16px' }}>📊 DigitalAu</div>
+                    <div style={{ color: '#3B82F6', fontWeight: 'bold', fontSize: '24px', marginBottom: '16px' }}>📊 Rankvertise</div>
                     <p style={{ color: '#9CA3AF', marginBottom: '24px' }}>
-                        Australia's leading digital marketing agency helping businesses grow their online presence and drive measurable results through proven strategies and cutting-edge technologies.
+                        India's leading digital marketing agency helping businesses grow their online presence and drive measurable results through proven strategies and cutting-edge technologies.
                     </p>
 
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', color: '#9CA3AF' }}>
@@ -19,7 +19,7 @@ const Footer = () => {
                         </div>
                         <div style={{ display: 'flex', alignItems: 'center' }}>
                             <Mail size={16} style={{ marginRight: '8px' }} />
-                            hello@digitalau.com.au
+                            hello@Rankvertise.com.au
                         </div>
                         <div style={{ display: 'flex', alignItems: 'center' }}>
                             <MapPin size={16} style={{ marginRight: '8px' }} />
@@ -78,7 +78,7 @@ const Footer = () => {
             </div>
 
             <div style={{ borderTop: '1px solid #374151', paddingTop: '32px', marginTop: '32px', textAlign: 'center', color: '#9CA3AF', fontSize: '12px' }}>
-                <p>© 2024 DigitalAu Pty Ltd. All rights reserved. Proudly Australian owned and operated.</p>
+                <p>© 2024 Rankvertise Pty Ltd. All rights reserved. Proudly Indian owned and operated.</p>
                 <p style={{ marginTop: '8px' }}>
                     Built with ❤️ in Melbourne | <a href="#" style={{ color: '#9CA3AF', marginLeft: '4px', marginRight: '4px', textDecoration: 'underline' }}>Privacy Policy</a> | <a href="#" style={{ color: '#9CA3AF', marginLeft: '4px', marginRight: '4px', textDecoration: 'underline' }}>Terms of Service</a> | <a href="#" style={{ color: '#9CA3AF', marginLeft: '4px', marginRight: '4px', textDecoration: 'underline' }}>Sitemap</a>
                 </p>

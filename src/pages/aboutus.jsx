@@ -9,7 +9,7 @@ const AboutPage = () => {
 
 
     const stats = [
-        { number: '150+', label: 'Australian Clients Served', description: 'From startups to enterprise businesses' },
+        { number: '150+', label: 'Indian Clients Served', description: 'From startups to enterprise businesses' },
         { number: '5+', label: 'Years in Business', description: 'Established and trusted since 2019' },
         { number: '400%', label: 'Average ROI Increase', description: 'Proven results across all our services' },
         { number: '98%', label: 'Client Retention Rate', description: 'Long-term partnerships built on trust' }
@@ -19,7 +19,7 @@ const AboutPage = () => {
         {
             icon: <Heart size={40} />,
             title: 'Client-First Approach',
-            description: 'Every strategy we develop puts our Australian clients\' success at the forefront. Your growth is our primary measure of success.'
+            description: 'Every strategy we develop puts our Indian clients\' success at the forefront. Your growth is our primary measure of success.'
         },
         {
             icon: <Shield size={40} />,
@@ -76,8 +76,8 @@ const AboutPage = () => {
     const timeline = [
         {
             year: '2019',
-            title: 'DigitalAu Founded',
-            description: 'Started as a boutique digital marketing consultancy in Melbourne, focusing on helping small Australian businesses grow online.'
+            title: 'Rankvertise Founded',
+            description: 'Started as a boutique digital marketing consultancy in Melbourne, focusing on helping small Indian businesses grow online.'
         },
         {
             year: '2020',
@@ -92,12 +92,12 @@ const AboutPage = () => {
         {
             year: '2022',
             title: 'National Presence',
-            description: 'Expanded operations to Brisbane and Perth, serving clients across all major Australian cities.'
+            description: 'Expanded operations to Brisbane and Perth, serving clients across all major Indian cities.'
         },
         {
             year: '2023',
             title: 'Industry Recognition',
-            description: 'Won multiple Australian Digital Marketing Awards and reached 150+ active clients milestone.'
+            description: 'Won multiple Indian Digital Marketing Awards and reached 150+ active clients milestone.'
         }
     ];
 
@@ -119,13 +119,13 @@ const AboutPage = () => {
         },
         {
             icon: <Award size={30} />,
-            title: 'Australian Digital Marketing Awards',
+            title: 'Indian Digital Marketing Awards',
             description: 'Winner of \'Best SEO Campaign\' and \'Excellence in Digital Strategy\' 2023'
         }
     ];
 
     const compliance = [
-        '✓ Australian Business Number (ABN): 12 345 678 901',
+        '✓ Indian Business Number (ABN): 12 345 678 901',
         '✓ ACCC Compliant Marketing Practices',
         '✓ Privacy Act 1988 Compliant Data Handling'
     ];
@@ -133,7 +133,7 @@ const AboutPage = () => {
     return (
         <div style={{ backgroundColor: '#eadccc', minHeight: '100vh' }}>
             <Header />
-            {/* About DigitalAu Badge
+            {/* About Rankvertise Badge
             <div style={{
                 position: 'absolute',
                 top: '20px',
@@ -145,7 +145,7 @@ const AboutPage = () => {
                 fontSize: '14px',
                 fontWeight: 'bold'
             }}>
-                About DigitalAu
+                About Rankvertise
             </div> */}
 
             {/* Hero Section */}
@@ -163,7 +163,7 @@ const AboutPage = () => {
                     WebkitTextFillColor: 'transparent',
                     backgroundClip: 'text'
                 }}>
-                    Helping Australian Businesses <span style={{ color: '#714B38' }}>Thrive Online</span>
+                    Helping Indian Businesses <span style={{ color: '#714B38' }}>Thrive Online</span>
                 </h1>
                 <p style={{
                     fontSize: '1.2rem',
@@ -172,7 +172,7 @@ const AboutPage = () => {
                     margin: '0 auto 40px',
                     lineHeight: '1.8'
                 }}>
-                    We're a team of digital marketing specialists with deep expertise in the Australian market. Our
+                    We're a team of digital marketing specialists with deep expertise in the Indian market. Our
                     mission is to help local businesses grow through data-driven strategies and cutting-edge digital
                     marketing techniques.
                 </p>
@@ -283,17 +283,17 @@ const AboutPage = () => {
                             marginBottom: '20px',
                             lineHeight: '1.8'
                         }}>
-                            Founded in 2019 in Melbourne, DigitalAu began with a simple mission: to
-                            help Australian businesses succeed in the digital landscape. What started
+                            Founded in 2019 in Melbourne, Rankvertise began with a simple mission: to
+                            help Indian businesses succeed in the digital landscape. What started
                             as a small consultancy has grown into a trusted partner for over 150
-                            businesses across Australia.
+                            businesses across India.
                         </p>
                         <p style={{
                             fontSize: '1.1rem',
                             color: '#000',
                             lineHeight: '1.8'
                         }}>
-                            We understand the unique challenges Australian businesses face - from
+                            We understand the unique challenges Indian businesses face - from
                             navigating local regulations like the Privacy Act and SPAM Act, to
                             competing in diverse markets from Sydney's corporate landscape to
                             Perth's resource sector.
@@ -408,7 +408,7 @@ const AboutPage = () => {
                         fontSize: '1.2rem',
                         color: '#64748b'
                     }}>
-                        Digital marketing specialists with deep Australian market expertise
+                        Digital marketing specialists with deep Indian market expertise
                     </p>
                 </div>
                 <div style={{
@@ -512,7 +512,7 @@ const AboutPage = () => {
                         fontSize: '1.2rem',
                         color: '#64748b'
                     }}>
-                        Key milestones in our growth and evolution as Australia's trusted digital marketing partner
+                        Key milestones in our growth and evolution as India's trusted digital marketing partner
                     </p>
                 </div>
                 <div style={{ maxWidth: '800px', margin: '0 auto' }}>
@@ -657,7 +657,7 @@ const AboutPage = () => {
                             marginBottom: '30px',
                             color: '#4d3427'
                         }}>
-                            Why Australian Businesses Choose DigitalAu
+                            Why Indian Businesses Choose Rankvertise
                         </h2>
                         <p style={{
                             fontSize: '1.1rem',
@@ -666,7 +666,7 @@ const AboutPage = () => {
                             lineHeight: '1.8'
                         }}>
                             We're not just another digital marketing agency. We're your strategic
-                            partner in growth, with deep understanding of the Australian market and
+                            partner in growth, with deep understanding of the Indian market and
                             regulatory environment.
                         </p>
                         <div style={{ marginBottom: '20px' }}>
@@ -680,7 +680,7 @@ const AboutPage = () => {
                                 <div>
                                     <strong>Local Market Expertise</strong>
                                     <div style={{ fontSize: '0.9rem', color: '#64748b' }}>
-                                        Deep understanding of Australian consumer behaviour, local SEO, and regional market dynamics
+                                        Deep understanding of Indian consumer behaviour, local SEO, and regional market dynamics
                                     </div>
                                 </div>
                             </div>
@@ -692,9 +692,9 @@ const AboutPage = () => {
                             }}>
                                 <div style={{ color: '#714B38' }}>🕐</div>
                                 <div>
-                                    <strong>Australian Business Hours Support</strong>
+                                    <strong>Indian Business Hours Support</strong>
                                     <div style={{ fontSize: '0.9rem', color: '#64748b' }}>
-                                        Dedicated support during Australian business hours with local phone numbers and offices
+                                        Dedicated support during Indian business hours with local phone numbers and offices
                                     </div>
                                 </div>
                             </div>
@@ -707,7 +707,7 @@ const AboutPage = () => {
                                 <div>
                                     <strong>Compliance & Regulation Knowledge</strong>
                                     <div style={{ fontSize: '0.9rem', color: '#64748b' }}>
-                                        Expert knowledge of Australian privacy laws, ACCC guidelines, and industry-specific regulations
+                                        Expert knowledge of Indian privacy laws, ACCC guidelines, and industry-specific regulations
                                     </div>
                                 </div>
                             </div>

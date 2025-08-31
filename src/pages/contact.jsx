@@ -530,10 +530,10 @@ export default function ContactPage() {
             <section style={styles.heroSection}>
                 <div style={styles.heroContainer}>
                     <h1 style={styles.heroTitle}>
-                        Let's Grow Your Australian Business <span style={styles.heroTitleBlue}>Together</span>
+                        Let's Grow Your Indian Business <span style={styles.heroTitleBlue}>Together</span>
                     </h1>
                     <p style={styles.heroText}>
-                        Ready to take your digital marketing to the next level? Get in touch with our Australian team for
+                        Ready to take your digital marketing to the next level? Get in touch with our Indian team for
                         a free consultation and custom strategy tailored to your business goals.
                     </p>
                     <div style={styles.heroButtons}>
@@ -566,7 +566,7 @@ export default function ContactPage() {
                 <div style={styles.sectionContainer}>
                     <h2 style={styles.sectionTitle}>How to Reach Us</h2>
                     <p style={styles.sectionSubtitle}>
-                        Multiple ways to connect with our Australian digital marketing experts
+                        Multiple ways to connect with our Indian digital marketing experts
                     </p>
 
                     <div style={styles.grid4}>
@@ -576,7 +576,7 @@ export default function ContactPage() {
                                 <Phone style={{ width: '32px', height: '32px', color: '#714b38' }} />
                             </div>
                             <h3 style={styles.cardTitle}>Phone Support</h3>
-                            <p style={styles.cardText}>Speak directly with our Australian team during business hours</p>
+                            <p style={styles.cardText}>Speak directly with our Indian team during business hours</p>
                             <div style={styles.cardHighlight}>1300 DIGITAL (1300 344 482)</div>
                             <p style={styles.cardSmallText}>Mon-Fri: 9AM-6PM, Sat: 10AM-2PM (AEST/AWST)</p>
                         </div>
@@ -588,7 +588,7 @@ export default function ContactPage() {
                             </div>
                             <h3 style={styles.cardTitle}>Email Support</h3>
                             <p style={styles.cardText}>Send us your questions and we'll respond within 4 hours during business days</p>
-                            <div style={styles.cardHighlight}>hello@digitalau.com.au</div>
+                            <div style={styles.cardHighlight}>hello@Rankvertise.com.au</div>
                             <p style={styles.cardSmallText}>24/7 - Response within 4 hours</p>
                         </div>
 
@@ -627,7 +627,7 @@ export default function ContactPage() {
                                 Get Your Free Digital Marketing Consultation
                             </h2>
                             <p style={{ ...styles.cardText, marginBottom: '32px' }}>
-                                Fill out the form below and our Australian team will get back to you within 4 hours during business days.
+                                Fill out the form below and our Indian team will get back to you within 4 hours during business days.
                             </p>
 
                             <div>
@@ -756,7 +756,7 @@ export default function ContactPage() {
 
                                 <p style={styles.disclaimerText}>
                                     * Required fields<br />
-                                    By submitting this form, you consent to DigitalAu collecting and using your information in accordance with our Privacy Policy and Australian Privacy Act 1988. You can unsubscribe at any time.
+                                    By submitting this form, you consent to Rankvertise collecting and using your information in accordance with our Privacy Policy and Indian Privacy Act 1988. You can unsubscribe at any time.
                                 </p>
 
                                 <button
@@ -770,10 +770,10 @@ export default function ContactPage() {
                             </div>
                         </div>
 
-                        {/* Why Choose DigitalAu */}
+                        {/* Why Choose Rankvertise */}
                         <div>
                             <h2 style={{ ...styles.sectionTitle, textAlign: 'left', marginBottom: '32px' }}>
-                                Why Choose DigitalAu?
+                                Why Choose Rankvertise?
                             </h2>
 
                             <ul style={styles.featureList}>
@@ -793,7 +793,7 @@ export default function ContactPage() {
                                     </div>
                                     <div>
                                         <h3 style={styles.featureTitle}>Local Expertise</h3>
-                                        <p style={styles.featureText}>Australian team with deep understanding of local markets and regulations.</p>
+                                        <p style={styles.featureText}>Indian team with deep understanding of local markets and regulations.</p>
                                     </div>
                                 </li>
 
@@ -803,7 +803,7 @@ export default function ContactPage() {
                                     </div>
                                     <div>
                                         <h3 style={styles.featureTitle}>Privacy Compliant</h3>
-                                        <p style={styles.featureText}>Full compliance with Australian Privacy Act and SPAM Act requirements.</p>
+                                        <p style={styles.featureText}>Full compliance with Indian Privacy Act and SPAM Act requirements.</p>
                                     </div>
                                 </li>
 
@@ -813,7 +813,7 @@ export default function ContactPage() {
                                     </div>
                                     <div>
                                         <h3 style={styles.featureTitle}>Proven Results</h3>
-                                        <p style={styles.featureText}>Over 150 successful Australian businesses trust us with their digital growth.</p>
+                                        <p style={styles.featureText}>Over 150 successful Indian businesses trust us with their digital growth.</p>
                                     </div>
                                 </li>
                             </ul>
@@ -854,7 +854,7 @@ export default function ContactPage() {
                 <div style={styles.sectionContainer}>
                     <h2 style={styles.sectionTitle}>Our Office Locations</h2>
                     <p style={styles.sectionSubtitle}>
-                        Local presence across Australia's major business centers
+                        Local presence across India's major business centers
                     </p>
 
                     <div style={styles.grid2}>
@@ -878,7 +878,7 @@ export default function ContactPage() {
                                 </div>
                                 <div style={styles.officeDetail}>
                                     <Mail style={{ width: '16px', height: '16px' }} />
-                                    <span>melbourne@digitalau.com.au</span>
+                                    <span>melbourne@Rankvertise.com.au</span>
                                 </div>
                                 <div style={styles.officeDetail}>
                                     <Clock style={{ width: '16px', height: '16px' }} />
@@ -921,7 +921,7 @@ export default function ContactPage() {
                                 </div>
                                 <div style={styles.officeDetail}>
                                     <Mail style={{ width: '16px', height: '16px' }} />
-                                    <span>sydney@digitalau.com.au</span>
+                                    <span>sydney@Rankvertise.com.au</span>
                                 </div>
                                 <div style={styles.officeDetail}>
                                     <Clock style={{ width: '16px', height: '16px' }} />
@@ -964,7 +964,7 @@ export default function ContactPage() {
                                 </div>
                                 <div style={styles.officeDetail}>
                                     <Mail style={{ width: '16px', height: '16px' }} />
-                                    <span>brisbane@digitalau.com.au</span>
+                                    <span>brisbane@Rankvertise.com.au</span>
                                 </div>
                                 <div style={styles.officeDetail}>
                                     <Clock style={{ width: '16px', height: '16px' }} />
@@ -1007,7 +1007,7 @@ export default function ContactPage() {
                                 </div>
                                 <div style={styles.officeDetail}>
                                     <Mail style={{ width: '16px', height: '16px' }} />
-                                    <span>perth@digitalau.com.au</span>
+                                    <span>perth@Rankvertise.com.au</span>
                                 </div>
                                 <div style={styles.officeDetail}>
                                     <Clock style={{ width: '16px', height: '16px' }} />
@@ -1044,7 +1044,7 @@ export default function ContactPage() {
                                 Business Information
                             </h3>
                             <ul style={styles.businessInfoList}>
-                                <li style={styles.businessInfoItem}><strong>Company:</strong> DigitalAu Pty Ltd</li>
+                                <li style={styles.businessInfoItem}><strong>Company:</strong> Rankvertise Pty Ltd</li>
                                 <li style={styles.businessInfoItem}><strong>ABN:</strong> 12 345 678 901</li>
                                 <li style={styles.businessInfoItem}><strong>ACN:</strong> 987 654 321</li>
                                 <li style={styles.businessInfoItem}><strong>Industry:</strong> Digital Marketing Services</li>
@@ -1061,7 +1061,7 @@ export default function ContactPage() {
                             <ul style={styles.businessInfoList}>
                                 <li style={styles.businessInfoItem}>
                                     <CheckCircle style={{ width: '16px', height: '16px', color: '#10b981' }} />
-                                    Australian Privacy Act 1988 Compliant
+                                    Indian Privacy Act 1988 Compliant
                                 </li>
                                 <li style={styles.businessInfoItem}>
                                     <CheckCircle style={{ width: '16px', height: '16px', color: '#10b981' }} />
@@ -1105,7 +1105,7 @@ export default function ContactPage() {
                 <div style={styles.sectionContainer}>
                     <h2 style={styles.ctaTitle}>Ready to Start Your Digital Growth Journey?</h2>
                     <p style={styles.ctaText}>
-                        Join over 150 Australian businesses who trust DigitalAu to drive their online success.
+                        Join over 150 Indian businesses who trust Rankvertise to drive their online success.
                         Get your free consultation today and discover how we can help your business thrive.
                     </p>
                     <div style={styles.ctaButtons}>

@@ -3,12 +3,12 @@ import { Search, MousePointer, Share2, FileText, Mail, BarChart3, Globe, Trendin
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-const DigitalAuServices = () => {
+const RankvertiseServices = () => {
     const services = [
         {
             icon: <Search size={24} color="#714B38" />,
             title: "Search Engine Optimisation (SEO)",
-            description: "Improve your website's visibility on Google and drive organic traffic with our comprehensive SEO strategies tailored for Australian businesses.",
+            description: "Improve your website's visibility on Google and drive organic traffic with our comprehensive SEO strategies tailored for Indian businesses.",
             features: [
                 "Local SEO",
                 "Technical SEO",
@@ -23,7 +23,7 @@ const DigitalAuServices = () => {
         {
             icon: <MousePointer size={24} color="#714B38" />,
             title: "Pay-Per-Click (PPC) Advertising",
-            description: "Generate immediate results with expertly managed Google Ads, Facebook Ads, and other PPC campaigns targeting Australian customers.",
+            description: "Generate immediate results with expertly managed Google Ads, Facebook Ads, and other PPC campaigns targeting Indian customers.",
             features: [
                 "Google Ads",
                 "Facebook Ads",
@@ -38,7 +38,7 @@ const DigitalAuServices = () => {
         {
             icon: <Share2 size={24} color="#714B38" />,
             title: "Social Media Marketing",
-            description: "Build your brand presence and engage with Australian audiences across Facebook, Instagram, LinkedIn, and other social platforms.",
+            description: "Build your brand presence and engage with Indian audiences across Facebook, Instagram, LinkedIn, and other social platforms.",
             features: [
                 "Content Creation",
                 "Community Management",
@@ -53,7 +53,7 @@ const DigitalAuServices = () => {
         {
             icon: <FileText size={24} color="#714B38" />,
             title: "Content Marketing",
-            description: "Create valuable, engaging content that attracts and converts your target Australian audience while building brand authority.",
+            description: "Create valuable, engaging content that attracts and converts your target Indian audience while building brand authority.",
             features: [
                 "Blog Writing",
                 "Video Content",
@@ -68,7 +68,7 @@ const DigitalAuServices = () => {
         {
             icon: <Mail size={24} color="#714B38" />,
             title: "Email Marketing",
-            description: "Nurture leads and retain customers with strategic email campaigns designed for the Australian market.",
+            description: "Nurture leads and retain customers with strategic email campaigns designed for the Indian market.",
             features: [
                 "Campaign Design",
                 "List Building",
@@ -102,7 +102,7 @@ const DigitalAuServices = () => {
             number: "01",
             icon: <Target size={32} color="#714B38" />,
             title: "Discovery & Audit",
-            description: "We analyse your current digital presence, competitors, and Australian market opportunities."
+            description: "We analyse your current digital presence, competitors, and Indian market opportunities."
         },
         {
             number: "02",
@@ -127,8 +127,8 @@ const DigitalAuServices = () => {
     const whyChooseUs = [
         {
             icon: <Globe size={32} color="#714B38" />,
-            title: "Australian Market Expertise",
-            description: "Deep understanding of Australian consumer behavior, local SEO, and compliance requirements."
+            title: "Indian Market Expertise",
+            description: "Deep understanding of Indian consumer behavior, local SEO, and compliance requirements."
         },
         {
             icon: <BarChart3 size={32} color="#714B38" />,
@@ -138,12 +138,12 @@ const DigitalAuServices = () => {
         {
             icon: <Users size={32} color="#714B38" />,
             title: "Dedicated Account Management",
-            description: "Personal account managers who understand your business and are available during Australian business hours."
+            description: "Personal account managers who understand your business and are available during Indian business hours."
         },
         {
             icon: <Smartphone size={32} color="#714B38" />,
             title: "Mobile-First Approach",
-            description: "All campaigns optimised for the mobile-first Australian market."
+            description: "All campaigns optimised for the mobile-first Indian market."
         }
     ];
 
@@ -166,14 +166,14 @@ const DigitalAuServices = () => {
                         marginBottom: '1rem',
                         lineHeight: '1.2'
                     }}>
-                        Digital Marketing Services for <span style={{ color: '#714B38' }}>Australian Businesses</span>
+                        Digital Marketing Services for <span style={{ color: '#714B38' }}>Indian Businesses</span>
                     </h1>
                     <p style={{
                         fontSize: '1.2rem',
                         color: '#666',
                         marginBottom: '2rem'
                     }}>
-                        Comprehensive digital marketing solutions designed to help Australian businesses grow their online presence, drive qualified leads, and increase revenue through proven strategies.
+                        Comprehensive digital marketing solutions designed to help Indian businesses grow their online presence, drive qualified leads, and increase revenue through proven strategies.
                     </p>
                     <button style={{
                         backgroundColor: '#714B38',
@@ -361,7 +361,7 @@ const DigitalAuServices = () => {
                         color: '#666',
                         marginBottom: '3rem'
                     }}>
-                        How we deliver results for Australian businesses
+                        How we deliver results for Indian businesses
                     </p>
 
                     <div style={{
@@ -436,14 +436,14 @@ const DigitalAuServices = () => {
                         fontWeight: 'bold',
                         marginBottom: '1rem'
                     }}>
-                        Why Choose DigitalAu?
+                        Why Choose Rankvertise?
                     </h2>
                     <p style={{
                         fontSize: '1.1rem',
                         color: '#666',
                         marginBottom: '3rem'
                     }}>
-                        What sets us apart in the Australian digital marketing landscape
+                        What sets us apart in the Indian digital marketing landscape
                     </p>
 
                     <div style={{
@@ -509,7 +509,7 @@ const DigitalAuServices = () => {
                         marginBottom: '3rem',
                         opacity: '0.9'
                     }}>
-                        See how we've helped Australian businesses achieve their digital marketing goals
+                        See how we've helped Indian businesses achieve their digital marketing goals
                     </p>
 
                     <div style={{
@@ -625,14 +625,14 @@ const DigitalAuServices = () => {
                         fontWeight: 'bold',
                         marginBottom: '1rem'
                     }}>
-                        Ready to Grow Your Australian Business?
+                        Ready to Grow Your Indian Business?
                     </h2>
                     <p style={{
                         fontSize: '1.2rem',
                         color: '#666',
                         marginBottom: '2rem'
                     }}>
-                        Get a free consultation and custom digital marketing strategy tailored to your business goals and the Australian market.
+                        Get a free consultation and custom digital marketing strategy tailored to your business goals and the Indian market.
                     </p>
                     <div style={{
                         display: 'flex',
@@ -675,4 +675,4 @@ const DigitalAuServices = () => {
     );
 };
 
-export default DigitalAuServices;
+export default RankvertiseServices;

@@ -7,9 +7,9 @@ export function AboutSection() {
             textAlign: 'center',
             marginBottom: '40px',
         }}>
-            <h3 style={{ fontSize: '2em', margin: '20px 0' }}>About DigitalAu</h3>
+            <h3 style={{ fontSize: '2em', margin: '20px 0' }}>About Rankvertise</h3>
             <p style={{ margin: '20px 0' }}>
-                We’re a team of digital marketing specialists with deep expertise in the Australian market.
+                We’re a team of digital marketing specialists with deep expertise in the Indian market.
                 Our mission is to help local businesses thrive online through data-driven strategies and cutting-edge digital marketing techniques.
             </p>
         </section>
