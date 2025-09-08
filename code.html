@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Strategy Scroll Animation</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0a0a0a;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    section {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .highlight {
+      color: cyan;
+      font-weight: bold;
+    }
+    .highlight-green {
+      color: limegreen;
+      font-weight: bold;
+    }
+
+    .frame {
+      background: #111;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 40px;
+      width: 70%;
+      font-size: 1.3rem;
+      line-height: 1.8rem;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .sticky {
+      position: sticky;
+      top: 20%;
+    }
+
+    .hidden-word {
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+  </style>
+</head>
+<body>
+  <!-- Section 1: Top Question -->
+  <section>
+    <div>
+      What is our <span id="strategyWord" class="highlight">strategy</span> ?
+    </div>
+  </section>
+
+  <!-- Section 2: Word Finder Frame -->
+  <section>
+    <div class="frame sticky">
+      <p>
+        We don’t believe in one 
+        <span id="frameStrategy" class="highlight hidden-word">strategy</span> 
+        for all. Different industries demand different moves, and that’s exactly
+        where we shine. Whether you’re selling skincare, software, or sushi, 
+        we’ve <span id="doneItWord" class="highlight-green">done it</span> (and done it well).
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 3: Bottom Question -->
+  <section>
+    <div id="doneItQuestion" class="hidden-word">
+      How we’ve <span class="highlight-green">done it</span> ?
+    </div>
+  </section>
+
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script>
+    const strategyWord = document.getElementById("strategyWord");
+    const frameStrategy = document.getElementById("frameStrategy");
+    const doneItWord = document.getElementById("doneItWord");
+    const doneItQuestion = document.getElementById("doneItQuestion");
+
+    window.addEventListener("scroll", () => {
+      const scrollY = window.scrollY;
+      const winH = window.innerHeight;
+
+      // Strategy word transition
+      if (scrollY > winH * 0.3 && scrollY < winH * 1.2) {
+        strategyWord.style.opacity = "0";
+        frameStrategy.classList.remove("hidden-word");
+      } else {
+        strategyWord.style.opacity = "1";
+        frameStrategy.classList.add("hidden-word");
+      }
+
+      // Done it transition
+      if (scrollY > winH * 1.5) {
+        doneItWord.style.opacity = "0";
+        doneItQuestion.classList.remove("hidden-word");
+      } else {
+        doneItWord.style.opacity = "1";
+        doneItQuestion.classList.add("hidden-word");
+      }
+    });
+  </script>
+</body>
+</html>

@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 // import { Star, Search, MousePointer, Share2, FileText } from 'lucide-react';
 import { Star, Search, MousePointer, Share2, FileText, Phone, Mail, MapPin } from "lucide-react";
+import { PenTool, Instagram, BarChart2, Globe, Camera } from "lucide-react";
 
 const Home = () => {
     const [formData, setFormData] = useState({
@@ -23,6 +24,103 @@ const Home = () => {
         alert('Message sent successfully!');
         console.log('Form submitted:', formData);
     };
+
+    const services = [
+        {
+            icon: <PenTool size={28} color="#714B38" />,
+            title: "Brand Identity",
+            description:
+                "Logo. Voice. Vibe. All dialed in. Whether you're starting out or starting over, we’ll design a brand that actually speaks.",
+            items: [
+                "Visual identity",
+                "Logo design",
+                "Brand naming",
+                "Brand guidelines",
+                "Brand voice & storytelling",
+            ],
+            keywords: [
+                "branding agency",
+                "brand strategy",
+                "logo design",
+                "visual identity",
+            ],
+        },
+        {
+            icon: <Instagram size={28} color="#714B38" />,
+            title: "Social Media & Content",
+            description:
+                "We don’t just manage. We create. Our content strategies are scroll-stopping, algorithm-busting, and extremely double-tap worthy.",
+            items: [
+                "Content creation",
+                "Social media management",
+                "Influencer partnerships",
+                "Campaign strategy",
+                "Content calendars & copywriting",
+            ],
+            keywords: [
+                "social media marketing",
+                "content creation",
+                "influencer marketing",
+                "performance marketing",
+            ],
+        },
+        {
+            icon: <BarChart2 size={28} color="#714B38" />,
+            title: "Digital Marketing That Clicks",
+            description:
+                "Your goals + our data-backed brains = ROI that actually means something. From SEO to paid ads, we speak digital fluently.",
+            items: [
+                "SEO & keyword strategy",
+                "Paid ads (Google, Meta, LinkedIn)",
+                "Email marketing",
+                "Conversion optimization",
+            ],
+            keywords: [
+                "digital marketing agency",
+                "paid campaigns",
+                "SEO services",
+                "performance marketing",
+            ],
+        },
+        {
+            icon: <Globe size={28} color="#714B38" />,
+            title: "Web Experiences",
+            description:
+                "Websites that look hot and load fast. From portfolios to e-commerce, we turn code into conversion.",
+            items: [
+                "UI/UX design",
+                "Shopify & WordPress development",
+                "E-commerce experiences",
+                "Copywriting & wireframing",
+            ],
+            keywords: ["website development", "UX/UI design", "ecommerce websites"],
+        },
+        {
+            icon: <Camera size={28} color="#714B38" />,
+            title: "Creative Direction & Production",
+            description:
+                "Ideas are cute. Execution is everything. From aesthetic to impact, we concept, shoot, and produce brand content that doesn’t just sit pretty, it performs.",
+            items: [
+                "Campaign ideation",
+                "Visual storytelling",
+                "Brand films & product shoots",
+                "Reels, UGC & viral-first formats",
+                "Motion graphics & creative editing",
+            ],
+            keywords: [
+                "creative direction",
+                "content production",
+                "brand videos",
+                "UGC content",
+                "motion design",
+                "visual storytelling",
+                "video marketing",
+            ],
+        },
+    ];
+
+
+    
 
     return (
         <div style={{ backgroundColor: '#eadccc', minHeight: '100vh' }}>
@@ -261,14 +359,15 @@ const Home = () => {
                         marginBottom: '1rem',
                         lineHeight: '1.2'
                     }}>
-                        Grow Your Indian Business with <span style={{ color: '#714B38' }}>Digital Marketing</span>
+                        {/* Grow Your Indian Business with <span style={{ color: '#714B38' }}>Digital Marketing</span> */}
+                        Not Your Regular Digital Marketing Agency
                     </h1>
                     <p style={{
                         fontSize: '1.1rem',
                         color: '#666',
                         marginBottom: '2rem'
                     }}>
-                        We help Indian businesses increase their online presence, drive qualified leads, and grow revenue through proven digital marketing strategies.
+                        We Don't Build Brands, We Build You An Audience We help Indian businesses increase their online presence, drive qualified leads, and grow revenue through proven digital marketing strategies.
                     </p>
                     <div style={{ display: 'flex', gap: '1rem' }}>
                         <button style={{
@@ -342,154 +441,153 @@ const Home = () => {
             </section>
 
             {/* Services Section */}
-            <section style={{
-                padding: '4rem 2rem',
-                maxWidth: '1200px',
-                margin: '0 auto',
-                textAlign: 'center'
-            }}>
-                <h2 style={{
-                    fontSize: '2.5rem',
-                    fontWeight: 'bold',
-                    marginBottom: '1rem'
-                }}>
-                    Our Digital Marketing Services
+            <section
+                style={{
+                    padding: "4rem 2rem",
+                    maxWidth: "1200px",
+                    margin: "0 auto",
+                }}
+            >
+                <h2
+                    style={{
+                        fontSize: "2.5rem",
+                        fontWeight: "bold",
+                        marginBottom: "1rem",
+                        textAlign: "center",
+                    }}
+                >
+                    What Do We Do?
                 </h2>
-                <p style={{
-                    fontSize: '1.1rem',
-                    color: '#666',
-                    marginBottom: '3rem'
-                }}>
-                    Comprehensive digital marketing solutions designed specifically for Indian businesses
+                <p
+                    style={{
+                        fontSize: "1.1rem",
+                        color: "#555",
+                        textAlign: "center",
+                        marginBottom: "3rem",
+                    }}
+                >
+                    We build brands that look good, talk smart, and show up where it matters.
                 </p>
 
-                <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-                    gap: '2rem',
-                    marginBottom: '3rem'
-                }}>
-                    <div style={{
-                        backgroundColor: '#fff',
-                        padding: '2rem',
-                        borderRadius: '8px',
-                        boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-                        textAlign: 'left'
-                    }}>
-                        <div style={{
-                            backgroundColor: '#e3f2fd',
-                            width: '60px',
-                            height: '60px',
-                            borderRadius: '8px',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            marginBottom: '1rem'
-                        }}>
-                            <Search size={24} color="#714B38" />
-                        </div>
-                        <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
-                            SEO Optimisation
-                        </h3>
-                        <p style={{ color: '#666' }}>
-                            Improve your Google rankings with data-driven SEO strategies and best organic traffic.
-                        </p>
-                    </div>
+                <div
+                    style={{
+                        display: "grid",
+                        gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+                        gap: "2rem",
+                    }}
+                >
+                    {services.map((s, i) => (
+                        <div
+                            key={i}
+                            style={{
+                                backgroundColor: "#fff",
+                                padding: "2rem",
+                                borderRadius: "12px",
+                                boxShadow: "0 3px 10px rgba(0,0,0,0.1)",
+                                transition: "transform 0.3s ease",
+                            }}
+                            onMouseEnter={(e) =>
+                                (e.currentTarget.style.transform = "translateY(-6px)")
+                            }
+                            onMouseLeave={(e) =>
+                                (e.currentTarget.style.transform = "translateY(0)")
+                            }
+                        >
+                            <div
+                                style={{
+                                    backgroundColor: "#e3f2fd",
+                                    width: "60px",
+                                    height: "60px",
+                                    borderRadius: "10px",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                    marginBottom: "1rem",
+                                }}
+                            >
+                                {s.icon}
+                            </div>
+                            <h3
+                                style={{
+                                    fontSize: "1.5rem",
+                                    fontWeight: "bold",
+                                    marginBottom: "0.5rem",
+                                }}
+                            >
+                                {s.title}
+                            </h3>
+                            <p style={{ color: "#666", marginBottom: "1rem" }}>{s.description}</p>
 
-                    <div style={{
-                        backgroundColor: '#fff',
-                        padding: '2rem',
-                        borderRadius: '8px',
-                        boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-                        textAlign: 'left'
-                    }}>
-                        <div style={{
-                            backgroundColor: '#e3f2fd',
-                            width: '60px',
-                            height: '60px',
-                            borderRadius: '8px',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            marginBottom: '1rem'
-                        }}>
-                            <MousePointer size={24} color="#714B38" />
-                        </div>
-                        <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
-                            PPC Advertising
-                        </h3>
-                        <p style={{ color: '#666' }}>
-                            Maximise ROI with targeted Google Ads campaigns.
-                        </p>
-                    </div>
+                            <ul style={{ paddingLeft: "1.2rem", marginBottom: "1rem" }}>
+                                {s.items.map((item, idx) => (
+                                    <li key={idx} style={{ color: "#444", marginBottom: "0.4rem" }}>
+                                        ✦ {item}
+                                    </li>
+                                ))}
+                            </ul>
 
-                    <div style={{
-                        backgroundColor: '#fff',
-                        padding: '2rem',
-                        borderRadius: '8px',
-                        boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-                        textAlign: 'left'
-                    }}>
-                        <div style={{
-                            backgroundColor: '#e3f2fd',
-                            width: '60px',
-                            height: '60px',
-                            borderRadius: '8px',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            marginBottom: '1rem'
-                        }}>
-                            <Share2 size={24} color="#714B38" />
+                            <p style={{ fontSize: "0.9rem", color: "#888" }}>
+                                <strong>Keywords:</strong> {s.keywords.join(", ")}
+                            </p>
                         </div>
-                        <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
-                            Social Media
-                        </h3>
-                        <p style={{ color: '#666' }}>
-                            Build your brand presence across social platforms.
-                        </p>
-                    </div>
-
-                    <div style={{
-                        backgroundColor: '#fff',
-                        padding: '2rem',
-                        borderRadius: '8px',
-                        boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-                        textAlign: 'left'
-                    }}>
-                        <div style={{
-                            backgroundColor: '#e3f2fd',
-                            width: '60px',
-                            height: '60px',
-                            borderRadius: '8px',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            marginBottom: '1rem'
-                        }}>
-                            <FileText size={24} color="#714B38" />
-                        </div>
-                        <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
-                            Content Marketing
-                        </h3>
-                        <p style={{ color: '#666' }}>
-                            Create engaging content that drives results and revenue.
-                        </p>
-                    </div>
+                    ))}
                 </div>
-
-                <button style={{
-                    backgroundColor: '#714B38',
-                    color: 'white',
-                    border: 'none',
-                    padding: '0.75rem 2rem',
-                    borderRadius: '4px',
-                    fontSize: '1rem',
-                    cursor: 'pointer'
-                }}>
-                    View All Services →
-                </button>
             </section>
+
+                {/* Who's It For Section */}
+                <section
+                    style={{
+                        padding: "4rem 2rem",
+                        maxWidth: "1000px",
+                        margin: "0 auto",
+                        textAlign: "center",
+                    }}
+                >
+                    <h2
+                        style={{
+                            fontSize: "2.2rem",
+                            fontWeight: "bold",
+                            marginBottom: "1rem",
+                        }}
+                    >
+                        Who’s It For?
+                    </h2>
+                    <p style={{ fontSize: "1.1rem", marginBottom: "2rem", color: "#444" }}>
+                        Startups. Legacy brands. Bootstrapped ideas. Venture-backed rockets.
+                        If you’re bold, you belong. You also belong if you are:
+                    </p>
+
+                    <ul
+                        style={{
+                            display: "grid",
+                            gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+                            gap: "1rem",
+                            listStyle: "none",
+                            padding: 0,
+                        }}
+                    >
+                        {[
+                            "Direct-to-consumer (D2C)",
+                            "SaaS & tech companies",
+                            "Lifestyle & fashion",
+                            "Creators & entrepreneurs",
+                            "Hospitality & F&B",
+                        ].map((item, i) => (
+                            <li
+                                key={i}
+                                style={{
+                                    background: "#f9f9f9",
+                                    padding: "1rem",
+                                    borderRadius: "8px",
+                                    fontWeight: "500",
+                                }}
+                            >
+                                ✦ {item}
+                            </li>
+                        ))}
+                    </ul>
+                </section>
+
 
             {/* About Section */}
             <section style={{
@@ -575,6 +673,158 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
+            {/* CTA Section */}
+                <section
+                    style={{
+                        textAlign: "center",
+                        padding: "3rem 2rem",
+                        background: "#714B38",
+                        color: "white",
+                    }}
+                >
+                    <h2 style={{ fontSize: "2rem", marginBottom: "1rem" }}>
+                        What Makes Us Us?
+                    </h2>
+                    <ul
+                        style={{
+                            margin: "0 auto 2rem auto",
+                            maxWidth: "600px",
+                            textAlign: "left",
+                            listStyle: "none",
+                            padding: 0,
+                            fontSize: "1rem",
+                            lineHeight: "1.6",
+                        }}
+                    >
+                        {[
+                            "Gen Z creativity, business-level strategy",
+                            "Speedy timelines without sacrificing quality",
+                            "Budget-friendly, ROI-rich strategies",
+                            "Transparent process and honest communication",
+                            "Custom solutions that scale with you",
+                        ].map((point, idx) => (
+                            <li key={idx}>✦ {point}</li>
+                        ))}
+                    </ul>
+                    <button
+                        style={{
+                            background: "white",
+                            color: "#714B38",
+                            border: "none",
+                            padding: "0.8rem 1.6rem",
+                            borderRadius: "6px",
+                            cursor: "pointer",
+                            fontWeight: "600",
+                        }}
+                    >
+                        📩 Let’s Talk
+                    </button>
+                </section>
+
+                {/* Portfolio Section */}
+                <section
+                    style={{
+                        padding: "4rem 2rem",
+                        textAlign: "center",
+                        maxWidth: "1100px",
+                        margin: "0 auto",
+                    }}
+                >
+                    <h2 style={{ fontSize: "2rem", marginBottom: "1rem" }}>Our Work</h2>
+                    <p style={{ marginBottom: "2rem", color: "#555" }}>
+                        Still Scrolling? Good. That means we’re doing our job.
+                        Keep going. It only gets better 👇
+                    </p>
+
+                    {/* Carousel Placeholder */}
+                    <div
+                        style={{
+                            display: "grid",
+                            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+                            gap: "1.5rem",
+                        }}
+                    >
+                        {[
+                            "This post broke the internet (literally).",
+                            "A campaign so sharp, it cut through the noise.",
+                            "From zero to viral in 30 days.",
+                        ].map((caption, idx) => (
+                            <div
+                                key={idx}
+                                style={{
+                                    background: "#eee",
+                                    padding: "4rem 1rem",
+                                    borderRadius: "10px",
+                                    fontWeight: "500",
+                                }}
+                            >
+                                {caption}
+                            </div>
+                        ))}
+                    </div>
+
+                    <button
+                        style={{
+                            marginTop: "2rem",
+                            background: "#714B38",
+                            color: "white",
+                            border: "none",
+                            padding: "0.8rem 1.6rem",
+                            borderRadius: "6px",
+                            cursor: "pointer",
+                            fontWeight: "600",
+                        }}
+                    >
+                        Explore Our Work →
+                    </button>
+                </section>
+
+                {/* Final CTA */}
+                <section
+                    style={{
+                        textAlign: "center",
+                        padding: "3rem 2rem",
+                        background: "#714B38",
+                        color: "white",
+                    }}
+                >
+                    <h2 style={{ fontSize: "2rem", marginBottom: "1rem" }}>
+                        Let’s Make It Unignorable
+                    </h2>
+                    <p style={{ marginBottom: "2rem", fontSize: "1.1rem" }}>
+                        Whether it’s time to launch or level up, we’re here to build something
+                        that stands out. And stays out.
+                    </p>
+                    <div style={{ display: "flex", gap: "1rem", justifyContent: "center" }}>
+                        <button
+                            style={{
+                                background: "white",
+                                color: "#714B38",
+                                border: "none",
+                                padding: "0.8rem 1.6rem",
+                                borderRadius: "6px",
+                                cursor: "pointer",
+                                fontWeight: "600",
+                            }}
+                        >
+                            Contact Us
+                        </button>
+                        <button
+                            style={{
+                                background: "#f9f9f9",
+                                color: "#714B38",
+                                border: "1px solid #fff",
+                                padding: "0.8rem 1.6rem",
+                                borderRadius: "6px",
+                                cursor: "pointer",
+                                fontWeight: "600",
+                            }}
+                        >
+                            Book a Free Discovery Call
+                        </button>
+                    </div>
+                </section>
 
             {/* Testimonials Section */}
             <section style={{
