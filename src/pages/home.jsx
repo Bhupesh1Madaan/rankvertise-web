@@ -4,6 +4,11 @@ import Footer from '../components/Footer';
 // import { Star, Search, MousePointer, Share2, FileText } from 'lucide-react';
 import { Star, Search, MousePointer, Share2, FileText, Phone, Mail, MapPin } from "lucide-react";
 import { PenTool, Instagram, BarChart2, Globe, Camera } from "lucide-react";
+import ServicesSection from '../components/ServicesSection';
+import WhoIsItFor from '../components/WhoIsItfor';
+import AboutSection from '../components/AboutSection';
+import PortfolioGrid from '../components/PortfolioGrid';
+
 
 const Home = () => {
     const [formData, setFormData] = useState({
@@ -24,101 +29,6 @@ const Home = () => {
         alert('Message sent successfully!');
         console.log('Form submitted:', formData);
     };
-
-    const services = [
-        {
-            icon: <PenTool size={28} color="#714B38" />,
-            title: "Brand Identity",
-            description:
-                "Logo. Voice. Vibe. All dialed in. Whether you're starting out or starting over, we’ll design a brand that actually speaks.",
-            items: [
-                "Visual identity",
-                "Logo design",
-                "Brand naming",
-                "Brand guidelines",
-                "Brand voice & storytelling",
-            ],
-            keywords: [
-                "branding agency",
-                "brand strategy",
-                "logo design",
-                "visual identity",
-            ],
-        },
-        {
-            icon: <Instagram size={28} color="#714B38" />,
-            title: "Social Media & Content",
-            description:
-                "We don’t just manage. We create. Our content strategies are scroll-stopping, algorithm-busting, and extremely double-tap worthy.",
-            items: [
-                "Content creation",
-                "Social media management",
-                "Influencer partnerships",
-                "Campaign strategy",
-                "Content calendars & copywriting",
-            ],
-            keywords: [
-                "social media marketing",
-                "content creation",
-                "influencer marketing",
-                "performance marketing",
-            ],
-        },
-        {
-            icon: <BarChart2 size={28} color="#714B38" />,
-            title: "Digital Marketing That Clicks",
-            description:
-                "Your goals + our data-backed brains = ROI that actually means something. From SEO to paid ads, we speak digital fluently.",
-            items: [
-                "SEO & keyword strategy",
-                "Paid ads (Google, Meta, LinkedIn)",
-                "Email marketing",
-                "Conversion optimization",
-            ],
-            keywords: [
-                "digital marketing agency",
-                "paid campaigns",
-                "SEO services",
-                "performance marketing",
-            ],
-        },
-        {
-            icon: <Globe size={28} color="#714B38" />,
-            title: "Web Experiences",
-            description:
-                "Websites that look hot and load fast. From portfolios to e-commerce, we turn code into conversion.",
-            items: [
-                "UI/UX design",
-                "Shopify & WordPress development",
-                "E-commerce experiences",
-                "Copywriting & wireframing",
-            ],
-            keywords: ["website development", "UX/UI design", "ecommerce websites"],
-        },
-        {
-            icon: <Camera size={28} color="#714B38" />,
-            title: "Creative Direction & Production",
-            description:
-                "Ideas are cute. Execution is everything. From aesthetic to impact, we concept, shoot, and produce brand content that doesn’t just sit pretty, it performs.",
-            items: [
-                "Campaign ideation",
-                "Visual storytelling",
-                "Brand films & product shoots",
-                "Reels, UGC & viral-first formats",
-                "Motion graphics & creative editing",
-            ],
-            keywords: [
-                "creative direction",
-                "content production",
-                "brand videos",
-                "UGC content",
-                "motion design",
-                "visual storytelling",
-                "video marketing",
-            ],
-        },
-    ];
-
 
     
 
@@ -441,7 +351,7 @@ const Home = () => {
             </section>
 
             {/* Services Section */}
-            <section
+            {/* <section
                 style={{
                     padding: "4rem 2rem",
                     maxWidth: "1200px",
@@ -532,10 +442,11 @@ const Home = () => {
                         </div>
                     ))}
                 </div>
-            </section>
+            </section> */}
+                <ServicesSection />
 
                 {/* Who's It For Section */}
-                <section
+                {/* <section
                     style={{
                         padding: "4rem 2rem",
                         maxWidth: "1000px",
@@ -586,11 +497,13 @@ const Home = () => {
                             </li>
                         ))}
                     </ul>
-                </section>
+                </section> */}
+            <div style={{ height: "50vh" }} /> {/* Spacer after services */}
+            <WhoIsItFor />
 
 
             {/* About Section */}
-            <section style={{
+            {/* <section style={{
                 backgroundColor: '#fff',
                 padding: '4rem 2rem'
             }}>
@@ -672,7 +585,8 @@ const Home = () => {
                         />
                     </div>
                 </div>
-            </section>
+            </section> */}
+            <AboutSection />
 
             {/* CTA Section */}
                 <section
@@ -723,7 +637,7 @@ const Home = () => {
                 </section>
 
                 {/* Portfolio Section */}
-                <section
+                {/* <section
                     style={{
                         padding: "4rem 2rem",
                         textAlign: "center",
@@ -737,7 +651,7 @@ const Home = () => {
                         Keep going. It only gets better 👇
                     </p>
 
-                    {/* Carousel Placeholder */}
+                    {/* Carousel Placeholder *
                     <div
                         style={{
                             display: "grid",
@@ -778,7 +692,8 @@ const Home = () => {
                     >
                         Explore Our Work →
                     </button>
-                </section>
+                </section> */}
+                <PortfolioGrid />
 
                 {/* Final CTA */}
                 <section
