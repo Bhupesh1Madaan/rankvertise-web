@@ -14,7 +14,7 @@ const services = [
             "Brand voice & storytelling",
         ],
         keywords: ["branding agency", "brand strategy", "logo design", "visual identity"],
-        bgColor: "#FF6B6B",
+        bgColor: "#714B38",
         icon: <PenTool size={28} color="#fff" />,
     },
     {
@@ -29,7 +29,7 @@ const services = [
             "Content calendars & copywriting",
         ],
         keywords: ["social media marketing", "content creation", "influencer marketing", "performance marketing"],
-        bgColor: "#FFD93D",
+        bgColor: "#eadccc",
         textColor: "#222",
         icon: <Instagram size={28} color="#222" />,
     },
@@ -44,7 +44,7 @@ const services = [
             "Conversion optimization",
         ],
         keywords: ["digital marketing agency", "paid campaigns", "SEO services", "performance marketing"],
-        bgColor: "#6BCB77",
+        bgColor: "#714B38",
         icon: <BarChart2 size={28} color="#fff" />,
     },
     {
@@ -58,8 +58,9 @@ const services = [
             "Copywriting & wireframing",
         ],
         keywords: ["website development", "UX/UI design", "ecommerce websites"],
-        bgColor: "#4D96FF",
-        icon: <Globe size={28} color="#fff" />,
+        bgColor: "#eadccc",
+        textColor: "#222",
+        icon: <Globe size={28} color="#222" />,
     },
     {
         title: "Creative Direction & Production",
@@ -81,7 +82,7 @@ const services = [
             "visual storytelling",
             "video marketing",
         ],
-        bgColor: "#9B59B6",
+        bgColor: "#714B38",
         icon: <Camera size={28} color="#fff" />,
     },
 ];
