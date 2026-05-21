@@ -1,0 +1,155 @@
+.master-scroll-wrapper {
+    position: relative;
+    width: 100%;
+    background-color: #f5ebe0;
+}
+
+.section-viewport {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.panel-one {
+    background-color: #f5ebe0;
+    z-index: 5;
+}
+
+/* Section 2 Engine Panel Layering rules */
+.panel-two {
+    background-color: #1a0508;
+    color: #f5ebe0;
+    position: absolute;
+    top: 100vh;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    box-shadow: 0 -30px 60px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Glassmorphism system overlays */
+.glass-split-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: 20;
+    pointer-events: none;
+}
+
+.glass-plate {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background: rgba(245, 235, 224, 0.25);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    will-change: transform;
+}
+
+.left-plate {
+    justify-content: flex-end;
+    border-right: none;
+}
+
+.right-plate {
+    justify-content: flex-start;
+    border-left: none;
+}
+
+.half-text {
+    font-size: clamp(3rem, 13vw, 9.5rem);
+    font-weight: 900;
+    line-height: 1;
+}
+
+.left-text {
+    color: #1a0508;
+}
+
+.right-text {
+    color: #801a24;
+}
+
+.hero-bg-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.reveal-content-box {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 850px;
+    padding: 0 24px;
+}
+
+.hero-subheadline {
+    font-size: clamp(1.6rem, 4.5vw, 3.4rem);
+    font-weight: 900;
+    color: #1a0508;
+    margin-bottom: 14px;
+}
+
+.hero-tagline {
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    color: #801a24;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.hero-desc {
+    font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+    color: rgba(26, 5, 8, 0.8);
+    line-height: 1.6;
+    margin-bottom: 35px;
+}
+
+.hero-primary-btn {
+    display: inline-block;
+    background-color: #1a0508;
+    color: #f5ebe0;
+    padding: 15px 38px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 50px;
+}
+
+.parallax-inner-content {
+    max-width: 1000px;
+    padding: 0 6%;
+    text-align: left;
+}
+
+.s2-tagline {
+    color: #d4a373;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.premium-reveal-paragraph {
+    font-size: clamp(1.4rem, 3vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.4;
+    color: #f5ebe0;
+}

@@ -1,0 +1,58 @@
+.logoloop {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 40px 0;
+    background-color: #f5ebe0;
+}
+
+.logoloop__track {
+    display: flex;
+    width: max-content;
+}
+
+.logoloop__list {
+    display: flex;
+    align-items: center;
+    gap: var(--logoloop-gap);
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    padding-left: var(--logoloop-gap);
+}
+
+.logo-usp-node {
+    font-size: clamp(1.2rem, 2.5vw, 2.2rem);
+    font-weight: 800;
+    color: #1a0508;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    white-space: nowrap;
+}
+
+.logo-usp-node::after {
+    content: ' ✦';
+    margin-left: var(--logoloop-gap);
+    color: #801a24;
+}
+
+.logoloop--fade::before,
+.logoloop--fade::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 15%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.logoloop--fade::before {
+    left: 0;
+    background: linear-gradient(to right, var(--logoloop-fadeColor), transparent);
+}
+
+.logoloop--fade::after {
+    right: 0;
+    background: linear-gradient(to left, var(--logoloop-fadeColor), transparent);
+}

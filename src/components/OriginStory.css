@@ -1,0 +1,61 @@
+.origin-story-fluid-section {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #f5ebe0;
+    /* Light Mode Luxury Beige Base */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 100px 0;
+}
+
+.origin-content-container {
+    position: relative;
+    z-index: 5;
+    /* Dynamic stacking above liquid fluid layers */
+    max-width: 1100px;
+    padding: 0 6%;
+    color: #1a0508;
+    pointer-events: none;
+    /* Allows mouse pointer events data directly fall to canvas behind */
+}
+
+.origin-tagline {
+    color: #801a24;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.origin-main-title {
+    font-size: clamp(2.2rem, 5vw, 4.2rem);
+    font-weight: 900;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    margin-bottom: 50px;
+}
+
+.origin-text-layout-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 50px;
+    border-top: 1px solid rgba(26, 5, 8, 0.15);
+    padding-top: 40px;
+}
+
+.origin-text-lead {
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    font-weight: 700;
+    line-height: 1.5;
+    color: #1a0508;
+}
+
+.origin-text-sub {
+    font-size: clamp(1rem, 1.5vw, 1.15rem);
+    line-height: 1.7;
+    color: rgba(26, 5, 8, 0.75);
+}
