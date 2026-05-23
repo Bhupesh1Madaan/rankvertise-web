@@ -1,13 +1,16 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import ScrollRevealHero from './components/ScrollRevealHero';
-import {LogoLoop} from './components/LogoLoop';
+import LogoLoop from './components/LogoLoop';
 import ScrollStack from './components/ScrollStack';
+import VideoOrigin from './components/VideoOrigin';
+// import ClientMapShowcase from './components/ClientMapShowcase'; // VECTOR MAP WITH TOP MARQUEE CONNECTED
 import LogoMarquee from './components/LogoMarquee';
-import OriginStory from './components/OriginStory';
-import MagicBento from './components/MagicBento';         // SECTION 5
-import CircularGallery from './components/CircularGallery'; // SECTION 6
+import MagicBento from './components/MagicBento';
+import CircularGallery from './components/CircularGallery';
 import Footer from './components/Footer';
+import { ClientOrbitSection } from './components/ClientOrbitSection';
+import './ResponsiveMaster.css';
 
 function App() {
   const usps = [
@@ -22,12 +25,14 @@ function App() {
       <ScrollRevealHero />
       <LogoLoop logos={usps} speed={100} fadeOutColor="#f5ebe0" />
       <ScrollStack />
-      <LogoMarquee />
-      <OriginStory />
+      <VideoOrigin />
 
-      {/* ADDED: Bento Grid & 3D Infinite Cylinder viewports */}
+      {/* SECTION COLLAGE: TOP MARQUEE EXTENSION + INTERACTIVE HIGHLIGHTED DOTTED WORLD MAP GRID */}
+
+      <LogoMarquee />
       <MagicBento />
       <CircularGallery />
+      <ClientOrbitSection />
       <Footer />
     </div>
   );

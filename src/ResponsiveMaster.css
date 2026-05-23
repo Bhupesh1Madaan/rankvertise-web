@@ -1,0 +1,92 @@
+/* ── RANKERTISE ULTIMATE GLOBAL RESPONSIVE LAYER ── */
+
+@media (max-width: 1024px) {
+    /* Yahan sirf un classes ko pakdo jo mobile par layout kharab kar rahi hain */
+
+    .orbit-container,
+    .sphere-main-stage,
+    .stage-3d-box {
+        height: 380px !important;
+        /* Saari heavy heights ko ek sath compress kiya */
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* 1. Global Typography & Padding Control */
+    html,
+    body {
+        overflow-x: hidden !important;
+        /* Mobile par left-right screen ka hilna permanent block */
+    }
+
+    h1 {
+        font-size: 2.5rem !important;
+        line-height: 1.2 !important;
+    }
+
+    h2 {
+        font-size: 1.8rem !important;
+        line-height: 1.2 !important;
+    }
+
+    p {
+        font-size: 0.95rem !important;
+        line-height: 1.5 !important;
+    }
+
+    /* 2. Global Section Gaps Reduction */
+    section,
+    .orbit-showcase-section,
+    .sphere-root-container {
+        padding: 40px 0 !important;
+        /* Saare sections ke upar-neeche ka gap ek baar mein khatam */
+    }
+
+    /* 3. Global Structural Flex Columns */
+    .flex-row,
+    .grid-cols-2,
+    .grid-cols-3,
+    .grid-cols-4,
+    .magic-bento-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+
+    /* 4. Heavy 3D Components Mobile Squeeze */
+    .dome-tile-node {
+        width: 100px !important;
+        height: 60px !important;
+    }
+
+    .orbit-image-wrapper {
+        padding: 8px !important;
+        border-radius: 12px !important;
+    }
+
+    /* 5. Buttery Smooth Hardware Acceleration for Mobile Graphics */
+    *,
+    *::before,
+    *::after {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .orbit-image-wrapper,
+    .dome-tile-node,
+    .item__image,
+    .scroll-card {
+        will-change: transform, opacity !important;
+        transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1) !important;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem !important;
+    }
+
+    .orbit-container {
+        height: 280px !important;
+    }
+}

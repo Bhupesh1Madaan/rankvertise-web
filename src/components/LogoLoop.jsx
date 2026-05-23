@@ -130,3 +130,5 @@ export const LogoLoop = memo(({
         </div>
     );
 });
+
+export default LogoLoop;
