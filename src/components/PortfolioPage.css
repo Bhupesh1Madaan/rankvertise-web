@@ -1,0 +1,523 @@
+/* ==========================================================================
+   1. GLOBAL HIGH-END BRAND IDENTITY ENGINE (BEIGE THEME)
+   ========================================================================== */
+:root {
+    --bg-light: #f5ebe0;
+    /* Premium Luxury Beige Backdrop */
+    --maroon-deep: #1a0508;
+    /* Signature Core Dark Maroon Text/Hull */
+    --maroon-accent: #801a24;
+    /* Crimson Tone for tags and lines highlights */
+    --gold-dim: #d4a373;
+    /* Subtle gold edge boundaries indicator tint */
+}
+
+.portfolio-page-viewport {
+    background-color: var(--bg-light);
+    color: var(--maroon-deep);
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    width: 100vw;
+    position: relative;
+    overflow-x: hidden !important;
+}
+
+/* ==========================================================================
+   2. SECTION 1: PARALLAX SPLIT STREAM MATRIX
+   ========================================================================== */
+.sec-parallax-split {
+    position: relative;
+    width: 100%;
+    height: 450vh;
+    /* Deep scrolling runway length factor for data mapping */
+    background-color: var(--bg-light);
+}
+
+.split-viewport-window {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+
+/* LEFT PINNED TEXT LAYOUT DESK */
+.split-left-narrative-zone {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 6%;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 10;
+    background-color: var(--bg-light);
+    border-right: 1px solid rgba(26, 5, 8, 0.05);
+}
+
+.parallax-story-card {
+    position: absolute;
+    width: 80%;
+    will-change: opacity, transform;
+}
+
+.p-tag {
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--maroon-accent);
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.p-title {
+    font-size: clamp(2rem, 3.5vw, 3.8rem);
+    font-weight: 900;
+    letter-spacing: -2px;
+    line-height: 1.1;
+    color: var(--maroon-deep);
+}
+
+.p-desc {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: rgba(26, 5, 8, 0.65);
+    margin-top: 20px;
+}
+
+/* RIGHT PARALLAX CONVEYOR RUNWAY SCREEN */
+.split-right-media-stream {
+    width: 55%;
+    height: 100%;
+    position: relative;
+    will-change: transform;
+}
+
+.stream-media-hull {
+    position: absolute;
+    left: 15%;
+    width: 70%;
+    height: 65vh;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 45px 90px rgba(26, 5, 8, 0.15);
+    border: 1px solid rgba(26, 5, 8, 0.06);
+    background-color: #eaddcf;
+    will-change: transform, opacity;
+}
+
+.stream-media-hull video,
+.stream-media-hull img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ==========================================================================
+   3. SECTION 2: BENTO MATRIX ARRAY (THE PROOF DATA)
+   ========================================================================== */
+.sec-bento-proof {
+    width: 100%;
+    padding: 140px 6%;
+    box-sizing: border-box;
+    background-color: var(--bg-light);
+}
+
+.bento-header-wrapper {
+    max-width: 800px;
+    margin-bottom: 60px;
+}
+
+.bento-grid-desk {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 250px;
+    gap: 24px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.bento-node-box {
+    background-color: #ebdcd0;
+    /* Luxury contrast beige block backing */
+    border: 1px solid rgba(26, 5, 8, 0.04);
+    border-radius: 28px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    will-change: transform;
+}
+
+.bento-span-2 {
+    grid-column: span 2;
+    grid-row: span 2;
+    height: 524px;
+}
+
+.bento-span-1 {
+    grid-column: span 1;
+    height: 250px;
+}
+
+.bento-full-row {
+    grid-column: span 3;
+    height: 220px;
+}
+
+.bento-node-label {
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--maroon-accent);
+}
+
+.bento-node-title {
+    font-size: clamp(1.8rem, 2.5vw, 3rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-top: 10px;
+}
+
+.bento-node-desc {
+    color: rgba(26, 5, 8, 0.6);
+    font-size: 1.05rem;
+    line-height: 1.5;
+    margin-top: 12px;
+}
+
+/* Micro Vector Graph inside Bento Box element */
+.bento-svg-graph-layer {
+    width: 100%;
+    height: 180px;
+    margin-top: 30px;
+    overflow: visible;
+}
+
+.bento-graph-line {
+    fill: none;
+    stroke: var(--maroon-accent);
+    stroke-width: 4;
+    stroke-linecap: round;
+}
+
+/* ==========================================================================
+   4. SECTION 3: SEAMLESS HORIZONTAL MARQUEE RINGS
+   ========================================================================= */
+.sec-marquee-ring {
+    width: 100%;
+    background-color: var(--maroon-deep);
+    /* Elegant Contrast break line block */
+    padding: 80px 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.marquee-track-line {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+}
+
+.marquee-cluster-nodes {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    padding-right: 60px;
+}
+
+.marquee-pill-text {
+    font-size: clamp(2.5rem, 6vw, 5.5rem);
+    font-weight: 900;
+    color: var(--bg-light);
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    white-space: nowrap;
+}
+
+.marquee-pill-text.outline-mode {
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(245, 235, 224, 0.3);
+}
+
+.marquee-pill-text::after {
+    content: ' ✦';
+    margin-left: 60px;
+    color: var(--gold-dim);
+}
+
+/* ==========================================================================
+   5. SECTION 4: EDITORIAL MAGAZINE TESTIMONIALS
+   ========================================================================== */
+.sec-testimonials-magazine {
+    width: 100%;
+    padding: 160px 6%;
+    box-sizing: border-box;
+    background-color: var(--bg-light);
+}
+
+.magazine-container-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 80px;
+}
+
+.magazine-left-panel h2 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -2px;
+}
+
+.magazine-left-panel p {
+    color: rgba(26, 5, 8, 0.6);
+    margin-top: 24px;
+    line-height: 1.6;
+}
+
+.magazine-column-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.magazine-quote-row {
+    border-bottom: 1px solid rgba(26, 5, 8, 0.08);
+    padding-bottom: 40px;
+}
+
+.magazine-quote-body {
+    font-size: clamp(1.2rem, 2vw, 1.8rem);
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--maroon-deep);
+    margin-bottom: 30px;
+}
+
+.magazine-author-block {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.magazine-user-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--maroon-accent);
+}
+
+.author-name-meta {
+    font-size: 1.05rem;
+    font-weight: 800;
+}
+
+.author-company-tag {
+    font-size: 0.85rem;
+    color: var(--maroon-accent);
+    font-weight: 700;
+    margin-top: 2px;
+}
+
+/* ==========================================================================
+   6. SECTION 5: CURATED ARCHITECTURE EDITORIAL BLOGS GRID
+   ========================================================================== */
+.sec-editorial-blogs {
+    width: 100%;
+    padding: 140px 6%;
+    box-sizing: border-box;
+    background-color: var(--bg-light);
+    border-top: 1px solid rgba(26, 5, 8, 0.05);
+}
+
+.blogs-masonry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+    margin-top: 60px;
+}
+
+.blog-editorial-card {
+    cursor: pointer;
+    background: #eaddcf;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(26, 5, 8, 0.04);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.blog-editorial-card:hover {
+    transform: translateY(-8px);
+}
+
+.blog-img-box {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+}
+
+.blog-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.blog-content-box {
+    padding: 30px;
+}
+
+.blog-meta-date {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--maroon-accent);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.blog-heading-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-top: 10px;
+    line-height: 1.3;
+}
+
+/* ==========================================================================
+   7. SECTION 6: CONTEXT NEWSLETTER FORM MODULE
+   ========================================================================== */
+.sec-newsletter-box {
+    width: 100%;
+    padding: 140px 6%;
+    box-sizing: border-box;
+    background-color: #ebdcd0;
+    /* Luxury contrasting end block zone */
+    display: flex;
+    justify-content: center;
+}
+
+.news-card-wrapper {
+    max-width: 750px;
+    width: 100%;
+    text-align: center;
+}
+
+.news-input-dock {
+    display: flex;
+    gap: 16px;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.news-field {
+    flex: 1;
+    background-color: var(--bg-light);
+    border: 1px solid rgba(26, 5, 8, 0.1);
+    padding: 18px 24px;
+    border-radius: 14px;
+    font-size: 1rem;
+    color: var(--maroon-deep);
+    font-family: inherit;
+    outline: none;
+}
+
+.news-field:focus {
+    border-color: var(--maroon-accent);
+}
+
+.news-submit-btn {
+    background-color: var(--maroon-deep);
+    color: var(--bg-light);
+    border: none;
+    padding: 0 36px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.news-submit-btn:hover {
+    background-color: var(--maroon-accent);
+}
+
+/* ==========================================================================
+   8. UNIFIED SMART RESPONSIVENESS OVERRIDES SYSTEM
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .magazine-container-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sec-parallax-split {
+        height: auto;
+    }
+
+    /* Bypasses pinning loop constraints on mobile */
+    .split-viewport-window {
+        flex-direction: column;
+        height: auto;
+        position: relative;
+    }
+
+    .split-left-narrative-zone {
+        width: 100%;
+        height: auto;
+        padding: 80px 4% 40px 4%;
+        position: relative;
+    }
+
+    .parallax-story-card {
+        position: relative;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .split-right-media-stream {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 0 4% 80px 4%;
+    }
+
+    .stream-media-hull {
+        position: relative;
+        left: auto;
+        width: 100%;
+        height: 45vh;
+    }
+
+    .bento-grid-desk {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+    }
+
+    .bento-span-2,
+    .bento-span-1,
+    .bento-full-row {
+        grid-column: span 1 !important;
+        height: auto !important;
+        min-height: 240px;
+    }
+
+    .news-input-dock {
+        flex-direction: column;
+    }
+
+    .news-submit-btn {
+        padding: 18px 0;
+    }
+}

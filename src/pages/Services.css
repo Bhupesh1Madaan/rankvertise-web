@@ -1,0 +1,336 @@
+/* ==========================================================================
+   RANKVERTISE SERVICES - PURE CURTAIN OVERLAP PARALLAX SYSTEM
+   ========================================================================== */
+
+/* Master Structural Blueprint Architecture mapping User's exact Palette */
+.services-master-parallax-wrapper {
+  background-color: #1a0508; /* Luxury Deep Maroon */
+  width: 100vw;
+  position: relative;
+  font-family: sans-serif;
+  overflow-x: hidden;
+}
+
+/* ── SECTION 1: PERFECT BACKGROUND DEEP FREEZE CONSTRAINTS ── */
+.services-parallax-trigger-box {
+  position: fixed; /* Poori screen par background canvas freeze lock kiya */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1; /* Sabse neeche rahega taaki agla panel iske upar slide ho */
+}
+
+.hero-frozen-canvas {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5ebe0; /* Premium Soft Beige base layout */
+  overflow: hidden;
+}
+
+.hero-static-grid-bg {
+  position: absolute;
+  inset: 0;
+  background-size: 30px 30px;
+  background-image:
+      linear-gradient(to right, rgba(128, 26, 36, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(128, 26, 36, 0.04) 1px, transparent 1px);
+  z-index: 0;
+}
+
+.reveal-content-box-custom {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  max-width: 900px;
+  padding: 0 40px;
+  color: #1a0508;
+  will-change: transform, opacity;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.services-mini-tagline {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 800;
+  color: #801a24;
+  letter-spacing: 4px;
+  margin-bottom: 24px;
+  display: block;
+  text-transform: uppercase;
+}
+
+.services-cinematic-headline {
+  font-size: clamp(2.5rem, 6vw, 4.6rem);
+  font-weight: 900;
+  color: #1a0508;
+  line-height: 1.15;
+  letter-spacing: -2px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.inline-word-span {
+  display: inline-block;
+  margin-right: 14px;
+  will-change: transform, filter, opacity;
+}
+
+.services-cinematic-desc {
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height: 1.65;
+  color: rgba(26, 5, 8, 0.85);
+  max-width: 820px;
+  margin: 24px auto 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.services-cinematic-desc .inline-word-span {
+  margin-right: 6px;
+}
+
+
+/* ── SECTION 2: SLIDING CURTAIN PANEL (PULL UP MATRIX OVERLAP) ── */
+.overlay-curtain-panel {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #1a0508; /* Luxury Deep Maroon Curtain Backdrop */
+  z-index: 5; /* Forces overlay clipping behavior on top of Section 1 fixed frame */
+  margin-top: 100vh; /* Engine placeholder forcing user to scroll first full page block height */
+  box-shadow: 0 -40px 80px rgba(0, 0, 0, 0.85); /* Premium shadow dividing edges */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 0;
+  box-sizing: border-box;
+}
+
+.arrow-grid-master-viewport {
+  width: 100%;
+  max-width: 1300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.grid-instructions-header-custom {
+  text-align: center;
+  margin-bottom: 60px;
+  padding: 0 40px;
+}
+
+.gold-accent-tag {
+  color: #d4a373;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.grid-instructions-header-custom h2 {
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  font-weight: 900;
+  color: #f5ebe0;
+  letter-spacing: -1.5px;
+  margin-bottom: 14px;
+}
+
+.grid-instructions-header-custom p {
+  color: rgba(245, 235, 224, 0.65);
+  font-size: 1.1rem;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.spatial-cross-grid-layout {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 25px;
+  width: 100%;
+  max-width: 1150px;
+  padding: 20px;
+}
+
+.arrow-matrix-card {
+  background-color: rgba(245, 235, 224, 0.02);
+  border: 1px solid rgba(245, 235, 224, 0.07);
+  border-radius: 24px;
+  padding: 35px 30px;
+  min-height: 190px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  backdrop-filter: blur(12px);
+  will-change: transform, opacity;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+.arrow-matrix-card:hover {
+  background-color: rgba(245, 235, 224, 0.04);
+}
+
+.card-direction-tag {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #801a24;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.arrow-matrix-card h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #f5ebe0;
+  line-height: 1.25;
+}
+
+.arrow-action-trigger {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #d4a373;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.position-top { grid-column: 2 / 4; grid-row: 1; }
+.position-left { grid-column: 1; grid-row: 2; }
+.position-center-left { grid-column: 2; grid-row: 2; border-color: rgba(128, 26, 36, 0.3); }
+.position-center-right { grid-column: 3; grid-row: 2; border-color: rgba(128, 26, 36, 0.3); }
+.position-right { grid-column: 4; grid-row: 2; }
+.position-bottom { grid-column: 2 / 4; grid-row: 3; }
+
+
+/* ── BLOCKS CONTINUOUS SEQUENTIAL STACK (SECTION 3, 4, 5, 6) ── */
+/* Relative parameters ensures they scroll naturally tracking behind Section 2 */
+.services-deep-flow,
+.services-testimonials-section,
+.services-newsletter-cta-section,
+.services-blogs-showcase-section {
+  position: relative;
+  z-index: 6; /* Fixed Section 1 canvas layer ke upar display level filter lock kiya */
+}
+
+/* SECTION 3: Deep Flow Continuous Rows */
+.services-deep-flow {
+  background-color: #f5ebe0;
+  padding: 0;
+}
+
+.deep-flow-row-viewport {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 4%;
+  box-sizing: border-box;
+}
+
+.immersive-scale-card {
+  width: 100%;
+  max-width: 1150px;
+  background-color: #1a0508;
+  color: #f5ebe0;
+  border-radius: 36px;
+  padding: 60px;
+  box-shadow: 0 30px 70px rgba(26, 5, 8, 0.25);
+  border: 1px solid rgba(245, 235, 224, 0.05);
+  will-change: transform, opacity;
+  box-sizing: border-box;
+}
+
+.card-deep-intro-header { margin-bottom: 35px; }
+.card-identity-tag { color: #801a24; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; }
+.card-immersive-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; letter-spacing: -1.5px; line-height: 1.15; margin-bottom: 20px; }
+.card-immersive-brief { font-size: clamp(1.05rem, 1.5vw, 1.3rem); line-height: 1.55; color: rgba(245, 235, 224, 0.8); max-width: 900px; }
+.card-layout-divider { border: none; border-top: 1px solid rgba(245, 235, 224, 0.1); margin: 35px 0; }
+.card-technical-pointers-grid h3 { font-size: 1.15rem; font-weight: 800; text-transform: uppercase; color: #d4a373; letter-spacing: 1.5px; margin-bottom: 25px; }
+.pointers-inner-sub-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 35px; }
+.sub-framework-item h4 { font-size: 1.25rem; font-weight: 800; color: #f5ebe0; margin-bottom: 10px; }
+.sub-framework-item p { font-size: 1rem; line-height: 1.5; color: rgba(245, 235, 224, 0.65); }
+.card-superiority-showcase { background-color: rgba(128, 26, 36, 0.12); border-left: 4px solid #801a24; padding: 30px; border-radius: 0 20px 20px 0; margin-top: 45px; }
+.superiority-badge { font-size: 0.78rem; font-weight: 900; color: #d4a373; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
+.card-superiority-showcase p { font-size: 1.05rem; line-height: 1.6; color: rgba(245, 235, 224, 0.9); font-style: italic; }
+.card-action-cta-wrapper { margin-top: 50px; display: flex; justify-content: flex-start; }
+.premium-service-cta-btn { background-color: #801a24; color: #f5ebe0; padding: 16px 32px; border-radius: 50px; font-weight: 700; text-decoration: none; font-size: 1.02rem; display: inline-flex; align-items: center; gap: 10px; }
+.premium-service-cta-btn:hover { background-color: #96202c; transform: translateY(-2px); }
+
+/* SECTION 4: TRUST MATRIX (TESTIMONIALS & MARQUEE) */
+.services-testimonials-section { background-color: #1a0508; padding: 120px 6%; border-bottom: 1px solid rgba(245, 235, 224, 0.05); }
+.testimonials-container { width: 100%; max-width: 1150px; margin: 0 auto; }
+.section-head-light { font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; color: #f5ebe0; letter-spacing: -1.5px; margin-bottom: 60px; }
+.testimonials-grid-system { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 40px; margin-bottom: 80px; }
+.testimonial-premium-card { background-color: rgba(245, 235, 224, 0.02); border: 1px solid rgba(245, 235, 224, 0.06); padding: 40px; border-radius: 24px; }
+.testimonial-quote { font-size: 1.15rem; line-height: 1.6; color: rgba(245, 235, 224, 0.85); font-style: italic; margin-bottom: 25px; }
+.testimonial-user-meta strong { display: block; color: #f5ebe0; font-size: 1.1rem; }
+.testimonial-user-meta span { color: #d4a373; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; }
+.marquee-intro-label { font-size: 0.75rem; font-weight: 800; color: rgba(245, 235, 224, 0.4); letter-spacing: 2px; text-align: center; margin-bottom: 20px; }
+.services-internal-marquee { width: 100%; overflow: hidden; background-color: rgba(128, 26, 36, 0.15); padding: 20px 0; border-radius: 14px; }
+.marquee-track-nodes { display: flex; white-space: nowrap; gap: 40px; animation: servicesMarqueeScroll 25s linear infinite; }
+.marquee-track-nodes span { font-size: 1.2rem; font-weight: 900; color: #f5ebe0; letter-spacing: 2px; }
+@keyframes servicesMarqueeScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+/* SECTION 5: LEAD CAPTURING ARCHITECTURE (NEWSLETTER CTA) */
+.services-newsletter-cta-section { background-color: #f5ebe0; padding: 100px 6%; }
+.newsletter-central-box { max-width: 850px; margin: 0 auto; text-align: center; }
+.maroon-accent-tag { color: #801a24; font-weight: 800; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2.5px; }
+.newsletter-central-box h2 { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 900; color: #1a0508; margin: 15px 0; }
+.newsletter-central-box p { color: rgba(26, 5, 8, 0.75); font-size: 1.1rem; line-height: 1.55; margin-bottom: 40px; }
+.premium-newsletter-form { display: flex; gap: 15px; max-width: 650px; margin: 0 auto; }
+.premium-newsletter-form input { flex: 1; background-color: rgba(26, 5, 8, 0.04); border: 1px solid rgba(26, 5, 8, 0.15); padding: 18px 25px; border-radius: 50px; color: #1a0508; outline: none; }
+.premium-newsletter-form input:focus { border-color: #801a24; }
+.newsletter-submit-btn { background-color: #1a0508; color: #f5ebe0; padding: 18px 36px; border-radius: 50px; font-weight: 700; border: none; cursor: pointer; }
+
+/* SECTION 6: KNOWLEDGE INFRASTRUCTURE (BLOGS SHOWCASE) */
+.services-blogs-showcase-section { background-color: #1a0508; padding: 120px 6%; }
+.blogs-showcase-container { width: 100%; max-width: 1150px; margin: 0 auto; }
+.blog-section-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 60px; }
+.view-all-blogs-btn { color: #d4a373; text-decoration: none; font-weight: 700; }
+.blogs-cards-matrix-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 40px; }
+.blog-matrix-node-card { background-color: rgba(245, 235, 224, 0.02); border: 1px solid rgba(245, 235, 224, 0.05); border-radius: 28px; overflow: hidden; display: flex; flex-direction: column; }
+.blog-node-image-placeholder { width: 100%; height: 240px; }
+.img-seo-bg { background: linear-gradient(135deg, #2a0b10 0%, #801a24 100%); }
+.img-tech-bg { background: linear-gradient(135deg, #1a0508 0%, #d4a373 100%); }
+.blog-node-body-content { padding: 35px; display: flex; flex-direction: column; flex: 1; }
+.blog-node-category { color: #801a24; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; margin-bottom: 12px; display: block; }
+.blog-node-body-content h3 { font-size: 1.45rem; font-weight: 800; color: #f5ebe0; line-height: 1.3; margin-bottom: 15px; }
+.blog-node-body-content p { color: rgba(245, 235, 224, 0.6); font-size: 1rem; line-height: 1.5; margin-bottom: 30px; }
+.blog-read-more-link { color: #f5ebe0; text-decoration: none; font-weight: 700; margin-top: auto; }
+
+/* Responsive Adaptability Overrides */
+@media (max-width: 992px) {
+  .spatial-cross-grid-layout { grid-template-columns: repeat(2, 1fr); grid-template-rows: auto; gap: 20px; }
+  .position-top, .position-left, .position-center-left, .position-center-right, .position-right, .position-bottom { grid-column: span 1 !important; grid-row: auto !important; }
+  .pointers-inner-sub-grid { grid-template-columns: 1fr; gap: 25px; }
+  .immersive-scale-card { padding: 40px 30px; border-radius: 24px; }
+  .overlay-curtain-panel { padding: 80px 0; }
+}
+
+@media (max-width: 768px) {
+  .blogs-cards-matrix-grid { grid-template-columns: 1fr; }
+  .premium-newsletter-form { flex-direction: column; }
+  .blog-section-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+}
+
+/* ── GLOBAL FOOTER STACKING REFIX FOR PARALLAX CONTEXTS ── */
+footer, .footer-master-wrapper {
+  position: relative;
+  z-index: 10 !important; /* Isko sabse upar layer par laaye taaki parda iske upar na chadhe */
+  background-color: #1a0508; /* Luxury Deep Maroon background layout fallback */
+}

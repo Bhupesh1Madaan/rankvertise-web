@@ -1,0 +1,219 @@
+/* ==========================================================================
+   RANKVERTISE ABOUT US - PURE CURTAIN OVERLAP PARALLAX SYSTEM
+   ========================================================================== */
+
+/* Page container resets handles layout layers boundary limits */
+.about-master-parallax-wrapper {
+  background-color: #1a0508;
+  width: 100vw;
+  position: relative;
+  font-family: sans-serif;
+  overflow-x: hidden;
+}
+
+/* ── SECTION 1: SYSTEM DEEP FREEZE CONSTRAINTS (STAY STILL TRACK) ── */
+.about-sticky-section-wrapper {
+  position: fixed; /* Poori screen par background mein lock kar diya */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1; /* Niche rahega taaki agla section upar slide ho sake */
+  pointer-events: auto;
+}
+
+.about-frozen-viewport-canvas {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5ebe0; /* Light Beige Base Canvas */
+  overflow: hidden;
+}
+
+.about-hero-static-grid-bg {
+  position: absolute;
+  inset: 0;
+  background-size: 30px 30px;
+  background-image:
+      linear-gradient(to right, rgba(128, 26, 36, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(128, 26, 36, 0.04) 1px, transparent 1px);
+}
+
+.about-manifesto-center-box {
+  width: 100%;
+  max-width: 1100px;
+  padding: 0 40px;
+  text-align: center;
+}
+
+.maroon-about-tag {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  font-weight: 800;
+  color: #801a24;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 24px;
+}
+
+.manifesto-rotating-headline-box {
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  font-weight: 900;
+  color: #1a0508;
+  line-height: 1.2;
+  letter-spacing: -1.5px;
+  margin-bottom: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.highlight-rotating-span {
+  color: #801a24;
+  display: inline-flex;
+  position: relative;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.about-text-rotate-line-box { display: inline-flex; flex-wrap: wrap; }
+.about-text-rotate-word { display: inline-flex; white-space: nowrap; }
+.about-text-rotate-element { display: inline-block; will-change: transform, opacity; }
+.manifesto-static-desc { font-size: clamp(1.05rem, 1.5vw, 1.25rem); line-height: 1.6; color: rgba(26, 5, 8, 0.8); max-width: 780px; margin: 0 auto; }
+
+
+/* ── SECTION 2: SLIDING CURTAIN PANEL (PULL UP MATRIX OVERLAP) ── */
+.about-overlap-curtain-panel {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #1a0508; /* Luxury Deep Maroon Curtain Backdrop */
+  z-index: 5; /* Section 1 ke fixed frame ke upar float karega */
+  margin-top: 100vh; /* Engine placeholder forcing user to scroll first full page block height */
+  box-shadow: 0 -40px 80px rgba(0, 0, 0, 0.85); /* Premium shadow dividing edges */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 6%;
+  box-sizing: border-box;
+}
+
+.editorial-split-grid-viewport {
+  width: 100%;
+  max-width: 1150px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.editorial-text-column { text-align: left; color: #f5ebe0; }
+.gold-about-subtag { color: #d4a373; font-size: 0.85rem; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; display: block; margin-bottom: 15px; }
+.editorial-text-column h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; line-height: 1.15; letter-spacing: -1.5px; margin-bottom: 20px; }
+.editorial-lead-para { font-size: 1.2rem; line-height: 1.55; color: rgba(245, 235, 224, 0.75); margin-bottom: 40px; }
+.editorial-embedded-counters { display: flex; gap: 40px; border-top: 1px solid rgba(245, 235, 224, 0.1); padding-top: 35px; }
+.mini-counter-node h3 { font-size: 2.5rem; font-weight: 900; color: #801a24; margin-bottom: 8px; }
+.mini-counter-node p { font-size: 0.95rem; line-height: 1.45; color: rgba(245, 235, 224, 0.5); }
+
+/* Editorial Still Frame Box Model Trackers */
+.luxury-parallax-frame-mask {
+  width: 100%;
+  max-width: 440px;
+  height: 560px;
+  border-radius: 28px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(245, 235, 224, 0.08);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  will-change: transform;
+}
+
+.parallax-still-image-asset {
+  width: 100%;
+  height: 130%;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: -15%; left: 0;
+  will-change: transform;
+}
+
+.frame-data-hud-overlay {
+  position: absolute;
+  bottom: 20px; left: 20px;
+  background-color: rgba(26, 5, 8, 0.75);
+  padding: 8px 16px; border-radius: 8px;
+  border: 1px solid rgba(245, 235, 224, 0.1);
+}
+.frame-data-hud-overlay span { font-size: 0.72rem; font-weight: 800; letter-spacing: 1.5px; color: #d4a373; }
+
+
+/* ── BLOCKS CONTINUOUS STACK (SECTION 3, 4, 5, 6) ── */
+/* Inhe relative paths par rakha taaki section 2 ke natural content trace mein slide-up follow karein */
+.about-team-matrix-section,
+.about-graphs-telemetry-section,
+.about-timeline-roadmap-section,
+.about-anti-agency-section {
+  position: relative;
+  z-index: 6; /* Section 1 se upar maintain block state */
+}
+
+.about-internal-block-container {
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-section-desc-brief {
+  font-size: 1.15rem;
+  line-height: 1.5;
+  max-width: 750px;
+  margin: 15px auto 50px auto;
+  opacity: 0.8;
+}
+
+.about-placeholder-card {
+  width: 100%;
+  min-height: 250px;
+  border-radius: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  padding: 40px;
+}
+
+/* BACKGROUND LAYERS ADAPTIVE SHIFT MANIFEST */
+.about-team-matrix-section { background-color: #f5ebe0; color: #1a0508; padding: 120px 4%; }
+.about-team-matrix-section .about-placeholder-card { background-color: #1a0508; color: #f5ebe0; }
+
+.about-graphs-telemetry-section { background-color: #1a0508; color: #f5ebe0; padding: 120px 4%; border-top: 1px solid rgba(245, 235, 224, 0.05); }
+.maroon-about-tag-light { font-size: 0.85rem; font-weight: 800; color: #801a24; letter-spacing: 3px; text-transform: uppercase; display: block; }
+.about-graphs-telemetry-section .about-placeholder-card { background-color: rgba(245, 235, 224, 0.01); border: 1px solid rgba(245, 235, 224, 0.05); color: rgba(245, 235, 224, 0.4); }
+
+.about-timeline-roadmap-section { background-color: #f5ebe0; color: #1a0508; padding: 120px 4%; }
+.about-timeline-roadmap-section .about-placeholder-card { background-color: #1a0508; color: #f5ebe0; }
+
+.about-anti-agency-section { background-color: #1a0508; color: #f5ebe0; padding: 120px 4%; border-top: 1px solid rgba(245, 235, 224, 0.05); }
+.about-anti-agency-section .about-placeholder-card { background-color: rgba(245, 235, 224, 0.01); border: 1px solid rgba(128, 26, 36, 0.3); color: #d4a373; }
+
+/* Responsive adjustments rules handles cross viewport devices balance */
+@media (max-width: 992px) {
+  .editorial-split-grid-viewport { grid-template-columns: 1fr; gap: 50px; }
+  .luxury-parallax-frame-mask { max-width: 100%; height: 400px; }
+}
+
+/* ── GLOBAL FOOTER STACKING REFIX FOR PARALLAX CONTEXTS ── */
+footer, .footer-master-wrapper {
+  position: relative;
+  z-index: 10 !important; /* Isko sabse upar layer par laaye taaki parda iske upar na chadhe */
+  background-color: #1a0508; /* Luxury Deep Maroon background layout fallback */
+}

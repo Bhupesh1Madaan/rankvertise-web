@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Router link tool layer bind key
 import './BallpitFooter.css'; // Relies on standard flex rules now
 
 const Footer = () => {
@@ -8,7 +9,10 @@ const Footer = () => {
 
                 <div className="footer-top-row">
                     <div className="footer-brand-title">
-                        Rank<span>vertise.in</span>
+                        {/* Logo par click karte hi clear screen default back reset */}
+                        <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+                            Rank<span>vertise.in</span>
+                        </Link>
                     </div>
 
                     <div className="footer-links-grid">

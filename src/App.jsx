@@ -1,40 +1,45 @@
 import React from 'react';
-import Navbar from './components/Navbar';
-import ScrollRevealHero from './components/ScrollRevealHero';
-import LogoLoop from './components/LogoLoop';
-import ScrollStack from './components/ScrollStack';
-import VideoOrigin from './components/VideoOrigin';
-// import ClientMapShowcase from './components/ClientMapShowcase'; // VECTOR MAP WITH TOP MARQUEE CONNECTED
-import LogoMarquee from './components/LogoMarquee';
-import MagicBento from './components/MagicBento';
-import CircularGallery from './components/CircularGallery';
-import Footer from './components/Footer';
-import { ClientOrbitSection } from './components/ClientOrbitSection';
+// 1. useLocation ko yahan import kijiye
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
+
+import { Navbar, Footer, PortfolioPage } from './components';
+import ScrollToTop from './components/ScrollToTop';
+import Home from './pages/Home';
+import Services from './pages/Services';
+import About from './pages/About';
 import './ResponsiveMaster.css';
 
-function App() {
-  const usps = [
-    { text: "Gen Z Creativity" }, { text: "Business Level Strategy" },
-    { text: "Speedy Timelines" }, { text: "ROI Rich Growth" },
-    { text: "Transparent Process" }, { text: "Custom Scale Solutions" }
-  ];
+// Routes ko handle karne ke liye ek internal wrapper banaya taaki useLocation trigger ho sake
+function AnimatedRoutes() {
+  const location = useLocation(); // <-- Yeh har single node track karega
 
   return (
-    <div className="app-container">
-      <Navbar />
-      <ScrollRevealHero />
-      <LogoLoop logos={usps} speed={100} fadeOutColor="#f5ebe0" />
-      <ScrollStack />
-      <VideoOrigin />
+    <AnimatePresence mode="wait">
+      {/* Location aur key lagane se unique route identities system load ho jata hai */}
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<Home />} />
+        <Route path="/portfolio" element={<PortfolioPage />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </AnimatePresence>
+  );
+}
 
-      {/* SECTION COLLAGE: TOP MARQUEE EXTENSION + INTERACTIVE HIGHLIGHTED DOTTED WORLD MAP GRID */}
+function App() {
+  return (
+    <Router>
+      <ScrollToTop />
+      <div className="app-container">
+        <Navbar />
 
-      <LogoMarquee />
-      <MagicBento />
-      <CircularGallery />
-      <ClientOrbitSection />
-      <Footer />
-    </div>
+        {/* Animated routes injector layout component wrapper hook layer */}
+        <AnimatedRoutes />
+
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

@@ -1,31 +1,33 @@
 import { useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
+// Programmatic routing ke liye useNavigate import kiya aur normal Link ko hataya
+import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = ({
     className = '',
     ease = 'power3.out',
-    baseColor = 'rgba(26, 5, 8, 0.95)', // Premium Maroon Blur tint
-    menuColor = '#f5ebe0',               // Beige Hamburger lines
-    buttonBgColor = '#801a24',           // Solid Maroon button
-    buttonTextColor = '#f5ebe0'          // Beige text
+    baseColor = 'rgba(26, 5, 8, 0.95)',
+    menuColor = '#f5ebe0',
+    buttonBgColor = '#801a24',
+    buttonTextColor = '#f5ebe0'
 }) => {
     const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
     const [isExpanded, setIsExpanded] = useState(false);
     const navRef = useRef(null);
     const cardsRef = useRef([]);
     const tlRef = useRef(null);
+    const navigate = useNavigate(); // <-- Navigation hook call kiya
 
-    // Saara Navigation menu content cards ke format mein split kiya
     const items = [
         {
             label: "Explore",
             bgColor: "#2a0b10",
             textColor: "#f5ebe0",
             links: [
-                { label: "Home", href: "#home" },
-                { label: "About Us", href: "#about-us" },
-                { label: "Plans & Pricing", href: "#plans-and-pricing" }
+                { label: "Home", to: "/" },
+                { label: "About Us", to: "/about" },
+                { label: "Plans & Pricing", to: "/" }
             ]
         },
         {
@@ -33,9 +35,9 @@ const Navbar = ({
             bgColor: "#3d0f16",
             textColor: "#f5ebe0",
             links: [
-                { label: "Portfolio", href: "#portfolio" },
-                { label: "Services", href: "#services" },
-                { label: "Blogs", href: "#blogs" }
+                { label: "Portfolio", to: "/portfolio" },
+                { label: "Services", to: "/services" },
+                { label: "Blogs", to: "/" }
             ]
         },
         {
@@ -43,8 +45,8 @@ const Navbar = ({
             bgColor: "#54141e",
             textColor: "#f5ebe0",
             links: [
-                { label: "Instagram", href: "https://www.instagram.com/rankvertise/" },
-                { label: "LinkedIn", href: "https://www.linkedin.com/company/rankvertise/" }
+                { label: "Instagram", href: "https://www.instagram.com/rankvertise/", isExternal: true },
+                { label: "LinkedIn", href: "https://www.linkedin.com/company/rankvertise/", isExternal: true }
             ]
         }
     ];
@@ -152,6 +154,29 @@ const Navbar = ({
         }
     };
 
+    // SAFE ROUTING HANDLER: Pehle GSAP complete hoga, fir navigate chalega!
+    const handleLinkClick = (e, destinationPath) => {
+        e.preventDefault(); // Default jump roki
+        const tl = tlRef.current;
+
+        if (!tl || !isExpanded) {
+            window.scrollTo({ top: 0, behavior: 'instant' });
+            navigate(destinationPath);
+            return;
+        }
+
+        setIsHamburgerOpen(false);
+
+        // GSAP complete hone ke baad hi transition lock trigger hoga
+        tl.eventCallback('onReverseComplete', () => {
+            setIsExpanded(false);
+            window.scrollTo({ top: 0, behavior: 'instant' });
+            navigate(destinationPath); // Clean shift
+        });
+
+        tl.reverse();
+    };
+
     const setCardRef = i => el => {
         if (el) cardsRef.current[i] = el;
     };
@@ -173,7 +198,9 @@ const Navbar = ({
                     </div>
 
                     <div className="logo-container">
-                        <span className="logo-text">Rank<span>vertise</span></span>
+                        <a href="/" onClick={(e) => handleLinkClick(e, "/")}>
+                            <span className="logo-text">Rank<span>vertise</span></span>
+                        </a>
                     </div>
 
                     <a
@@ -190,7 +217,7 @@ const Navbar = ({
                 <div className="card-nav-content" aria-hidden={!isExpanded}>
                     {(items || []).slice(0, 3).map((item, idx) => (
                         <div
-                            key={`${item.label}-${idx}`}
+                            key={`nav-card-block-${idx}`}
                             className="nav-card"
                             ref={setCardRef(idx)}
                             style={{ backgroundColor: item.bgColor, color: item.textColor }}
@@ -198,14 +225,24 @@ const Navbar = ({
                             <div className="nav-card-label">{item.label}</div>
                             <div className="nav-card-links">
                                 {item.links?.map((lnk, i) => (
-                                    <a key={`${lnk.label}-${i}`} className="nav-card-link" href={lnk.href}>
-                                        {/* Inline SVG for cross icon */}
-                                        <svg className="nav-card-link-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                            <line x1="7" y1="17" x2="17" y2="7"></line>
-                                            <polyline points="7 7 17 7 17 17"></polyline>
-                                        </svg>
-                                        {lnk.label}
-                                    </a>
+                                    lnk.isExternal ? (
+                                        <a key={`ext-${idx}-${i}`} className="nav-card-link" href={lnk.href} target="_blank" rel="noreferrer">
+                                            <svg className="nav-card-link-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                                <polyline points="7 7 17 7 17 17"></polyline>
+                                            </svg>
+                                            {lnk.label}
+                                        </a>
+                                    ) : (
+                                        // OnClick pass destination logic parameters to prevent trace failure
+                                        <a key={`int-${idx}-${i}`} className="nav-card-link" href={lnk.to} onClick={(e) => handleLinkClick(e, lnk.to)}>
+                                            <svg className="nav-card-link-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                                <polyline points="7 7 17 7 17 17"></polyline>
+                                            </svg>
+                                            {lnk.label}
+                                        </a>
+                                    )
                                 ))}
                             </div>
                         </div>

@@ -1,0 +1,58 @@
+.posters-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #07090e;
+    /* Clean deep dark environment */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.posters-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: auto;
+}
+
+/* Kinetic Scrolling Center Typography Styles */
+.center-overlay-text {
+    position: absolute;
+    z-index: 2;
+    pointer-events: none;
+    /* Allows user to interactively scroll over the canvas layer */
+    text-align: center;
+    width: 100%;
+    padding: 0 20px;
+    user-select: none;
+}
+
+.center-overlay-text h2 {
+    font-size: 8rem;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+    transition: transform 0.1s ease-out;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.7),
+        0 0 80px rgba(255, 255, 255, 0.05);
+}
+
+/* Responsive Scaling for Kinetic Typography Font Sizes */
+@media (max-width: 992px) {
+    .center-overlay-text h2 {
+        font-size: 5.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .center-overlay-text h2 {
+        font-size: 3.5rem;
+        letter-spacing: -1px;
+    }
+}
