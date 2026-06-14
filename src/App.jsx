@@ -3,7 +3,8 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
-import { Navbar, Footer, PortfolioPage } from './components';
+import { Navbar, Footer } from './components';
+import PortfolioPage from './pages/PortfolioPage';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import Services from './pages/Services';

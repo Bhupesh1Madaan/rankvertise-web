@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion'; // <-- Framer motion import kiya
 import ScrollRevealHero from '../components/ScrollRevealHero';
-import { Navbar, Footer, PortfolioPage } from '../components';
+import { Navbar, Footer } from '../components';
 import LogoLoop from '../components/LogoLoop';
 import ScrollStack from '../components/ScrollStack';
 import VideoOrigin from '../components/VideoOrigin';

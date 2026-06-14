@@ -1,0 +1,99 @@
+/* ==========================================================================
+   SECTION 1: THREE.JS INTERACTIVE HERO CANVAS STYLING
+   ========================================================================== */
+
+.hero-canvas-master-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #1a0508; /* Luxury Deep Maroon Background applied */
+  overflow: hidden;
+  position: relative;
+}
+
+.scroll-html-wrapper {
+  width: 100%;
+}
+
+/* Common Slide Blueprint for Canvas Overlay */
+.canvas-slide {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.slide-center {
+  justify-content: center;
+}
+
+.slide-right-panel {
+  justify-content: flex-end; /* Pushes content clean to the right side */
+  padding-right: 12%;
+}
+
+/* Typography & Content Architecture */
+.scroll-indicator-text {
+  color: #f5ebe0; /* Soft Beige */
+  font-family: sans-serif;
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  font-weight: 700;
+  margin-top: 320px;
+  opacity: 0.4;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  animation: pulseIndicator 2s infinite ease-in-out;
+}
+
+.canvas-hero-text-box {
+  max-width: 450px;
+  text-align: left;
+  padding: 20px;
+}
+
+.hero-mini-badge {
+  color: #d4a373; /* Gold Accent */
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.hero-interactive-title {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 900;
+  color: #f5ebe0; /* Soft Beige Header */
+  line-height: 1.2;
+  margin: 0 0 1.5rem 0;
+  letter-spacing: -1px;
+}
+
+.hero-interactive-desc {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.65;
+  color: rgba(245, 235, 224, 0.75); /* Muted Soft Beige text */
+  margin: 0;
+}
+
+/* Animations */
+@keyframes pulseIndicator {
+  0%, 100% { opacity: 0.3; transform: translateY(0); }
+  50% { opacity: 0.6; transform: translateY(-5px); }
+}
+
+/* Responsive Scaling for Tablets/Mobiles */
+@media (max-width: 768px) {
+  .slide-right-panel {
+    justify-content: center;
+    padding-right: 0;
+    padding: 0 30px;
+  }
+  .canvas-hero-text-box {
+    text-align: center;
+    background-color: rgba(26, 5, 8, 0.85); /* Semitransparent shield on small screens */
+    border-radius: 16px;
+    border: 1px solid rgba(212, 163, 115, 0.1);
+    backdrop-filter: blur(8px);
+  }
+}
