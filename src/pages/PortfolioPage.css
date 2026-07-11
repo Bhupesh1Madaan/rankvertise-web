@@ -1,11 +1,11 @@
-/* ==========================================================================
+/* /* ==========================================================================
    SECTION 1: THREE.JS INTERACTIVE HERO CANVAS STYLING
-   ========================================================================== */
+   ========================================================================== *
 
 .hero-canvas-master-container {
   width: 100vw;
   height: 100vh;
-  background-color: #1a0508; /* Luxury Deep Maroon Background applied */
+  background-color: #1a0508; /* Luxury Deep Maroon Background applied *
   overflow: hidden;
   position: relative;
 }
@@ -14,7 +14,7 @@
   width: 100%;
 }
 
-/* Common Slide Blueprint for Canvas Overlay */
+/* Common Slide Blueprint for Canvas Overlay *
 .canvas-slide {
   height: 100vh;
   display: flex;
@@ -27,13 +27,13 @@
 }
 
 .slide-right-panel {
-  justify-content: flex-end; /* Pushes content clean to the right side */
+  justify-content: flex-end; /* Pushes content clean to the right side *
   padding-right: 12%;
 }
 
-/* Typography & Content Architecture */
+/* Typography & Content Architecture *
 .scroll-indicator-text {
-  color: #f5ebe0; /* Soft Beige */
+  color: #f5ebe0; /* Soft Beige *
   font-family: sans-serif;
   font-size: clamp(1.2rem, 3vw, 2rem);
   font-weight: 700;
@@ -51,7 +51,7 @@
 }
 
 .hero-mini-badge {
-  color: #d4a373; /* Gold Accent */
+  color: #d4a373; /* Gold Accent *
   font-size: 0.85rem;
   font-weight: 800;
   letter-spacing: 3px;
@@ -63,7 +63,7 @@
 .hero-interactive-title {
   font-size: clamp(2rem, 4vw, 3.2rem);
   font-weight: 900;
-  color: #f5ebe0; /* Soft Beige Header */
+  color: #f5ebe0; /* Soft Beige Header *
   line-height: 1.2;
   margin: 0 0 1.5rem 0;
   letter-spacing: -1px;
@@ -72,17 +72,17 @@
 .hero-interactive-desc {
   font-size: clamp(1rem, 1.5vw, 1.2rem);
   line-height: 1.65;
-  color: rgba(245, 235, 224, 0.75); /* Muted Soft Beige text */
+  color: rgba(245, 235, 224, 0.75); /* Muted Soft Beige text *
   margin: 0;
 }
 
-/* Animations */
+/* Animations *
 @keyframes pulseIndicator {
   0%, 100% { opacity: 0.3; transform: translateY(0); }
   50% { opacity: 0.6; transform: translateY(-5px); }
 }
 
-/* Responsive Scaling for Tablets/Mobiles */
+/* Responsive Scaling for Tablets/Mobiles *
 @media (max-width: 768px) {
   .slide-right-panel {
     justify-content: center;
@@ -91,9 +91,203 @@
   }
   .canvas-hero-text-box {
     text-align: center;
-    background-color: rgba(26, 5, 8, 0.85); /* Semitransparent shield on small screens */
+    background-color: rgba(26, 5, 8, 0.85); /* Semitransparent shield on small screens *
     border-radius: 16px;
     border: 1px solid rgba(212, 163, 115, 0.1);
     backdrop-filter: blur(8px);
   }
+} */
+
+/* ==========================================================================
+   CARDS OVERLAP STACKING AND BITBALLS SEPARATOR SYSTEM
+   ========================================================================== */
+
+/* Panel setup updates for stack depth */
+.stacking-panel-adjust {
+  display: block !important;
+  min-height: auto !important;
+  padding-bottom: 15vh !important;
+}
+
+/* Stacking layout using clean sticky calculation */
+.projects-cards-vertical-stack {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* HAR CARD AB APNI POSITION PAR STICKY RAHEGA */
+.big-fat-project-card {
+  position: sticky;
+  width: 100%;
+  background-color: rgba(26, 5, 8, 0.7); /* Deep velvet trans backing for stacking contrast */
+  border: 1px solid rgba(245, 235, 224, 0.1);
+  border-radius: 36px;
+  padding: 40px; 
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.5); /* Shadow upwards to distinguish overlap */
+  box-sizing: border-box;
+  margin-bottom: 15vh; /* This dictates the scroll release timing before next card hits */
+  will-change: transform, opacity;
+}
+
+/* COLLAGE ARCHITECTURE AND STATS MATRIX */
+.collage-container {
+  display: grid;
+  grid-template-columns: 1.1fr 1.6fr;
+  gap: 35px;
+  align-items: stretch;
+}
+
+.collage-left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.collage-img-box {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 240px;
+  border: 1px solid rgba(245, 235, 224, 0.05);
+}
+
+.collage-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-overlay-tag {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: #801a24;
+  color: #f5ebe0;
+  padding: 6px 14px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 30px;
+}
+
+.collage-right-column {
+  background-color: rgba(26, 5, 8, 0.4);
+  border-radius: 24px;
+  border: 1px solid rgba(245, 235, 224, 0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.stats-main-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+}
+
+.stats-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.stats-dark-gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 20%, rgba(26, 5, 8, 0.9) 100%);
+}
+
+.project-stats-content {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  flex: 1;
+}
+
+.stats-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #f5ebe0;
+}
+
+.stats-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.metric-item {
+  background-color: rgba(245, 235, 224, 0.03);
+  border: 1px solid rgba(245, 235, 224, 0.05);
+  padding: 15px 20px;
+  border-radius: 16px;
+}
+
+.metric-number {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #d4a373;
+}
+
+.metric-label {
+  font-size: 0.75rem;
+  color: rgba(245, 235, 224, 0.5);
+  text-transform: uppercase;
+}
+
+.project-tags-footer span {
+  font-size: 0.8rem;
+  color: #d4a373;
+  background-color: rgba(212, 163, 115, 0.1);
+  padding: 6px 14px;
+  border-radius: 30px;
+  margin-right: 8px;
+}
+
+/* ── BITBALLS SEPARATOR SECTOR STYLE ── */
+.bitballs-separator-container {
+  position: relative;
+  width: 100vw;
+  height: 180px;
+  background-color: #1a0508; /* Blends back smoothly with Luxury Maroon */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 6;
+  border-top: 1px solid rgba(245, 235, 224, 0.05);
+  border-bottom: 1px solid rgba(245, 235, 224, 0.05);
+}
+
+.bitballs-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.bitballs-overlay-text {
+  position: relative;
+  z-index: 2;
+  font-size: 0.85rem;
+  font-weight: 900;
+  color: #f5ebe0;
+  letter-spacing: 6px;
+  text-shadow: 0 0 10px rgba(245, 235, 224, 0.3);
+  opacity: 0.6;
+}
+
+@media (max-width: 992px) {
+  .collage-container { grid-template-columns: 1fr; }
+  .big-fat-project-card { padding: 20px; margin-bottom: 8vh; }
 }
