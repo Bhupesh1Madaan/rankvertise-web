@@ -1,28 +1,3 @@
-
-
-// import React from 'react';
-// import Cube3D from '../components/portfolio/Cube3D';
-// import VideoZoomReveal from '../components/portfolio/VideoZoomReveal';
-// import './PortfolioPage.css';
-// import OurWorkSection from '../components/portfolio/OurWorkSection';
-// import PortfolioFooterCTA from '../components/portfolio/PortfolioFooterCTA';
-// import ClientsShowcase from '../components/portfolio/ClientShowcase';
-
-// export default function PortfolioPage() {
-//   return (
-//     <div className="portfolio-container">
-//       {/* 1. Tera Cube3D Section */}
-//       <Cube3D />
-//       <VideoZoomReveal />
-//       <OurWorkSection />
-//       <ClientsShowcase />
-//       <PortfolioFooterCTA />
-//       {/* 2. Agla koi component aayega toh iske neeche direct call ho jayega */}
-//       {/* <NextComponent /> */}
-//     </div>
-//   );
-// }
-
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -30,206 +5,213 @@ import './PortfolioPage.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const projectsData = [
-  { id: 1, title: 'Summer Campaign 2026', reach: '2.4M', engagement: '210K', conv: '9.2%', roi: '+410%', tag1: '#Growth', tag2: '#Meta', tag3: '#Creative' },
-  { id: 2, title: 'Automotive Brand Launch', reach: '1.8M', engagement: '165K', conv: '7.4%', roi: '+280%', tag1: '#Leads', tag2: '#Video', tag3: '#Scale' },
-  { id: 3, title: 'D2C Fashion Reel Surge', reach: '4.2M', engagement: '530K', conv: '12.1%', roi: '+620%', tag1: '#Reels', tag2: '#Viral', tag3: '#D2C' },
-  { id: 4, title: 'Fintech App Acquisition', reach: '950K', engagement: '88K', conv: '6.2%', roi: '+190%', tag1: '#Performance', tag2: '#ROI', tag3: '#Ads' },
-  { id: 5, title: 'EdTech Organic Blueprint', reach: '3.1M', engagement: '290K', conv: '8.8%', roi: '+340%', tag1: '#SEO', tag2: '#Inbound', tag3: '#Content' },
-  { id: 6, title: 'Real Estate Lead Gen', reach: '1.2M', engagement: '115K', conv: '10.5%', roi: '+450%', tag1: '#Targeting', tag2: '#Funnel', tag3: '#Sales' },
-  { id: 7, title: 'Crypto Web3 Global Drop', reach: '5.6M', engagement: '710K', conv: '4.9%', roi: '+510%', tag1: '#Community', tag2: '#Web3', tag3: '#Twitter' },
+const trailImages = [
+  'https://picsum.photos/400/300?random=1',
+  'https://picsum.photos/400/300?random=2',
+  'https://picsum.photos/400/300?random=3',
+  'https://picsum.photos/400/300?random=4',
+  'https://picsum.photos/400/300?random=5',
+  'https://picsum.photos/400/300?random=6',
+  'https://picsum.photos/400/300?random=7',
+  'https://picsum.photos/400/300?random=8',
+];
+
+const brandsData = [
+  { id: 1, name: 'CREW DIGITAL', desc: 'Performance marketing infrastructure.', imgs: ['https://picsum.photos/400/800?random=11', 'https://picsum.photos/600/400?random=12', 'https://picsum.photos/600/400?random=13'] },
+  { id: 2, name: 'ZARA INDIA', desc: 'Organic growth and Gen-Z styling.', imgs: ['https://picsum.photos/400/800?random=14', 'https://picsum.photos/600/400?random=15', 'https://picsum.photos/600/400?random=16'] },
+  { id: 3, name: 'APEX AGENCY', desc: 'Paid scaling matrix and funnels.', imgs: ['https://picsum.photos/400/800?random=17', 'https://picsum.photos/600/400?random=18', 'https://picsum.photos/600/400?random=19'] }
+];
+
+const stackProjects = [
+  { id: 1, brand: 'ZARA India', demand: 'Scale organic conversion via Gen-Z aesthetic patterns.', reach: '1.2M', engagement: '95K' },
+  { id: 2, brand: 'KicksCrew', demand: 'Maximize performance conversions for dynamic limited drops.', reach: '3.4M', engagement: '410K' },
+  { id: 3, brand: 'Aura Fintech', demand: 'Establish trust and high acquisition loops via micro-infographics.', reach: '890K', engagement: '62K' }
 ];
 
 const PortfolioPage = () => {
-  const cardsContainerRef = useRef(null);
-  const bitballsRef = useRef(null);
+  const compRef = useRef(null);
+  const stackContainerRef = useRef(null);
 
   useEffect(() => {
-    // ── 1. CARDS OVERLAP SCALING ANIMATION ──
-    const cards = cardsContainerRef.current.querySelectorAll('.big-fat-project-card');
-    
-    cards.forEach((card, index) => {
-      if (index === cards.length - 1) return; // Last card scale down nahi hoga
-
-      gsap.to(card, {
-        scale: 0.9,
-        opacity: 0.4,
+    let ctx = gsap.context(() => {
+      
+      // ── SECTION 1: TRAIL LOOP ──
+      gsap.to('.trail-track', {
+        x: '-50%',
         ease: 'none',
+        duration: 22,
+        repeat: -1
+      });
+
+      const singleImages = document.querySelectorAll('.trail-card');
+      singleImages.forEach((img, index) => {
+        gsap.to(img, {
+          y: '+=20',
+          duration: 2.5 + (index % 3) * 0.3,
+          repeat: -1,
+          yoyo: true,
+          ease: 'sine.inOut',
+          delay: index * 0.15
+        });
+      });
+
+      // ── SECTION 2: HEADING DRIFT BOUNDED WITHIN SECTION 2 ──
+      // Dynamic shift: enters left-top, pins down to absolute center, hides on Section 2 leave.
+      gsap.timeline({
         scrollTrigger: {
-          trigger: card,
-          start: 'top 120px', // Header clear karne ke liye fixed gap
-          end: 'bottom 120px',
+          trigger: '.sec-two-viewport',
+          start: 'top top',      // Pinned when section top hits screen top
+          end: 'bottom bottom',  // Unpins when section ends
           scrub: true,
-          pinSpacing: false,
         }
+      })
+      .fromTo('.shifting-title-head',
+        { 
+          left: '4%', 
+          top: '40px', 
+          xPercent: 0, 
+          yPercent: 0, 
+          scale: 1, 
+          opacity: 1 
+        },
+        { 
+          left: '50%', 
+          top: '50%', 
+          xPercent: -50, 
+          yPercent: -50, 
+          scale: 1.4, 
+          opacity: 0.05, // Subtle light background shade in center
+          ease: 'power1.out'
+        }
+      );
+
+      // ── SECTION 3: INCREMENTAL 2PX CARD STACK ──
+      const cards = stackContainerRef.current.querySelectorAll('.stack-center-card');
+      cards.forEach((card, index) => {
+        if (index === cards.length - 1) return;
+        
+        gsap.to(card, {
+          scale: 0.96 - (index * 0.01),
+          ease: 'none',
+          scrollTrigger: {
+            trigger: card,
+            start: 'top +=120px',
+            end: 'bottom +=120px',
+            scrub: true,
+            invalidateOnRefresh: true
+          }
+        });
       });
-    });
 
-    // ── 2. BITBALLS SEPARATOR ENGINE (CANVAS) ──
-    const canvas = bitballsRef.current;
-    const ctx = canvas.getContext('2d');
-    
-    canvas.width = window.innerWidth;
-    canvas.height = 180; // Separator zone ka clear vertical size
+    }, compRef);
 
-    let balls = [];
-    const colors = ['#d4a373', '#801a24', '#f5ebe0', '#1a0508'];
-
-    class Ball {
-      constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.radius = Math.random() * 8 + 4; // Bitball diameter range
-        this.speedX = (Math.random() - 0.5) * 1.5;
-        this.speedY = (Math.random() - 0.5) * 0.8;
-        this.color = colors[Math.floor(Math.random() * colors.length)];
-      }
-      update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-
-        // Reset boundaries
-        if (this.x < -20) this.x = canvas.width + 20;
-        if (this.x > canvas.width + 20) this.x = -20;
-        if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
-      }
-      draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = this.color;
-        // Subtle cyber glow matrix
-        ctx.shadowBlur = 15;
-        ctx.shadowColor = this.color;
-        ctx.fill();
-        ctx.shadowBlur = 0; // reset
-      }
-    }
-
-    for (let i = 0; i < 40; i++) {
-      balls.push(new Ball());
-    }
-
-    const animateBalls = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      balls.forEach(ball => {
-        ball.update();
-        ball.draw();
-      });
-      requestAnimationFrame(animateBalls);
-    };
-    animateBalls();
-
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
+    return () => ctx.revert();
   }, []);
 
   return (
-    <div className="services-master-parallax-wrapper">
+    <div className="revamp-master-box" ref={compRef}>
       
-      {/* SECTION 1: HERO FIXED CANVAS */}
-      <div className="services-parallax-trigger-box">
-        <div className="hero-frozen-canvas">
-          <div className="hero-static-grid-bg"></div>
-          <div className="reveal-content-box-custom">
-            <span className="services-mini-tagline">Rankvertise Creative Studio</span>
-            <h1 className="services-cinematic-headline">
-              <span className="inline-word-span">Crafting</span>
-              <span className="inline-word-span">Digital</span>
-              <span className="inline-word-span">Ecosystems</span>
-            </h1>
-          </div>
-        </div>
-      </div>
-
-      {/* SECTION 2: SLIDING CURTAIN PANEL (STACKING CARDS) */}
-      <div className="overlay-curtain-panel stacking-panel-adjust">
-        <div className="arrow-grid-master-viewport">
-          
-          <div className="grid-instructions-header-custom project-heading-center">
-            <span className="gold-accent-tag">Featured Work</span>
-            <h2>Our Top Projects</h2>
-            <p>Scroll down to see cards stack elegantly over one another.</p>
-          </div>
-
-          {/* Overlapping Container */}
-          <div className="projects-cards-vertical-stack" ref={cardsContainerRef}>
-            {projectsData.map((project, idx) => (
-              <div 
-                className="big-fat-project-card" 
-                key={project.id}
-                style={{ top: `${120 + idx * 25}px` }} // Dynamic safe distance allocation
-              >
-                <div className="collage-container">
-                  
-                  {/* LEFT SIDE: 2 Images */}
-                  <div className="collage-left-column">
-                    <div className="collage-img-box img-one">
-                      <img src={`https://picsum.photos/400/300?random=${project.id}-a`} alt="Asset" />
-                      <span className="img-overlay-tag">Creative Post</span>
-                    </div>
-                    <div className="collage-img-box img-two">
-                      <img src={`https://picsum.photos/400/300?random=${project.id}-b`} alt="Asset" />
-                      <span className="img-overlay-tag">Trending Reel</span>
-                    </div>
-                  </div>
-
-                  {/* RIGHT SIDE: Stats Dashboard */}
-                  <div className="collage-right-column">
-                    <div className="stats-main-image-wrapper">
-                      <img src={`https://picsum.photos/600/400?random=${project.id}-c`} alt="Hero" className="stats-hero-img" />
-                      <div className="stats-dark-gradient-overlay"></div>
-                    </div>
-                    
-                    <div className="project-stats-content">
-                      <div className="stats-header">
-                        <h3>⚡ {project.title}</h3>
-                        <p>Live engagement stats for the showcased assets.</p>
-                      </div>
-                      
-                      <div className="stats-metrics-grid">
-                        <div className="metric-item">
-                          <span className="metric-number">{project.reach}</span>
-                          <span className="metric-label">Total Reach</span>
-                        </div>
-                        <div className="metric-item">
-                          <span className="metric-number">{project.engagement}</span>
-                          <span className="metric-label">Engagements</span>
-                        </div>
-                        <div className="metric-item">
-                          <span className="metric-number">{project.conv}</span>
-                          <span className="metric-label">Conversion Rate</span>
-                        </div>
-                        <div className="metric-item">
-                          <span className="metric-number">{project.roi}</span>
-                          <span className="metric-label">ROI Growth</span>
-                        </div>
-                      </div>
-
-                      <div className="project-tags-footer">
-                        <span>{project.tag1}</span>
-                        <span>{project.tag2}</span>
-                        <span>{project.tag3}</span>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
+      {/* SECTION 1: HERO VIEWPORT */}
+      <section className="sec-one-hero">
+        <div className="wavy-trail-viewport">
+          <div className="trail-track">
+            {[...trailImages, ...trailImages].map((src, i) => (
+              <div className="trail-card" key={i}>
+                <img src={src} alt="Stream Grid" />
               </div>
             ))}
           </div>
-
         </div>
-      </div>
+        <div className="hero-content-front">
+          <span className="gold-accent-pill">RANKVERTISE MATRIX</span>
+          <h1 className="hero-main-title">WE PROVE THE VALUE</h1>
+          <p className="hero-sub-para">Custom dynamic strategy tracking built for high-scale marketing deployment.</p>
+        </div>
+      </section>
 
-      {/* ── BITBALLS SEPARATOR ZONE ── */}
-      <div className="bitballs-separator-container">
-        <canvas ref={bitballsRef} className="bitballs-canvas" />
-        <div className="bitballs-overlay-text">CONTINUE TO SUB-SYSTEM</div>
-      </div>
+      {/* SECTION 2: BRAND ENGINE (HEADING LOCKED TO THIS CONTAINER ONLY) */}
+      <section className="sec-two-viewport">
+        {/* Fixed within container using CSS sticky trick so it hides instantly on Section 3 start */}
+        <div className="sticky-heading-bridge">
+          <h2 className="shifting-title-head">FEATURED WORK</h2>
+        </div>
 
-      {/* NEXT SECTION (Fallback Structure) */}
-      <div className="services-deep-flow" style={{ minHeight: '50vh', background: '#f5ebe0' }}></div>
+        <div className="brands-stack-fluid">
+          {brandsData.map((brand, index) => (
+            <div className={`brand-item-row ${index % 2 !== 0 ? 'row-flipped' : ''}`} key={brand.id}>
+              
+              <div className="brand-info-left">
+                <h3>{brand.name}</h3>
+                <p>{brand.desc}</p>
+              </div>
+
+              <div className="brand-collage-square-composite">
+                <div className="tall-image-column">
+                  <img src={brand.imgs[0]} alt="Featured Portrait" />
+                </div>
+                <div className="wide-images-column-stack">
+                  <div className="wide-box"><img src={brand.imgs[1]} alt="Featured Landscape 1" /></div>
+                  <div className="wide-box"><img src={brand.imgs[2]} alt="Featured Landscape 2" /></div>
+                </div>
+              </div>
+
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* SECTION 3: STICKY CARD OVERLAY WITH 2PX INCREMENT GAP */}
+      <section className="section-three-stack-wrapper">
+        <div className="stack-header-intro">
+          <span>METRICS ENGINE</span>
+          <h2>Live Conversion Funnels</h2>
+        </div>
+
+        <div className="stack-cards-pinned-container" ref={stackContainerRef}>
+          {stackProjects.map((proj, idx) => (
+            <div 
+              className="stack-center-card" 
+              key={proj.id}
+              style={{ 
+                top: `${120 + (idx * 2)}px`, // Dynamic 2px calculation step
+                zIndex: idx + 1 
+              }}
+            >
+              <div className="stack-card-inner-split">
+                
+                <div className="stack-left-demand">
+                  <span className="brand-pill">{proj.brand}</span>
+                  <h4>THE DEMAND</h4>
+                  <p className="demand-text">"{proj.demand}"</p>
+                </div>
+
+                <div className="stack-right-instagram-mock">
+                  <div className="instagram-post-container">
+                    <div className="insta-header-mock">
+                      <div className="avatar-mock"></div>
+                      <span>{proj.brand.toLowerCase()}</span>
+                    </div>
+                    <div className="insta-media-mock">
+                      <img src={`https://picsum.photos/500/500?random=${proj.id + 88}`} alt="Insta Data Render" />
+                    </div>
+                    <div className="insta-metrics-overlay-row">
+                      <div className="metric-badge">
+                        <span className="lbl">REACH</span>
+                        <span className="val">⚡ {proj.reach}</span>
+                      </div>
+                      <div className="metric-badge">
+                        <span className="lbl">ENGAGEMENT</span>
+                        <span className="val">❤️ {proj.engagement}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
 
     </div>
   );

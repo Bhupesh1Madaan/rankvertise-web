@@ -202,6 +202,15 @@
     line-height: 1.35 !important;
     font-weight: 800;
     letter-spacing: -0.5px;
+    display: inline;
+    flex-wrap: wrap;
+    word-break: break-word;
+    white-space: pre;
+}
+
+.premium-reveal-paragraph span {
+    display: inline-block;
+    white-space: pre-wrap; /* This preserves spaces AND wraps text */
 }
 
 /* ==========================================================================

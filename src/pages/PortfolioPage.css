@@ -1,273 +1,101 @@
-/* /* ==========================================================================
-   SECTION 1: THREE.JS INTERACTIVE HERO CANVAS STYLING
-   ========================================================================== *
+.revamp-master-box {
+  background-color: #0b0203;
+  color: #f5ebe0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+}
 
-.hero-canvas-master-container {
-  width: 100vw;
-  height: 100vh;
-  background-color: #1a0508; /* Luxury Deep Maroon Background applied *
-  overflow: hidden;
+/* ── HERO VIEWPORT CORE ── */
+.sec-one-hero {
   position: relative;
-}
-
-.scroll-html-wrapper {
-  width: 100%;
-}
-
-/* Common Slide Blueprint for Canvas Overlay *
-.canvas-slide {
+  width: 100vw;
   height: 100vh;
   display: flex;
   align-items: center;
-  box-sizing: border-box;
-}
-
-.slide-center {
   justify-content: center;
-}
-
-.slide-right-panel {
-  justify-content: flex-end; /* Pushes content clean to the right side *
-  padding-right: 12%;
-}
-
-/* Typography & Content Architecture *
-.scroll-indicator-text {
-  color: #f5ebe0; /* Soft Beige *
-  font-family: sans-serif;
-  font-size: clamp(1.2rem, 3vw, 2rem);
-  font-weight: 700;
-  margin-top: 320px;
-  opacity: 0.4;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  animation: pulseIndicator 2s infinite ease-in-out;
-}
-
-.canvas-hero-text-box {
-  max-width: 450px;
-  text-align: left;
-  padding: 20px;
-}
-
-.hero-mini-badge {
-  color: #d4a373; /* Gold Accent *
-  font-size: 0.85rem;
-  font-weight: 800;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  display: block;
-  margin-bottom: 12px;
-}
-
-.hero-interactive-title {
-  font-size: clamp(2rem, 4vw, 3.2rem);
-  font-weight: 900;
-  color: #f5ebe0; /* Soft Beige Header *
-  line-height: 1.2;
-  margin: 0 0 1.5rem 0;
-  letter-spacing: -1px;
-}
-
-.hero-interactive-desc {
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
-  line-height: 1.65;
-  color: rgba(245, 235, 224, 0.75); /* Muted Soft Beige text *
-  margin: 0;
-}
-
-/* Animations *
-@keyframes pulseIndicator {
-  0%, 100% { opacity: 0.3; transform: translateY(0); }
-  50% { opacity: 0.6; transform: translateY(-5px); }
-}
-
-/* Responsive Scaling for Tablets/Mobiles *
-@media (max-width: 768px) {
-  .slide-right-panel {
-    justify-content: center;
-    padding-right: 0;
-    padding: 0 30px;
-  }
-  .canvas-hero-text-box {
-    text-align: center;
-    background-color: rgba(26, 5, 8, 0.85); /* Semitransparent shield on small screens *
-    border-radius: 16px;
-    border: 1px solid rgba(212, 163, 115, 0.1);
-    backdrop-filter: blur(8px);
-  }
-} */
-
-/* ==========================================================================
-   CARDS OVERLAP STACKING AND BITBALLS SEPARATOR SYSTEM
-   ========================================================================== */
-
-/* Panel setup updates for stack depth */
-.stacking-panel-adjust {
-  display: block !important;
-  min-height: auto !important;
-  padding-bottom: 15vh !important;
-}
-
-/* Stacking layout using clean sticky calculation */
-.projects-cards-vertical-stack {
-  position: relative;
-  display: block;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-
-/* HAR CARD AB APNI POSITION PAR STICKY RAHEGA */
-.big-fat-project-card {
-  position: sticky;
-  width: 100%;
-  background-color: rgba(26, 5, 8, 0.7); /* Deep velvet trans backing for stacking contrast */
-  border: 1px solid rgba(245, 235, 224, 0.1);
-  border-radius: 36px;
-  padding: 40px; 
-  backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(30px);
-  box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.5); /* Shadow upwards to distinguish overlap */
-  box-sizing: border-box;
-  margin-bottom: 15vh; /* This dictates the scroll release timing before next card hits */
-  will-change: transform, opacity;
-}
-
-/* COLLAGE ARCHITECTURE AND STATS MATRIX */
-.collage-container {
-  display: grid;
-  grid-template-columns: 1.1fr 1.6fr;
-  gap: 35px;
-  align-items: stretch;
-}
-
-.collage-left-column {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
-
-.collage-img-box {
-  position: relative;
-  border-radius: 20px;
   overflow: hidden;
-  height: 240px;
-  border: 1px solid rgba(245, 235, 224, 0.05);
+  z-index: 10; /* Higher than section 2 sticky components */
+  background-color: #0b0203;
 }
 
-.collage-img-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.img-overlay-tag {
+.wavy-trail-viewport {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  background-color: #801a24;
-  color: #f5ebe0;
-  padding: 6px 14px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  border-radius: 30px;
-}
-
-.collage-right-column {
-  background-color: rgba(26, 5, 8, 0.4);
-  border-radius: 24px;
-  border: 1px solid rgba(245, 235, 224, 0.05);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-.stats-main-image-wrapper {
-  position: relative;
   width: 100%;
-  height: 200px;
-}
-
-.stats-hero-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.stats-dark-gradient-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, transparent 20%, rgba(26, 5, 8, 0.9) 100%);
-}
-
-.project-stats-content {
-  padding: 30px;
+  left: 0;
   display: flex;
-  flex-direction: column;
-  gap: 25px;
-  flex: 1;
+  align-items: center;
+  pointer-events: none;
+  z-index: 1;
 }
 
-.stats-header h3 {
-  margin: 0;
-  font-size: 1.5rem;
-  color: #f5ebe0;
+.trail-track {
+  display: flex;
+  gap: 40px;
+  padding-left: 20px;
+  width: max-content;
+  will-change: transform;
 }
 
-.stats-metrics-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-}
-
-.metric-item {
-  background-color: rgba(245, 235, 224, 0.03);
-  border: 1px solid rgba(245, 235, 224, 0.05);
-  padding: 15px 20px;
+.trail-card {
+  width: 260px;
+  height: 170px;
   border-radius: 16px;
-}
-
-.metric-number {
-  font-size: 1.8rem;
-  font-weight: 900;
-  color: #d4a373;
-}
-
-.metric-label {
-  font-size: 0.75rem;
-  color: rgba(245, 235, 224, 0.5);
-  text-transform: uppercase;
-}
-
-.project-tags-footer span {
-  font-size: 0.8rem;
-  color: #d4a373;
-  background-color: rgba(212, 163, 115, 0.1);
-  padding: 6px 14px;
-  border-radius: 30px;
-  margin-right: 8px;
-}
-
-/* ── BITBALLS SEPARATOR SECTOR STYLE ── */
-.bitballs-separator-container {
-  position: relative;
-  width: 100vw;
-  height: 180px;
-  background-color: #1a0508; /* Blends back smoothly with Luxury Maroon */
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 6;
-  border-top: 1px solid rgba(245, 235, 224, 0.05);
-  border-bottom: 1px solid rgba(245, 235, 224, 0.05);
+  border: 1px solid rgba(245, 235, 224, 0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  opacity: 0.22;
+  will-change: transform;
 }
 
-.bitballs-canvas {
+.trail-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-content-front {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.gold-accent-pill {
+  color: #d4a373;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 6px;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.hero-main-title {
+  font-size: clamp(2.8rem, 6.5vw, 5.2rem);
+  font-weight: 900;
+  letter-spacing: -2px;
+  margin: 0 0 20px 0;
+  line-height: 1.1;
+}
+
+.hero-sub-para {
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  color: rgba(245, 235, 224, 0.75);
+  max-width: 580px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ── SECTION 2: FIXED ACCENT STICKY HEADING BOX ── */
+.sec-two-viewport {
+  position: relative;
+  min-height: 220vh; /* Plenty of scroll room to stack brands content smoothly */
+  background-color: #0b0203;
+  z-index: 5;
+}
+
+/* This box sets the sticky boundary zone. It makes sure header dies as section leaves */
+.sticky-heading-bridge {
   position: absolute;
   top: 0;
   left: 0;
@@ -276,18 +104,254 @@
   pointer-events: none;
 }
 
-.bitballs-overlay-text {
-  position: relative;
-  z-index: 2;
-  font-size: 0.85rem;
+.shifting-title-head {
+  position: sticky;
+  top: 40px; /* Base initial layout placement line */
+  left: 4%;
+  font-size: clamp(1.4rem, 3.5vw, 2.2rem);
   font-weight: 900;
+  letter-spacing: 5px;
+  margin: 0;
   color: #f5ebe0;
-  letter-spacing: 6px;
-  text-shadow: 0 0 10px rgba(245, 235, 224, 0.3);
-  opacity: 0.6;
+  z-index: 2;
+  white-space: nowrap;
+  pointer-events: none;
+  display: inline-block;
+  will-change: top, left, transform, opacity;
+}
+
+.brands-stack-fluid {
+  position: relative;
+  z-index: 4;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 160px 20px 60px 20px;
+}
+
+.brand-item-row {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 80px;
+  align-items: center;
+  margin-bottom: 240px;
+}
+
+.row-flipped {
+  direction: rtl;
+}
+.row-flipped .brand-info-left,
+.row-flipped .brand-collage-square-composite {
+  direction: ltr;
+}
+
+.brand-info-left h3 {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 900;
+  margin: 0 0 12px 0;
+}
+
+.brand-info-left p {
+  font-size: 1rem;
+  color: rgba(245, 235, 224, 0.45);
+  margin: 0;
+}
+
+/* COMPOSITE SQUARE STRUCTURE */
+.brand-collage-square-composite {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 1 / 1;
+}
+
+.tall-image-column {
+  width: 100%;
+  height: 100%;
+}
+
+.tall-image-column img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid rgba(245, 235, 224, 0.08);
+}
+
+.wide-images-column-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+}
+
+.wide-box {
+  flex: 1;
+  width: 100%;
+  overflow: hidden;
+}
+
+.wide-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid rgba(245, 235, 224, 0.08);
+}
+
+/* ── SECTION 3: INCREMENTAL 2PX CARD OVERLAY STACK ── */
+.section-three-stack-wrapper {
+  position: relative;
+  padding: 140px 20px 25vh 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  z-index: 12; /* Keeps it layered cleanly over section 2 assets */
+  background-color: #0b0203;
+}
+
+.stack-header-intro {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.stack-header-intro span {
+  color: #801a24;
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+}
+
+.stack-header-intro h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 8px 0 0 0;
+}
+
+.stack-cards-pinned-container {
+  position: relative;
+  width: 100%;
+}
+
+.stack-center-card {
+  position: sticky;
+  width: 100%;
+  background-color: #140608;
+  border: 1px solid rgba(245, 235, 224, 0.14);
+  border-radius: 24px;
+  padding: 50px;
+  box-sizing: border-box;
+  box-shadow: 0 -25px 50px rgba(0, 0, 0, 0.8);
+  margin-bottom: 28vh;
+  will-change: transform;
+}
+
+.stack-card-inner-split {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.brand-pill {
+  font-size: 0.75rem;
+  background: rgba(212, 163, 115, 0.1);
+  border: 1px solid rgba(212, 163, 115, 0.3);
+  color: #d4a373;
+  padding: 6px 16px;
+  border-radius: 30px;
+  font-weight: 700;
+}
+
+.stack-left-demand h4 {
+  font-size: 0.8rem;
+  color: rgba(245, 235, 224, 0.4);
+  letter-spacing: 2px;
+  margin: 30px 0 10px 0;
+}
+
+.demand-text {
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  font-weight: 700;
+  line-height: 1.4;
+  color: #f5ebe0;
+  margin: 0;
+}
+
+.stack-right-instagram-mock {
+  display: flex;
+  justify-content: center;
+}
+
+.instagram-post-container {
+  width: 100%;
+  max-width: 370px;
+  background: #0b0203;
+  border: 1px solid rgba(245, 235, 224, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.insta-header-mock {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+}
+
+.avatar-mock {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #d4a373;
+}
+
+.insta-header-mock span {
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.insta-media-mock {
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+
+.insta-media-mock img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.insta-metrics-overlay-row {
+  display: flex;
+  border-top: 1px solid rgba(245, 235, 224, 0.08);
+}
+
+.metric-badge {
+  flex: 1;
+  padding: 12px;
+  text-align: center;
+  border-right: 1px solid rgba(245, 235, 224, 0.08);
+}
+
+.metric-badge:last-child {
+  border-right: none;
+}
+
+.metric-badge .lbl {
+  display: block;
+  font-size: 0.65rem;
+  color: rgba(245, 235, 224, 0.4);
+  margin-bottom: 2px;
+}
+
+.metric-badge .val {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #d4a373;
 }
 
 @media (max-width: 992px) {
-  .collage-container { grid-template-columns: 1fr; }
-  .big-fat-project-card { padding: 20px; margin-bottom: 8vh; }
+  .brand-item-row { grid-template-columns: 1fr; gap: 40px; }
+  .brand-collage-square-composite { max-width: 100%; }
+  .stack-card-inner-split { grid-template-columns: 1fr; gap: 30px; }
 }
