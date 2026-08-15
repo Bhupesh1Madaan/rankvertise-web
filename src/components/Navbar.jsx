@@ -1,6 +1,5 @@
 import { useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
-// Programmatic routing ke liye useNavigate import kiya aur normal Link ko hataya
 import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 
@@ -17,7 +16,7 @@ const Navbar = ({
     const navRef = useRef(null);
     const cardsRef = useRef([]);
     const tlRef = useRef(null);
-    const navigate = useNavigate(); // <-- Navigation hook call kiya
+    const navigate = useNavigate();
 
     const items = [
         {
@@ -27,7 +26,7 @@ const Navbar = ({
             links: [
                 { label: "Home", to: "/" },
                 { label: "About Us", to: "/about" },
-                { label: "Plans & Pricing", to: "/" }
+                { label: "Plans & Pricing", href: "https://www.rankvertise.in/consultation", isExternal: true }
             ]
         },
         {
@@ -37,7 +36,7 @@ const Navbar = ({
             links: [
                 { label: "Portfolio", to: "/portfolio" },
                 { label: "Services", to: "/services" },
-                { label: "Blogs", to: "/" }
+                { label: "Blogs", href: "https://www.rankvertise.in/blogs", isExternal: true }
             ]
         },
         {
@@ -154,9 +153,8 @@ const Navbar = ({
         }
     };
 
-    // SAFE ROUTING HANDLER: Pehle GSAP complete hoga, fir navigate chalega!
     const handleLinkClick = (e, destinationPath) => {
-        e.preventDefault(); // Default jump roki
+        e.preventDefault();
         const tl = tlRef.current;
 
         if (!tl || !isExpanded) {
@@ -167,11 +165,10 @@ const Navbar = ({
 
         setIsHamburgerOpen(false);
 
-        // GSAP complete hone ke baad hi transition lock trigger hoga
         tl.eventCallback('onReverseComplete', () => {
             setIsExpanded(false);
             window.scrollTo({ top: 0, behavior: 'instant' });
-            navigate(destinationPath); // Clean shift
+            navigate(destinationPath);
         });
 
         tl.reverse();
@@ -234,7 +231,6 @@ const Navbar = ({
                                             {lnk.label}
                                         </a>
                                     ) : (
-                                        // OnClick pass destination logic parameters to prevent trace failure
                                         <a key={`int-${idx}-${i}`} className="nav-card-link" href={lnk.to} onClick={(e) => handleLinkClick(e, lnk.to)}>
                                             <svg className="nav-card-link-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                                                 <line x1="7" y1="17" x2="17" y2="7"></line>
