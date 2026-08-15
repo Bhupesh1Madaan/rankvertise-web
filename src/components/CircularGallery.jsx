@@ -1,5 +1,6 @@
 import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from 'ogl';
 import { useEffect, useRef } from 'react';
+import { useData } from '../context/DataContext';
 import './CircularGallery.css';
 
 function debounce(func, wait) {
@@ -123,22 +124,24 @@ class AppEngine {
     destroy() { window.cancelAnimationFrame(this.raf); window.removeEventListener('resize', this._resize); window.removeEventListener('wheel', this._wheel); this.gl.canvas.parentNode?.removeChild(this.gl.canvas); }
 }
 
+const DEFAULT_GALLERY_ITEMS = [
+    { image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&auto=format&fit=crop&q=60', text: 'ALGORITHM BUSTING' },
+    { image: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&auto=format&fit=crop&q=60', text: 'VIRAL REELS FORMAT' },
+    { image: 'https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?w=600&auto=format&fit=crop&q=60', text: 'SCROLL STOPPING CONTENT' },
+    { image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=600&auto=format&fit=crop&q=60', text: 'CULTURAL ICON STRATEGY' }
+];
+
 export default function CircularGallery({ bend = 2.5, textColor = '#801a24' }) {
     const containerRef = useRef(null);
+    const { getVal } = useData();
 
-    // Custom high-vibe social items matching brand blueprint
-    // FIXED STRINGS PLACEHOLDERS FOR BYPASSING REDIRECT CORS CONSTRAINTS
-    const items = [
-        { image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&auto=format&fit=crop&q=60', text: 'ALGORITHM BUSTING' },
-        { image: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&auto=format&fit=crop&q=60', text: 'VIRAL REELS FORMAT' },
-        { image: 'https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?w=600&auto=format&fit=crop&q=60', text: 'SCROLL STOPPING CONTENT' },
-        { image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=600&auto=format&fit=crop&q=60', text: 'CULTURAL ICON STRATEGY' }
-    ];
+    const items = getVal('circular_gallery_data', DEFAULT_GALLERY_ITEMS);
 
     useEffect(() => {
+        if (!containerRef.current || !items || !items.length) return;
         const app = new AppEngine(containerRef.current, { items, bend, textColor, borderRadius: 0.04, font: 'bold 24px sans-serif', scrollSpeed: 2, scrollEase: 0.05 });
         return () => app.destroy();
-    }, []);
+    }, [items, bend, textColor]);
 
     return (
         <section className="gallery-outer-block">

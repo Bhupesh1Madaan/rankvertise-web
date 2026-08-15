@@ -1,14 +1,14 @@
 import { useRef, useEffect, useCallback, useState } from 'react';
 import { gsap } from 'gsap';
+import { useData } from '../context/DataContext';
 import './MagicBento.css';
 
 const DEFAULT_PARTICLE_COUNT = 10;
 const DEFAULT_SPOTLIGHT_RADIUS = 280;
-const DEFAULT_GLOW_COLOR = '128, 26, 36'; // Maroon core theme glow
+const DEFAULT_GLOW_COLOR = '128, 26, 36';
 const MOBILE_BREAKPOINT = 768;
 
-// Extracted real track data from blueprint sheet mapped correctly
-const cardData = [
+const DEFAULT_BENTO_CARDS = [
     {
         color: '#2a0b10',
         title: '10+ Years',
@@ -50,7 +50,7 @@ const createParticleElement = (x, y, color = DEFAULT_GLOW_COLOR) => {
     return el;
 };
 
-const ParticleCard = ({ children, className = '', disableAnimations = false, style, particleCount = DEFAULT_PARTICLE_COUNT, glowColor = DEFAULT_GLOW_COLOR, enableTilt = true, clickEffect = true, enableMagnetism = true }) => {
+const ParticleCard = ({ children, className = '', disableAnimations = false, style, particleCount = DEFAULT_PARTICLE_COUNT, glowColor = DEFAULT_GLOW_COLOR, enableTilt = true, enableMagnetism = true }) => {
     const cardRef = useRef(null);
     const particlesRef = useRef([]);
     const timeoutsRef = useRef([]);
@@ -155,11 +155,15 @@ const GlobalSpotlight = ({ gridRef, disableAnimations = false, enabled = true, s
 export default function MagicBento() {
     const gridRef = useRef(null);
     const [isMobile, setIsMobile] = useState(false);
+    const { getVal } = useData();
+
+    const cards = getVal('bento_cards_data', DEFAULT_BENTO_CARDS);
 
     useEffect(() => {
         const checkSize = () => setIsMobile(window.innerWidth <= MOBILE_BREAKPOINT);
-        checkSize(); window.addEventListener('resize', checkSize);
-        return () => window.removeMirror || window.removeEventListener('resize', checkSize);
+        checkSize();
+        window.addEventListener('resize', checkSize);
+        return () => window.removeEventListener('resize', checkSize);
     }, []);
 
     return (
@@ -172,8 +176,15 @@ export default function MagicBento() {
             <GlobalSpotlight gridRef={gridRef} disableAnimations={isMobile} enabled={true} />
 
             <div className="card-grid bento-section" ref={gridRef}>
-                {cardData.map((card, index) => (
-                    <ParticleCard key={index} className={`magic-bento-card ${card.sizeClass} magic-bento-card--border-glow`} style={{ backgroundColor: card.color, '--glow-color': DEFAULT_GLOW_COLOR }} disableAnimations={isMobile} enableTilt={true} enableMagnetism={true}>
+                {cards.map((card, index) => (
+                    <ParticleCard 
+                        key={index} 
+                        className={`magic-bento-card ${card.sizeClass || 'bento-small'} magic-bento-card--border-glow`} 
+                        style={{ backgroundColor: card.color || '#1a0508', '--glow-color': DEFAULT_GLOW_COLOR }} 
+                        disableAnimations={isMobile} 
+                        enableTilt={true} 
+                        enableMagnetism={true}
+                    >
                         <div className="magic-bento-card__header">
                             <div className="magic-bento-card__label">{card.label}</div>
                         </div>

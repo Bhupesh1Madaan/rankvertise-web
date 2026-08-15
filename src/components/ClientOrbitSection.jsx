@@ -1,22 +1,29 @@
 import { useMemo, useEffect, useRef, useState } from 'react';
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import { useData } from '../context/DataContext';
 import './OrbitImages.css';
 
-const dummyLogos = [
-    "https://static.wixstatic.com/media/4fce5e_f579dec309b24713bbbacae25da05c5c~mv2.png/v1/fill/w_319,h_316,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/18.png",
-    "https://static.wixstatic.com/media/4fce5e_3a747d46d465459cb71669eb0a5e7a10~mv2.png/v1/fill/w_319,h_316,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/17.png",
-    "https://static.wixstatic.com/media/4fce5e_23443126bf6443f0b7e88ffc57d846be~mv2.png/v1/fill/w_319,h_316,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/19.png",
-    "https://static.wixstatic.com/media/4fce5e_4dfc40799fb242479d108fa60e46653c~mv2.png/v1/fill/w_319,h_316,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/14.png",
-    "https://static.wixstatic.com/media/4fce5e_40e22c72ffb9402e9c8ee15d632cf7e2~mv2.png/v1/fill/w_319,h_316,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/15.png",
-    "https://static.wixstatic.com/media/4fce5e_d8b0bfe9f60f443dbf9a8d0ebaf52d83~mv2.png/v1/fill/w_319,h_316,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/16.png",
-    "https://static.wixstatic.com/media/4fce5e_a52f704c9aa345f0a911415e81747761~mv2.png/v1/fill/w_319,h_316,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/13.png",
-    "https://static.wixstatic.com/media/4fce5e_e9e4b828abcd4ce1a11be0ee435cefc8~mv2.png/v1/fill/w_319,h_316,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/10.png",
-    "https://static.wixstatic.com/media/4fce5e_a911a0ea4c4d46a0928f5094d35aa054~mv2.png/v1/fill/w_319,h_316,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/9.png",
-    "https://static.wixstatic.com/media/4fce5e_896ce7936ef548cf84a6f6135c629d22~mv2.png/v1/fill/w_319,h_316,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/11.png",
-    "https://static.wixstatic.com/media/4fce5e_d8be49e8f5cb48259be1fa196c0fb0c6~mv2.png/v1/fill/w_319,h_316,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/12.png"
+const DEFAULT_ORBIT_CLIENTS = [
+    { logo: "https://static.wixstatic.com/media/4fce5e_f579dec309b24713bbbacae25da05c5c~mv2.png/v1/fill/w_319,h_316,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/18.png", url: "https://rankvertise.in" },
+    { logo: "https://static.wixstatic.com/media/4fce5e_3a747d46d465459cb71669eb0a5e7a10~mv2.png/v1/fill/w_319,h_316,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/17.png", url: "https://rankvertise.in" },
+    { logo: "https://static.wixstatic.com/media/4fce5e_23443126bf6443f0b7e88ffc57d846be~mv2.png/v1/fill/w_319,h_316,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/19.png", url: "https://rankvertise.in" },
+    { logo: "https://static.wixstatic.com/media/4fce5e_4dfc40799fb242479d108fa60e46653c~mv2.png/v1/fill/w_319,h_316,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/14.png", url: "https://rankvertise.in" },
+    { logo: "https://static.wixstatic.com/media/4fce5e_40e22c72ffb9402e9c8ee15d632cf7e2~mv2.png/v1/fill/w_319,h_316,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/15.png", url: "https://rankvertise.in" }
 ];
 
 export function ClientOrbitSection() {
+    const { getVal } = useData();
+    const rawClients = getVal('client_orbit_data', DEFAULT_ORBIT_CLIENTS);
+
+    // Format check: agar direct strings hon ya objects
+    const clientsList = useMemo(() => {
+        if (!Array.isArray(rawClients)) return DEFAULT_ORBIT_CLIENTS;
+        return rawClients.map(item => {
+            if (typeof item === 'string') return { logo: item, url: 'https://rankvertise.in' };
+            return item;
+        });
+    }, [rawClients]);
+
     return (
         <section className="orbit-showcase-section">
             <div className="orbit-section-header">
@@ -30,13 +37,13 @@ export function ClientOrbitSection() {
             <div className="w-full max-w-5xl mx-auto flex justify-center items-center h-[520px]">
                 <div className="w-full max-w-5xl mx-auto flex justify-center items-center h-[550px]">
                     <OrbitImages
-                        images={dummyLogos}
+                        itemsData={clientsList}
                         shape="ellipse"
                         showPath={true}
-                        pathColor="rgba(245, 235, 224, 0.35)" /* HIGH CONTRAST CLEAR AXIS PATH LINE */
-                        pathWidth={2.5}                      /* Line thodi bold ki taaki saaf dikhe */
+                        pathColor="rgba(245, 235, 224, 0.35)"
+                        pathWidth={2.5}
                         duration={35}
-                        itemSize={110}                       /* LOGOS SIZE EXPANDED FROM 75 TO 110 */
+                        itemSize={110}
                         responsive={true}
                         rotation={-6}
                         centerContent={
@@ -51,44 +58,8 @@ export function ClientOrbitSection() {
     );
 }
 
-// ── INNER STRUCTURAL CALCULATION CONTROLLERS (DOMINIK KOCH) ──
 function generateEllipsePath(cx, cy, rx, ry) {
     return `M ${cx - rx} ${cy} A ${rx} ${ry} 0 1 0 ${cx + rx} ${cy} A ${rx} ${ry} 0 1 0 ${cx - rx} ${cy}`;
-}
-function generateCirclePath(cx, cy, r) { return generateEllipsePath(cx, cy, r, r); }
-function generateSquarePath(cx, cy, size) {
-    const h = size / 2; return `M ${cx - h} ${cy - h} L ${cx + h} ${cy - h} L ${cx + h} ${cy + h} L ${cx - h} ${cy + h} Z`;
-}
-function generateRectanglePath(cx, cy, w, h) {
-    const hw = w / 2; const hh = h / 2; return `M ${cx - hw} ${cy - hh} L ${cx + hw} ${cy - hh} L ${cx + hw} ${cy + hh} L ${cx - hw} ${cy - hh} Z`;
-}
-function generateTrianglePath(cx, cy, size) {
-    const height = (size * Math.sqrt(3)) / 2; const hs = size / 2; return `M ${cx} ${cy - height / 1.5} L ${cx + hs} ${cy + height / 3} L ${cx - hs} ${cy + height / 3} Z`;
-}
-function generateStarPath(cx, cy, outerR, innerR, points) {
-    const step = Math.PI / points; let path = '';
-    for (let i = 0; i < 2 * points; i++) {
-        const r = i % 2 === 0 ? outerR : innerR; const angle = i * step - Math.PI / 2;
-        const x = cx + r * Math.cos(angle); const y = cy + r * Math.sin(angle);
-        path += i === 0 ? `M ${x} ${y}` : ` L ${x} ${y}`;
-    }
-    return path + ' Z';
-}
-function generateHeartPath(cx, cy, size) {
-    const s = size / 30; return `M ${cx} ${cy + 12 * s} C ${cx - 20 * s} ${cy - 5 * s}, ${cx - 12 * s} ${cy - 18 * s}, ${cx} ${cy - 8 * s} C ${cx + 12 * s} ${cy - 18 * s}, ${cx + 20 * s} ${cy - 5 * s}, ${cx} ${cy + 12 * s}`;
-}
-function generateInfinityPath(cx, cy, w, h) {
-    const hw = w / 2; const hh = h / 2; return `M ${cx} ${cy} C ${cx + hw * 0.5} ${cy - hh}, ${cx + hw} ${cy - hh}, ${cx + hw} ${cy} C ${cx + hw} ${cy + hh}, ${cx + hw * 0.5} ${cy + hh}, ${cx} ${cy} C ${cx - hw * 0.5} ${cy + hh}, ${cx - hw} ${cy + hh}, ${cx - hw} ${cy} C ${cx - hw} ${cy - hh}, ${cx - hw * 0.5} ${cy - hh}, ${cx} ${cy}`;
-}
-function generateWavePath(cx, cy, w, amplitude, waves) {
-    const pts = []; const segs = waves * 20; const hw = w / 2;
-    for (let i = 0; i <= segs; i++) {
-        const x = cx - hw + (w * i) / segs; const y = cy + Math.sin((i / segs) * waves * 2 * Math.PI) * amplitude; pts.push(i === 0 ? `M ${x} ${y}` : `L ${x} ${y}`);
-    }
-    for (let i = segs; i >= 0; i--) {
-        const x = cx - hw + (w * i) / segs; const y = cy - Math.sin((i / segs) * waves * 2 * Math.PI) * amplitude; pts.push(`L ${x} ${y}`);
-    }
-    return pts.join(' ') + ' Z';
 }
 
 function OrbitItem({ item, index, totalItems, path, itemSize, rotation, progress, fill }) {
@@ -118,24 +89,16 @@ function OrbitItem({ item, index, totalItems, path, itemSize, rotation, progress
 }
 
 function OrbitImages({
-    images = [],
-    altPrefix = 'Orbiting image',
+    itemsData = [],
     shape = 'ellipse',
-    customPath,
     baseWidth = 1400,
     radiusX = 700,
     radiusY = 170,
-    radius = 300,
-    starPoints = 5,
-    starInnerRatio = 0.5,
     rotation = -8,
     duration = 40,
     itemSize = 64,
     direction = 'normal',
     fill = true,
-    width = 100,
-    height = 100,
-    className = '',
     showPath = false,
     pathColor = 'rgba(0,0,0,0.1)',
     pathWidth = 2,
@@ -150,20 +113,8 @@ function OrbitImages({
     const designCenterY = baseWidth / 2;
 
     const path = useMemo(() => {
-        switch (shape) {
-            case 'circle': return generateCirclePath(designCenterX, designCenterY, radius);
-            case 'ellipse': return generateEllipsePath(designCenterX, designCenterY, radiusX, radiusY);
-            case 'square': return generateSquarePath(designCenterX, designCenterY, radius * 2);
-            case 'rectangle': return generateRectanglePath(designCenterX, designCenterY, radiusX * 2, radiusY * 2);
-            case 'triangle': return generateTrianglePath(designCenterX, designCenterY, radius * 2);
-            case 'star': return generateStarPath(designCenterX, designCenterY, radius, radius * starInnerRatio, starPoints);
-            case 'heart': return generateHeartPath(designCenterX, designCenterY, radius * 2);
-            case 'infinity': return generateInfinityPath(designCenterX, designCenterY, radiusX * 2, radiusY * 2);
-            case 'wave': return generateWavePath(designCenterX, designCenterY, radiusX * 2, radiusY, 3);
-            case 'custom': return customPath || generateCirclePath(designCenterX, designCenterY, radius);
-            default: return generateEllipsePath(designCenterX, designCenterY, radiusX, radiusY);
-        }
-    }, [shape, customPath, designCenterX, designCenterY, radiusX, radiusY, radius, starPoints, starInnerRatio]);
+        return generateEllipsePath(designCenterX, designCenterY, radiusX, radiusY);
+    }, [designCenterX, designCenterY, radiusX, radiusY]);
 
     useEffect(() => {
         if (!responsive || !containerRef.current) return;
@@ -190,27 +141,30 @@ function OrbitImages({
         return () => controls.stop();
     }, [progress, duration, easing, direction, paused]);
 
-    const containerWidth = responsive ? '100%' : (typeof width === 'number' ? width : '100%');
-    const containerHeight = responsive ? 'auto' : (typeof height === 'number' ? height : (typeof width === 'number' ? width : 'auto'));
-
-    const items = images.map((src, index) => (
-        <div key={src} className="orbit-image-wrapper">
+    const renderedItems = itemsData.map((client, index) => (
+        <a 
+            key={index} 
+            href={client.url || "#"} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="orbit-image-wrapper"
+            style={{ textDecoration: 'none', display: 'flex' }}
+        >
             <img
-                src={src}
-                alt={`${altPrefix} ${index + 1}`}
+                src={client.logo}
+                alt={`Client ${index + 1}`}
                 draggable={false}
                 className="orbit-image"
             />
-        </div>
+        </a>
     ));
 
     return (
         <div
             ref={containerRef}
-            className={`orbit-container ${className}`}
+            className="orbit-container"
             style={{
-                width: containerWidth,
-                height: containerHeight,
+                width: '100%',
                 aspectRatio: responsive ? '1 / 1' : undefined,
             }}
             aria-hidden="true"
@@ -238,12 +192,12 @@ function OrbitImages({
                         </svg>
                     )}
 
-                    {items.map((item, index) => (
+                    {renderedItems.map((item, index) => (
                         <OrbitItem
                             key={index}
                             item={item}
                             index={index}
-                            totalItems={items.length}
+                            totalItems={renderedItems.length}
                             path={path}
                             itemSize={itemSize}
                             rotation={rotation}
