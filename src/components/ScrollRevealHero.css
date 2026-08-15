@@ -202,10 +202,10 @@
     line-height: 1.35 !important;
     font-weight: 800;
     letter-spacing: -0.5px;
-    display: inline;
+    display: block;
     flex-wrap: wrap;
     word-break: break-word;
-    white-space: pre;
+    white-space: normal; /* Allow text to wrap normally */
 }
 
 .premium-reveal-paragraph span {
