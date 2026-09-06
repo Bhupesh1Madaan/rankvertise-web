@@ -1,100 +1,476 @@
+/* ==========================================================================
+   RANKVERTISE LUXURY REDESIGNED FOOTER & GLASSMORPHISM MODAL
+   ========================================================================== */
+
 .footer-interactive-stage {
     position: relative;
     width: 100vw;
-    background-color: #f5ebe0;
-    /* Base luxury Beige */
+    background-color: #f5ebe0; /* Light Luxury Beige Canvas */
+    color: #1a0508;
+    padding: 90px 6% 40px 6%;
+    box-sizing: border-box;
     overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     border-top: 1px solid rgba(26, 5, 8, 0.08);
-    padding: 80px 0 40px 0;
 }
 
 .footer-real-content-wrap {
-    position: relative;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1150px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    gap: 65px;
+}
+
+/* ── 1. TOP SECTION: BRAND HERO & NEWSLETTER ── */
+.footer-hero-cta-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
     gap: 60px;
-    padding: 0 6%;
+    align-items: center;
+    border-bottom: 1px solid rgba(26, 5, 8, 0.12);
+    padding-bottom: 55px;
 }
 
-.footer-top-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 40px;
+.footer-logo-anchor {
+    text-decoration: none !important;
+    color: inherit;
+    outline: none;
+    display: inline-block;
+    margin-bottom: 18px;
 }
 
-.footer-brand-title {
-    font-size: 2.5rem;
+.footer-brand-main {
+    font-size: clamp(2.2rem, 3.8vw, 3.2rem);
     font-weight: 900;
     color: #1a0508;
-    letter-spacing: -1px;
+    letter-spacing: -1.5px;
 }
 
-.footer-brand-title span {
+.footer-brand-main span {
     color: #801a24;
 }
 
-.footer-links-grid {
-    display: flex;
-    gap: 60px;
-    flex-wrap: wrap;
+.footer-tagline-desc {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: rgba(26, 5, 8, 0.75);
+    max-width: 540px;
+    margin: 0;
 }
 
-.footer-links-column {
+/* Newsletter Card */
+.footer-newsletter-card {
+    background-color: #1a0508;
+    color: #f5ebe0;
+    padding: 35px 32px;
+    border-radius: 24px;
+    box-shadow: 0 20px 45px rgba(26, 5, 8, 0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.newsletter-tagline {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #d4a373;
+}
+
+.footer-newsletter-card h3 {
+    font-size: 1.35rem;
+    font-weight: 800;
+    margin: 0;
+    color: #f5ebe0;
+    letter-spacing: -0.3px;
+}
+
+.footer-newsletter-card p {
+    font-size: 0.9rem;
+    color: rgba(245, 235, 224, 0.65);
+    line-height: 1.45;
+    margin: 0 0 14px 0;
+}
+
+.footer-subscribe-form {
+    display: flex;
+    gap: 10px;
+    position: relative;
+}
+
+.footer-subscribe-form input {
+    flex-grow: 1;
+    background: rgba(245, 235, 224, 0.06);
+    border: 1px solid rgba(245, 235, 224, 0.15);
+    padding: 12px 16px;
+    border-radius: 12px;
+    color: #f5ebe0;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.footer-subscribe-form input:focus {
+    border-color: #d4a373;
+}
+
+.footer-newsletter-btn {
+    background-color: #801a24;
+    color: #f5ebe0;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.footer-newsletter-btn:hover {
+    background-color: #9b222e;
+    transform: translateY(-2px);
+}
+
+.newsletter-confirm-msg {
+    font-size: 0.8rem;
+    color: #d4a373;
+    font-weight: 700;
+    margin-top: 6px;
+}
+
+/* ── 2. MIDDLE CHANNELS GRID ── */
+.footer-channels-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    text-align: left;
+}
+
+.footer-col-block {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.footer-col-head {
+    font-size: 0.75rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #801a24;
+    text-transform: uppercase;
+}
+
+.footer-links-list,
+.footer-social-stack {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
-.footer-column-head {
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: rgba(26, 5, 8, 0.4);
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 5px;
-}
-
-.footer-links-column a {
+.footer-links-list a,
+.footer-social-stack a {
+    text-decoration: none !important;
     color: #1a0508;
-    font-weight: 600;
-    text-decoration: none;
     font-size: 0.95rem;
-    transition: color 0.2s ease;
+    font-weight: 600;
+    transition: color 0.3s, transform 0.3s;
+    width: fit-content;
 }
 
-.footer-links-column a:hover {
+.footer-links-list a:hover,
+.footer-social-stack a:hover {
+    color: #801a24;
+    transform: translateX(4px);
+}
+
+.footer-contact-nodes {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contact-node-item {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.contact-node-label {
+    font-size: 0.68rem;
+    font-weight: 800;
+    color: rgba(26, 5, 8, 0.45);
+    letter-spacing: 1px;
+}
+
+.contact-node-value {
+    text-decoration: none !important;
+    color: #1a0508;
+    font-size: 0.95rem;
+    font-weight: 700;
+    transition: color 0.3s;
+    width: fit-content;
+}
+
+.contact-node-value:hover {
     color: #801a24;
 }
 
+.footer-location-box {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.location-line {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1a0508;
+}
+
+.location-sub {
+    margin: 0;
+    font-size: 0.9rem;
+    color: rgba(26, 5, 8, 0.7);
+}
+
+/* ── 3. BOTTOM BAR & MODAL TRIGGERS ── */
 .footer-bottom-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid rgba(26, 5, 8, 0.08);
-    padding-top: 30px;
-    color: rgba(26, 5, 8, 0.5);
-    font-size: 0.85rem;
-    font-weight: 500;
+    border-top: 1px solid rgba(26, 5, 8, 0.1);
+    padding-top: 25px;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 16px;
 }
 
-@media (max-width: 768px) {
-    .footer-interactive-stage {
-        padding: 60px 0 30px 0;
+.footer-bottom-bar p {
+    margin: 0;
+    font-size: 0.88rem;
+    color: rgba(26, 5, 8, 0.6);
+    font-weight: 500;
+}
+
+.footer-legal-triggers {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.legal-link-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #1a0508;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.legal-link-btn:hover {
+    color: #801a24;
+    text-decoration: underline;
+}
+
+.legal-dot-divider {
+    color: rgba(26, 5, 8, 0.3);
+    font-size: 0.8rem;
+}
+
+/* ── 4. GLASSMORPHISM MODAL STYLES ── */
+.glass-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(11, 2, 3, 0.75);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.glass-modal-container {
+    width: 100%;
+    max-width: 720px;
+    max-height: 85vh;
+    background: rgba(26, 5, 8, 0.85);
+    border: 1px solid rgba(245, 235, 224, 0.15);
+    border-radius: 28px;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    color: #f5ebe0;
+    text-align: left;
+}
+
+.glass-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 30px 35px 20px 35px;
+    border-bottom: 1px solid rgba(245, 235, 224, 0.08);
+}
+
+.modal-tag {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #d4a373;
+}
+
+.glass-modal-header h2 {
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin: 6px 0 0 0;
+    color: #f5ebe0;
+    letter-spacing: -0.5px;
+}
+
+.glass-modal-close-btn {
+    background: rgba(245, 235, 224, 0.05);
+    border: 1px solid rgba(245, 235, 224, 0.1);
+    color: #f5ebe0;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.glass-modal-close-btn:hover {
+    background: #801a24;
+    transform: rotate(90deg);
+}
+
+.glass-modal-scroll-body {
+    padding: 30px 35px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #801a24 transparent;
+}
+
+.glass-modal-scroll-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.glass-modal-scroll-body::-webkit-scrollbar-thumb {
+    background-color: #801a24;
+    border-radius: 10px;
+}
+
+.modal-inner-text-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.modal-meta-date {
+    font-size: 0.85rem;
+    color: rgba(245, 235, 224, 0.5);
+    margin: 0;
+}
+
+.modal-inner-text-flow section h3 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #d4a373;
+    margin: 0 0 8px 0;
+}
+
+.modal-inner-text-flow section p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(245, 235, 224, 0.75);
+    margin: 0;
+}
+
+.modal-inner-text-flow a {
+    color: #d4a373;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.glass-modal-footer {
+    padding: 20px 35px;
+    border-top: 1px solid rgba(245, 235, 224, 0.08);
+    display: flex;
+    justify-content: flex-end;
+    background: rgba(11, 2, 3, 0.4);
+}
+
+.glass-modal-action-btn {
+    background-color: #801a24;
+    color: #f5ebe0;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.glass-modal-action-btn:hover {
+    background-color: #9b222e;
+}
+
+/* ── 5. RESPONSIVE MASTER BREAKPOINTS ── */
+@media (max-width: 1024px) {
+    .footer-hero-cta-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
     }
 
-    .footer-top-row {
+    .footer-channels-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-interactive-stage {
+        padding: 60px 20px 30px 20px;
+    }
+
+    .footer-channels-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer-subscribe-form {
         flex-direction: column;
     }
 
-    .footer-links-grid {
-        gap: 40px;
+    .footer-newsletter-btn {
         width: 100%;
+        padding: 14px;
+    }
+
+    .footer-bottom-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .glass-modal-container {
+        max-height: 90vh;
+    }
+
+    .glass-modal-header,
+    .glass-modal-scroll-body,
+    .glass-modal-footer {
+        padding: 20px;
     }
 }

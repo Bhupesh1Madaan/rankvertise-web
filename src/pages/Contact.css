@@ -1,0 +1,300 @@
+.contact-master-stage {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #1a0508;
+    color: #f5ebe0;
+    padding: 140px 6% 100px 6%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.contact-grid-background {
+    position: absolute;
+    inset: 0;
+    background-size: 32px 32px;
+    background-image:
+        linear-gradient(to right, rgba(245, 235, 224, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(245, 235, 224, 0.03) 1px, transparent 1px);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.contact-container {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    max-width: 1250px;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* ── LEFT COLUMN STYLES ── */
+.contact-info-column {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.contact-status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(212, 163, 115, 0.08);
+    border: 1px solid rgba(212, 163, 115, 0.25);
+    padding: 8px 18px;
+    border-radius: 100px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: #d4a373;
+    letter-spacing: 2px;
+    width: fit-content;
+    margin-bottom: 24px;
+}
+
+.pulse-indicator {
+    width: 7px;
+    height: 7px;
+    background-color: #801a24;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #801a24;
+    animation: contactPulse 1.8s infinite;
+}
+
+@keyframes contactPulse {
+    0% { opacity: 0.3; transform: scale(0.9); }
+    50% { opacity: 1; transform: scale(1.2); }
+    100% { opacity: 0.3; transform: scale(0.9); }
+}
+
+.contact-main-headline {
+    font-size: clamp(2.2rem, 4.2vw, 3.8rem);
+    font-weight: 900;
+    line-height: 1.12;
+    letter-spacing: -1.5px;
+    color: #f5ebe0;
+    margin-bottom: 20px;
+}
+
+.highlight-text {
+    color: #d4a373;
+    background: linear-gradient(135deg, #f5ebe0 0%, #d4a373 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.contact-sub-description {
+    font-size: clamp(1rem, 1.3vw, 1.18rem);
+    line-height: 1.6;
+    color: rgba(245, 235, 224, 0.75);
+    max-width: 540px;
+    margin-bottom: 35px;
+}
+
+.contact-channels-matrix {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border-top: 1px solid rgba(245, 235, 224, 0.1);
+    padding-top: 25px;
+    margin-bottom: 35px;
+}
+
+.channel-box {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.channel-label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #801a24;
+    letter-spacing: 2px;
+}
+
+.channel-value {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #f5ebe0;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+    width: fit-content;
+}
+
+.channel-value:hover {
+    color: #d4a373;
+    transform: translateX(4px);
+}
+
+.channel-value-static {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: rgba(245, 235, 224, 0.9);
+}
+
+.contact-social-row {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.social-row-label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: rgba(245, 235, 224, 0.4);
+    letter-spacing: 2px;
+}
+
+.social-links-wrap {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.social-links-wrap a {
+    color: #d4a373;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 700;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-links-wrap a:hover {
+    color: #f5ebe0;
+    transform: translateY(-2px);
+}
+
+/* ── RIGHT COLUMN: WIX EMBED CARD ── */
+.contact-form-column {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.wix-form-glass-card {
+    width: 100%;
+    min-height: 600px;
+    height: 650px;
+    background: rgba(245, 235, 224, 0.02);
+    border: 1px solid rgba(245, 235, 224, 0.12);
+    border-radius: 28px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    backdrop-filter: blur(8px);
+}
+
+.wix-form-hud-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(26, 5, 8, 0.85);
+    border-bottom: 1px solid rgba(245, 235, 224, 0.08);
+    padding: 14px 20px;
+    z-index: 2;
+}
+
+.hud-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.hud-dots span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(245, 235, 224, 0.2);
+}
+
+.hud-dots span:nth-child(1) { background-color: #801a24; }
+
+.hud-title {
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: rgba(245, 235, 224, 0.5);
+}
+
+.wix-embedded-iframe {
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
+    border: none;
+    background: transparent;
+}
+
+.wix-form-loading-state {
+    position: absolute;
+    inset: 0;
+    top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    background: #1a0508;
+    z-index: 1;
+    color: #d4a373;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.spinner-orbit {
+    width: 36px;
+    height: 36px;
+    border: 3px solid rgba(212, 163, 115, 0.15);
+    border-top-color: #d4a373;
+    border-radius: 50%;
+    animation: spinOrbit 0.9s linear infinite;
+}
+
+@keyframes spinOrbit {
+    to { transform: rotate(360deg); }
+}
+
+/* ── RESPONSIVE BREAKPOINTS ── */
+@media (max-width: 992px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .contact-info-column {
+        text-align: center;
+        align-items: center;
+    }
+
+    .contact-sub-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .contact-channels-matrix {
+        align-items: center;
+    }
+
+    .social-links-wrap {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-master-stage {
+        padding: 100px 20px 60px 20px;
+    }
+
+    .wix-form-glass-card {
+        height: 580px;
+        min-height: 520px;
+    }
+}

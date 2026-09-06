@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
@@ -8,8 +8,11 @@ import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import About from './pages/About';
+import Contact from './pages/Contact';
 import AdminPortal from './pages/AdminPortal';
 import { DataProvider } from './context/DataContext';
+
+import { initMobileOptimizer } from './utils/mobileOptimizer';
 import './ResponsiveMaster.css';
 
 function AnimatedRoutes() {
@@ -22,6 +25,7 @@ function AnimatedRoutes() {
         <Route path="/portfolio" element={<PortfolioPage />} />
         <Route path="/services" element={<Services />} />
         <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/portal-admin" element={<AdminPortal />} />
       </Routes>
     </AnimatePresence>
@@ -29,6 +33,11 @@ function AnimatedRoutes() {
 }
 
 function App() {
+  useEffect(() => {
+    // Universal Mobile lag elimination trigger
+    initMobileOptimizer();
+  }, []);
+
   return (
     <DataProvider>
       <Router>

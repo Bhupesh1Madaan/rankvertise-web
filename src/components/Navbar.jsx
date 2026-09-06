@@ -1,6 +1,6 @@
 import { useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = ({
@@ -26,7 +26,7 @@ const Navbar = ({
             links: [
                 { label: "Home", to: "/" },
                 { label: "About Us", to: "/about" },
-                { label: "Plans & Pricing", href: "https://www.rankvertise.in/consultation", isExternal: true }
+                { label: "Plans & Pricing", to: "/contact" }
             ]
         },
         {
@@ -195,17 +195,25 @@ const Navbar = ({
                     </div>
 
                     <div className="logo-container">
-                        <a href="/" onClick={(e) => handleLinkClick(e, "/")}>
+                        <a 
+                            href="/" 
+                            onClick={(e) => handleLinkClick(e, "/")}
+                            style={{ textDecoration: 'none', color: 'inherit', outline: 'none' }}
+                        >
                             <span className="logo-text">Rank<span>vertise</span></span>
                         </a>
                     </div>
 
+                    {/* Consultation link replaced with /contact */}
                     <a
-                        href="https://www.rankvertise.in/consultation"
-                        target="_blank"
-                        rel="noreferrer"
+                        href="/contact"
+                        onClick={(e) => handleLinkClick(e, "/contact")}
                         className="card-nav-cta-button"
-                        style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
+                        style={{ 
+                            backgroundColor: buttonBgColor, 
+                            color: buttonTextColor,
+                            textDecoration: 'none' 
+                        }}
                     >
                         Get Started
                     </a>
