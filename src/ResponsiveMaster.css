@@ -1,92 +1,266 @@
-/* ── RANKERTISE ULTIMATE GLOBAL RESPONSIVE LAYER ── */
-
-@media (max-width: 1024px) {
-    /* Yahan sirf un classes ko pakdo jo mobile par layout kharab kar rahi hain */
-
-    .orbit-container,
-    .sphere-main-stage,
-    .stage-3d-box {
-        height: 380px !important;
-        /* Saari heavy heights ko ek sath compress kiya */
-    }
-}
+/* ==========================================================================
+   RANKVERTISE UNIVERSAL MOBILE PERFORMANCE & SUBTLE FADE-IN ENGINE
+   ========================================================================== */
 
 @media (max-width: 768px) {
+  /* ── 1. GLOBAL SCROLL & VIEWPORT STABILIZATION ── */
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    position: relative !important;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
 
-    /* 1. Global Typography & Padding Control */
-    html,
-    body {
-        overflow-x: hidden !important;
-        /* Mobile par left-right screen ka hilna permanent block */
-    }
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
 
-    h1 {
-        font-size: 2.5rem !important;
-        line-height: 1.2 !important;
-    }
+  /* ── 2. ELIMINATE GPU BOTTLENECKS (HEAVY BLURS & 3D MATRIX) ── */
+  /* Mobile par multi-layered blur filters aur continuous transforms lag create karte hain */
+  .telemetry-scroll-vector-mesh,
+  .roadmap-abstract-swirl-bg,
+  .protocol-card-glow-flare,
+  .bento-global-spotlight {
+    display: none !important;
+  }
 
-    h2 {
-        font-size: 1.8rem !important;
-        line-height: 1.2 !important;
-    }
+  /* Flatten all complex 3D perspectives to plain 2D */
+  .about-master-parallax-wrapper,
+  .services-master-parallax-wrapper,
+  .asymmetric-comparison-engine-grid,
+  .telemetry-data-display-matrix,
+  .editorial-split-grid-viewport {
+    perspective: none !important;
+    transform-style: flat !important;
+  }
 
-    p {
-        font-size: 0.95rem !important;
-        line-height: 1.5 !important;
-    }
+  /* ── 3. SUBTLE VIEWPORT FADE-IN SYSTEM ── */
+  /* Sections scroll view me aane par subtle fade-in transition execute karenge */
+  section,
+  .about-overlap-curtain-panel,
+  .about-team-matrix-section,
+  .about-graphs-telemetry-section,
+  .about-timeline-roadmap-section,
+  .about-anti-agency-section,
+  .services-deep-flow,
+  .services-testimonials-section,
+  .services-newsletter-cta-section,
+  .services-blogs-showcase-section,
+  .deep-flow-row-viewport,
+  .bento-section,
+  .scroll-stack-master,
+  .orbit-showcase-section {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: opacity 0.5s ease, transform 0.5s ease !important;
+    content-visibility: auto; /* Offscreen elements ko tabhi render karega jab zarurat ho */
+    contain-intrinsic-size: 1px 500px;
+  }
 
-    /* 2. Global Section Gaps Reduction */
-    section,
-    .orbit-showcase-section,
-    .sphere-root-container {
-        padding: 40px 0 !important;
-        /* Saare sections ke upar-neeche ka gap ek baar mein khatam */
-    }
+  /* ── 4. SECTION 1 (HERO/MANIFESTO) - CLEAN CENTERED PRESENTATION ── */
+  .about-sticky-section-wrapper,
+  .services-parallax-trigger-box {
+    position: relative !important;
+    height: auto !important;
+    min-height: 85vh !important;
+    z-index: 2 !important;
+  }
 
-    /* 3. Global Structural Flex Columns */
-    .flex-row,
-    .grid-cols-2,
-    .grid-cols-3,
-    .grid-cols-4,
-    .magic-bento-grid {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 20px !important;
-    }
+  .about-frozen-viewport-canvas,
+  .hero-frozen-canvas {
+    position: relative !important;
+    height: auto !important;
+    min-height: 85vh !important;
+    padding: 100px 20px 60px 20px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
 
-    /* 4. Heavy 3D Components Mobile Squeeze */
-    .dome-tile-node {
-        width: 100px !important;
-        height: 60px !important;
-    }
+  /* Word-by-word blur reels remain completely readable without layout shift */
+  .reveal-content-box-custom,
+  .about-manifesto-center-box {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
 
-    .orbit-image-wrapper {
-        padding: 8px !important;
-        border-radius: 12px !important;
-    }
+  .manifesto-rotating-headline-box,
+  .services-cinematic-headline {
+    font-size: clamp(2.1rem, 7vw, 2.7rem) !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.5px !important;
+  }
 
-    /* 5. Buttery Smooth Hardware Acceleration for Mobile Graphics */
-    *,
-    *::before,
-    *::after {
-        -webkit-tap-highlight-color: transparent;
-    }
+  /* ── 5. SECTION 2: SLIDING CURTAIN OVERLAP BYPASS ── */
+  /* Curtain overlap scroll pull ko natural vertical stack me convert karta hai */
+  .about-overlap-curtain-panel,
+  .overlay-curtain-panel {
+    margin-top: 0 !important;
+    position: relative !important;
+    box-shadow: none !important;
+    padding: 70px 20px !important;
+    min-height: auto !important;
+  }
 
-    .orbit-image-wrapper,
-    .dome-tile-node,
-    .item__image,
-    .scroll-card {
-        will-change: transform, opacity !important;
-        transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1) !important;
-    }
+  .editorial-split-grid-viewport {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 40px !important;
+  }
+
+  .luxury-parallax-frame-mask {
+    max-width: 100% !important;
+    height: 340px !important;
+    transform: none !important;
+  }
+
+  .parallax-still-image-asset {
+    transform: none !important;
+    top: 0 !important;
+    height: 100% !important;
+  }
+
+  /* ── 6. SCROLLSTACK & BENTO - 1-COLUMN LIGHTWEIGHT FLOW ── */
+  .scroll-stack-master {
+    height: auto !important;
+    min-height: auto !important;
+    padding: 60px 20px !important;
+    position: relative !important;
+    display: block !important;
+  }
+
+  .cards-relative-zone {
+    position: relative !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  .scroll-stack-card {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    transform: none !important;
+    height: auto !important;
+    min-height: auto !important;
+    padding: 30px 24px !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4) !important;
+  }
+
+  .card-grid,
+  .magic-bento-grid,
+  .team-syndicate-grid,
+  .asymmetric-comparison-engine-grid,
+  .telemetry-data-display-matrix,
+  .loc-cards-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+    transform: none !important;
+  }
+
+  .magic-bento-card,
+  .syndicate-node-card,
+  .divergence-column-card,
+  .telemetry-chart-simulation-box {
+    width: 100% !important;
+    min-height: auto !important;
+    transform: none !important;
+    padding: 30px 22px !important;
+  }
+
+  /* ── 7. SECTION 5: TIMELINE STRAIGHTENING ── */
+  .chronicle-timeline-spine-wrapper {
+    margin-top: 40px !important;
+    padding: 0 !important;
+  }
+
+  .timeline-static-backbone {
+    left: 12px !important;
+    transform: none !important;
+  }
+
+  .timeline-active-laser-fill {
+    height: 100% !important; /* Static clean line without scroll calc lag */
+  }
+
+  .timeline-node-pointer-dot {
+    left: 12px !important;
+    transform: translateX(-50%) !important;
+  }
+
+  .chronicle-timeline-node-row {
+    padding-left: 35px !important;
+    padding-right: 0 !important;
+    justify-content: flex-start !important;
+    margin-bottom: 30px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .chronicle-event-card {
+    width: 100% !important;
+    transform: none !important;
+    padding: 24px 20px !important;
+  }
+
+  /* ── 8. SERVICES SECTION 2 SPATIAL CROSS GRID ── */
+  .spatial-cross-grid-layout {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    padding: 10px 0 !important;
+  }
+
+  .arrow-matrix-card {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    transform: none !important;
+    padding: 24px 20px !important;
+  }
+
+  .deep-flow-row-viewport {
+    padding: 50px 16px !important;
+    min-height: auto !important;
+  }
+
+  .immersive-scale-card {
+    padding: 35px 22px !important;
+    transform: none !important;
+  }
+
+  .pointers-inner-sub-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  /* ── 9. REDUCE ASYMMETRIC SLOPES HEIGHT TO AVOID BLANK HOLES ── */
+  .section-asymmetric-transition-slope {
+    height: 35px !important;
+  }
+
+  /* ── 10. TYPOGRAPHY SCALING ── */
+  h1 { font-size: 2.2rem !important; line-height: 1.2 !important; }
+  h2 { font-size: 1.7rem !important; line-height: 1.25 !important; }
+  h3 { font-size: 1.3rem !important; line-height: 1.3 !important; }
+  p { font-size: 0.95rem !important; line-height: 1.55 !important; }
 }
 
 @media (max-width: 480px) {
-    h1 {
-        font-size: 2rem !important;
-    }
-
-    .orbit-container {
-        height: 280px !important;
-    }
+  h1 { font-size: 1.95rem !important; }
+  h2 { font-size: 1.5rem !important; }
+  .about-overlap-curtain-panel,
+  .overlay-curtain-panel,
+  .about-team-matrix-section,
+  .about-graphs-telemetry-section,
+  .about-anti-agency-section,
+  .loc-pillars-section {
+    padding: 60px 16px !important;
+  }
 }

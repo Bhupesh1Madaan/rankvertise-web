@@ -9,9 +9,9 @@ import Home from './pages/Home';
 import Services from './pages/Services';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import LocationPage from './pages/LocationPage'; // <-- Import Location Page
 import AdminPortal from './pages/AdminPortal';
 import { DataProvider } from './context/DataContext';
-
 import { initMobileOptimizer } from './utils/mobileOptimizer';
 import './ResponsiveMaster.css';
 
@@ -27,6 +27,10 @@ function AnimatedRoutes() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/portal-admin" element={<AdminPortal />} />
+
+        {/* ── PROGRAMMATIC SEO LOCATION ROUTES ── */}
+        <Route path="/services/:locationSlug" element={<LocationPage />} />
+        <Route path="/:locationSlug" element={<LocationPage />} />
       </Routes>
     </AnimatePresence>
   );
@@ -34,7 +38,6 @@ function AnimatedRoutes() {
 
 function App() {
   useEffect(() => {
-    // Universal Mobile lag elimination trigger
     initMobileOptimizer();
   }, []);
 

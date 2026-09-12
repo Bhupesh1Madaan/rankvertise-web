@@ -51,12 +51,9 @@ export default function AdminPortal() {
 
   // ── 5. ABOUT US STATE (ALL 6 SECTIONS) ──
   const [aboutData, setAboutData] = useState({
-    // Section 1: The Hero Manifesto & Operations Tagline
     tag: "Rankvertise Operations",
     rotatingTexts: ["Disrupt Markets.", "Scale Platforms.", "Override Algorithms.", "Capture Intent."],
     manifestoDesc: "Traditional advertising frameworks are fundamentally lazy. They optimize for vanity metrics while capital evaporates. Rankvertise builds composable technology layers to acquire permanent attention models. Scroll to inspect our internal architecture benchmarks.",
-    
-    // Section 2: Velocity Operations Architecture
     s2Subtag: "System Telemetry // 02",
     s2Heading: "Velocity Operations Architecture",
     s2Lead: "We replace human processing delay fields with high-performance automated ingestion components.",
@@ -65,9 +62,6 @@ export default function AdminPortal() {
     s2Counter2Val: "-42%",
     s2Counter2Text: "Latent bounce velocity drops tracking micro-frontend structural refactors.",
     s2Image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop",
-    
-    // Section 3: The Cross-Functional Growth Core (Human-in-the-loop Matrix)
-    s3Subtag: "Human-in-the-loop Matrix // 03",
     s3Heading: "The Cross-Functional Growth Core",
     s3Desc: "We don't assign isolated freelancers or leave your scaling assets unsupervised. Rankvertise deploys a dedicated structural unit mapping directly to your brand ecosystems—ensuring end-to-end integration across every protocol.",
     pillars: [
@@ -77,9 +71,6 @@ export default function AdminPortal() {
     ],
     priorityBannerHero: "\"Your scaling vectors aren't passed down a generic assembly line. You are the absolute engineering priority.\"",
     priorityBannerSub: "From continuous optimization loops to enterprise-wide infrastructure deployment, your assets are managed by a cohesive, dedicated operational core built to protect and compound your growth.",
-    
-    // Section 4: Visualizing Disruption Trajectories (Performance Analytics & Telemetry)
-    s4Tag: "Performance Analytics // 04",
     s4Heading: "Visualizing Disruption Trajectories",
     s4Desc: "Raw mathematical projections and operational scaling curves outperforming legacy marketing indices. We optimize vectors in real-time.",
     metric1Val: "94.2%",
@@ -88,9 +79,6 @@ export default function AdminPortal() {
     metric2Val: "0.18s",
     metric2Title: "Edge Content Delivery Max Latency",
     metric2Desc: "Global edge caching overrides bypassing traditional proxy rendering bottlenecks.",
-    
-    // Section 5: Genesis to Market Dominance (Chronicle Timeline Logs)
-    s5Subtag: "Chronicle Logs // 05",
     s5Heading: "Genesis to Market Dominance",
     s5Desc: "How we evolved from an automated micro-script experiment into a multi-vertical strategic enterprise engine.",
     timeline: [
@@ -98,9 +86,6 @@ export default function AdminPortal() {
       { dateTag: "Scale Engine // 2024", title: "Algorithmic Projections Expansion", desc: "Transitioned from isolated testing sandboxes into active enterprise deployments. Launched real-time telemetry processing overlays to track user retention footprints dynamically." },
       { dateTag: "Dominance Matrix // 2026", title: "Multi-Vertical Enterprise Core", desc: "Today, Rankvertise transforms raw search architecture. Overriding modern programmatic restrictions to build permanent authority structures for globally scaling clients." }
     ],
-
-    // Section 6: Strategic Divergence (Anti-Agency Comparison Engine)
-    s6Tag: "Strategic Divergence // 06",
     s6Heading: "Why We are Fundamentally Different",
     s6Desc: "Conventional agencies lock you into restrictive contracts to optimize for vanity metrics. Rankvertise builds composable technology layers to acquire permanent market gravity.",
     legacyHeading: "The Traditional Agency Retainer",
@@ -191,12 +176,40 @@ export default function AdminPortal() {
         ],
         example: "Real-Time Dominance: A manufacturing group re-positions its brand identity away from utility vendor status into global strategic leadership, doubling its pricing quotes without losing clients."
       }
-    ],
-    testimonials: [
-      { quote: "Rankvertise completely re-engineered our customer acquisition loop. Our organic traffic grew by 310% within months, bypassing high ad network dependency entirely.", name: "Arjun Mehta", role: "Founder, FinTech Matrix" },
-      { quote: "Their tech stack deployment velocity is incredible. The headless interface they custom built reduced our checkout friction to absolute zero. Exceptional conversion design.", name: "Sarah Jenkins", role: "Operations Director, Core D2C" }
     ]
   });
+
+  // ── 7. PROGRAMMATIC SEO LOCATIONS STATE ──
+  const [locationsData, setLocationsData] = useState([
+    {
+      slug: "mumbai",
+      cityName: "Mumbai",
+      heroTitle: "Top Digital Marketing Agency in Mumbai",
+      heroSub: "Scaling ambitious brands in Mumbai with high-authority SEO, bespoke social campaigns, and lightning-fast headless digital experiences.",
+      metaTitle: "Best Digital Marketing Agency in Mumbai | Rankvertise",
+      metaDesc: "Rankvertise is the leading digital marketing agency in Mumbai. Engineered for high ROI, organic traffic velocity, and zero-latency conversion web architectures.",
+      stat1Val: "+340%",
+      stat1Desc: "Average Organic Authority Acceleration in Mumbai",
+      stat2Val: "< 24h",
+      stat2Desc: "Dedicated Local Account Pod Response Time",
+      stat3Val: "₹18Cr+",
+      stat3Desc: "Pipeline Value Generated for Mumbai Clients"
+    },
+    {
+      slug: "new-delhi",
+      cityName: "New Delhi",
+      heroTitle: "Leading Digital Marketing Agency in New Delhi",
+      heroSub: "From Connaught Place to Cyber City, we deploy precision marketing technology layers that dominate local intent and capture permanent market share.",
+      metaTitle: "Top Digital Marketing Agency in New Delhi | Rankvertise",
+      metaDesc: "Scale your brand with New Delhi's premier digital marketing & performance architecture firm. SEO, web experiences, and paid funnel mastery.",
+      stat1Val: "+410%",
+      stat1Desc: "Search Share Capture Across Delhi-NCR",
+      stat2Val: "< 12h",
+      stat2Desc: "Regional Engineering & Operations SLA",
+      stat3Val: "₹24Cr+",
+      stat3Desc: "Client Growth Capital Acquired"
+    }
+  ]);
 
   // Synchronize Google Sheet data into Component States
   useEffect(() => {
@@ -218,6 +231,9 @@ export default function AdminPortal() {
       }
       if (data.services_page_data) {
         try { setServicesData(JSON.parse(data.services_page_data)); } catch (e) {}
+      }
+      if (data.seo_locations_data) {
+        try { setLocationsData(JSON.parse(data.seo_locations_data)); } catch (e) {}
       }
     }
   }, [data]);
@@ -299,7 +315,7 @@ export default function AdminPortal() {
       <div className="admin-navbar">
         <div>
           <h1>Rankvertise CMS Control Engine</h1>
-          <p>Live Dashboard for Home, About Us, and Services Pages.</p>
+          <p>Live Dashboard for Home, About Us, Services, and Programmatic SEO Locations.</p>
         </div>
         <button onClick={handleLogout} className="admin-logout-btn">Log Out</button>
       </div>
@@ -324,6 +340,9 @@ export default function AdminPortal() {
         </button>
         <button className={activeTab === 'services' ? 'active' : ''} onClick={() => setActiveTab('services')}>
           6. Services Page
+        </button>
+        <button className={activeTab === 'locations' ? 'active' : ''} onClick={() => setActiveTab('locations')}>
+          7. SEO Locations Matrix
         </button>
       </div>
 
@@ -569,7 +588,6 @@ export default function AdminPortal() {
                 placeholder="Counter 2 Description" 
               />
               
-              {/* Parallax Image Upload */}
               {aboutData.s2Image && <img src={aboutData.s2Image} alt="Parallax Asset" className="admin-card-preview-thumb" />}
               <input
                 type="file"
@@ -595,9 +613,9 @@ export default function AdminPortal() {
               />
             </div>
 
-            {/* SECTION 3: THE CROSS-FUNCTIONAL GROWTH CORE (HUMAN-IN-THE-LOOP MATRIX) */}
+            {/* SECTION 3: THE CROSS-FUNCTIONAL GROWTH CORE */}
             <div className="admin-edit-row-card" style={{ marginBottom: '24px' }}>
-              <span className="admin-badge">Section 3: The Cross-Functional Growth Core (Human-in-the-loop Matrix)</span>
+              <span className="admin-badge">Section 3: The Cross-Functional Growth Core</span>
               <input 
                 type="text" 
                 value={aboutData.s3Heading || "The Cross-Functional Growth Core"} 
@@ -606,7 +624,7 @@ export default function AdminPortal() {
               />
               <textarea 
                 rows={2} 
-                value={aboutData.s3Desc || "We don't assign isolated freelancers or leave your scaling assets unsupervised..."} 
+                value={aboutData.s3Desc || ""} 
                 onChange={(e) => setAboutData({ ...aboutData, s3Desc: e.target.value })} 
                 placeholder="Brief Description" 
               />
@@ -662,9 +680,9 @@ export default function AdminPortal() {
               />
             </div>
 
-            {/* SECTION 4: VISUALIZING DISRUPTION TRAJECTORIES (PERFORMANCE ANALYTICS & TELEMETRY) */}
+            {/* SECTION 4: PERFORMANCE ANALYTICS & TELEMETRY */}
             <div className="admin-edit-row-card" style={{ marginBottom: '24px' }}>
-              <span className="admin-badge">Section 4: Visualizing Disruption Trajectories (Performance Analytics & Telemetry)</span>
+              <span className="admin-badge">Section 4: Performance Analytics & Telemetry</span>
               <input 
                 type="text" 
                 value={aboutData.s4Heading || "Visualizing Disruption Trajectories"} 
@@ -673,7 +691,7 @@ export default function AdminPortal() {
               />
               <textarea 
                 rows={2} 
-                value={aboutData.s4Desc || "Raw mathematical projections and operational scaling curves outperforming legacy marketing indices..."} 
+                value={aboutData.s4Desc || ""} 
                 onChange={(e) => setAboutData({ ...aboutData, s4Desc: e.target.value })} 
                 placeholder="Brief Description" 
               />
@@ -718,15 +736,15 @@ export default function AdminPortal() {
               />
             </div>
 
-            {/* SECTION 5: GENESIS TO MARKET DOMINANCE (CHRONICLE TIMELINE LOGS) */}
+            {/* SECTION 5: GENESIS TO MARKET DOMINANCE */}
             <div className="admin-edit-row-card" style={{ marginBottom: '24px' }}>
               <div className="admin-inline-split">
-                <span className="admin-badge">Section 5: Genesis to Market Dominance (Chronicle Timeline Logs)</span>
+                <span className="admin-badge">Section 5: Genesis to Market Dominance</span>
                 <button 
                   className="admin-btn-secondary"
                   onClick={() => setAboutData({
                     ...aboutData,
-                    timeline: [...(aboutData.timeline || []), { dateTag: "New Phase // 2027", title: "New Milestone", desc: "Milestone detail description." }]
+                    timeline: [...(aboutData.timeline || []), { dateTag: "Phase Next // 2027", title: "New Milestone", desc: "Milestone detail description." }]
                   })}
                 >
                   + Add Milestone
@@ -741,7 +759,7 @@ export default function AdminPortal() {
               />
               <textarea 
                 rows={2} 
-                value={aboutData.s5Desc || "How we evolved from an automated micro-script experiment into a multi-vertical strategic enterprise engine."} 
+                value={aboutData.s5Desc || ""} 
                 onChange={(e) => setAboutData({ ...aboutData, s5Desc: e.target.value })} 
                 placeholder="Brief Description" 
               />
@@ -768,7 +786,7 @@ export default function AdminPortal() {
                       u[mIdx].dateTag = e.target.value;
                       setAboutData({ ...aboutData, timeline: u });
                     }} 
-                    placeholder="Phase / Year Tag (e.g. Phase Alpha // 2023)" 
+                    placeholder="Phase / Year Tag" 
                   />
                   <input 
                     type="text" 
@@ -794,9 +812,9 @@ export default function AdminPortal() {
               ))}
             </div>
 
-            {/* SECTION 6: STRATEGIC DIVERGENCE (ANTI-AGENCY COMPARISON ENGINE) */}
+            {/* SECTION 6: STRATEGIC DIVERGENCE */}
             <div className="admin-edit-row-card" style={{ marginBottom: '24px' }}>
-              <span className="admin-badge">Section 6: Strategic Divergence (Anti-Agency Comparison Engine)</span>
+              <span className="admin-badge">Section 6: Strategic Divergence</span>
               <input 
                 type="text" 
                 value={aboutData.s6Heading || "Why We are Fundamentally Different"} 
@@ -805,15 +823,14 @@ export default function AdminPortal() {
               />
               <textarea 
                 rows={2} 
-                value={aboutData.s6Desc || "Conventional agencies lock you into restrictive contracts..."} 
+                value={aboutData.s6Desc || ""} 
                 onChange={(e) => setAboutData({ ...aboutData, s6Desc: e.target.value })} 
                 placeholder="Section Brief" 
               />
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginTop: '15px' }}>
-                {/* Column 1: Legacy */}
                 <div style={{ background: '#0b0203', padding: '15px', borderRadius: '12px' }}>
-                  <h4 style={{ color: '#ff6b6b', margin: '0 0 10px 0' }}>Legacy Agency Framework</h4>
+                  <h4 style={{ color: '#ff6b6b', margin: '0 0 10px 0' }}>Legacy Framework</h4>
                   <input 
                     type="text" 
                     value={aboutData.legacyHeading || "The Traditional Agency Retainer"} 
@@ -846,7 +863,6 @@ export default function AdminPortal() {
                   ))}
                 </div>
 
-                {/* Column 2: Rankvertise */}
                 <div style={{ background: '#0b0203', padding: '15px', borderRadius: '12px' }}>
                   <h4 style={{ color: '#d4a373', margin: '0 0 10px 0' }}>Rankvertise Protocol</h4>
                   <input 
@@ -949,6 +965,194 @@ export default function AdminPortal() {
               onClick={() => saveSectionToSheet('services_page_data', servicesData)}
             >
               {savingKey === 'services_page_data' ? 'Saving...' : 'Save Services Page to Sheet ➔'}
+            </button>
+          </div>
+        )}
+
+        {/* ── TAB 7: PROGRAMMATIC SEO LOCATIONS ── */}
+        {activeTab === 'locations' && (
+          <div className="admin-section-box">
+            <div className="admin-subhead-row">
+              <div>
+                <h3>Programmatic SEO Locations Matrix</h3>
+                <p style={{ color: 'rgba(245, 235, 224, 0.6)', margin: '4px 0 0 0', fontSize: '0.85rem' }}>
+                  Create customized local landing pages. Adding a location instantly generates <code>rankvertise.in/[slug]</code> and <code>rankvertise.in/services/[slug]</code>.
+                </p>
+              </div>
+              <button 
+                className="admin-btn-secondary"
+                onClick={() => setLocationsData([
+                  ...locationsData, 
+                  {
+                    slug: "bangalore",
+                    cityName: "Bangalore",
+                    heroTitle: "Premier Digital Marketing Agency in Bangalore",
+                    heroSub: "Powering tech startups and enterprise hubs across Bangalore with algorithmic SEO frameworks and rapid-conversion web infrastructures.",
+                    metaTitle: "Best Digital Marketing Agency in Bangalore | Rankvertise",
+                    metaDesc: "Looking to scale your brand in Bangalore? Rankvertise builds compounding organic search architectures, viral media loops, and zero-latency web codebases.",
+                    stat1Val: "+380%",
+                    stat1Desc: "Average Organic Traction Surge in Bangalore",
+                    stat2Val: "< 18h",
+                    stat2Desc: "Dedicated Core Deployment Velocity",
+                    stat3Val: "₹15Cr+",
+                    stat3Desc: "Transaction Volume Scaled"
+                  }
+                ])}
+              >
+                + Add New Location
+              </button>
+            </div>
+
+            <div className="admin-cards-list">
+              {locationsData.map((loc, idx) => (
+                <div key={idx} className="admin-edit-row-card">
+                  <div className="admin-inline-split">
+                    <span className="admin-badge">
+                      Routes: /{loc.slug} & /services/{loc.slug}
+                    </span>
+                    <button 
+                      className="admin-delete-btn"
+                      onClick={() => setLocationsData(locationsData.filter((_, i) => i !== idx))}
+                    >
+                      Delete
+                    </button>
+                  </div>
+
+                  <label style={{ fontSize: '0.72rem', color: '#d4a373', fontWeight: 800 }}>
+                    URL SLUG (Must be lowercase, hyphens only):
+                  </label>
+                  <input 
+                    type="text" 
+                    value={loc.slug} 
+                    onChange={(e) => {
+                      const u = [...locationsData];
+                      u[idx].slug = e.target.value.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+                      setLocationsData(u);
+                    }} 
+                    placeholder="e.g. pune, hyderabad, kolkata" 
+                  />
+
+                  <label style={{ fontSize: '0.72rem', color: '#d4a373', fontWeight: 800 }}>
+                    CITY / REGION DISPLAY NAME:
+                  </label>
+                  <input 
+                    type="text" 
+                    value={loc.cityName} 
+                    onChange={(e) => {
+                      const u = [...locationsData];
+                      u[idx].cityName = e.target.value;
+                      setLocationsData(u);
+                    }} 
+                    placeholder="e.g. Pune or Delhi-NCR" 
+                  />
+
+                  <label style={{ fontSize: '0.72rem', color: '#d4a373', fontWeight: 800 }}>
+                    HERO H1 HEADLINE (Target Keyword):
+                  </label>
+                  <input 
+                    type="text" 
+                    value={loc.heroTitle} 
+                    onChange={(e) => {
+                      const u = [...locationsData];
+                      u[idx].heroTitle = e.target.value;
+                      setLocationsData(u);
+                    }} 
+                    placeholder="e.g. Digital Marketing Agency in Pune" 
+                  />
+
+                  <label style={{ fontSize: '0.72rem', color: '#d4a373', fontWeight: 800 }}>
+                    LOCALIZED VALUE PROPOSITION:
+                  </label>
+                  <textarea 
+                    rows={2} 
+                    value={loc.heroSub} 
+                    onChange={(e) => {
+                      const u = [...locationsData];
+                      u[idx].heroSub = e.target.value;
+                      setLocationsData(u);
+                    }} 
+                    placeholder="Elevator pitch explaining why local brands should hire you..." 
+                  />
+
+                  <label style={{ fontSize: '0.72rem', color: '#d4a373', fontWeight: 800 }}>
+                    SEARCH META TITLE:
+                  </label>
+                  <input 
+                    type="text" 
+                    value={loc.metaTitle} 
+                    onChange={(e) => {
+                      const u = [...locationsData];
+                      u[idx].metaTitle = e.target.value;
+                      setLocationsData(u);
+                    }} 
+                    placeholder="e.g. Best Digital Marketing Agency in Pune | Rankvertise" 
+                  />
+
+                  <label style={{ fontSize: '0.72rem', color: '#d4a373', fontWeight: 800 }}>
+                    SEARCH META DESCRIPTION (150-160 characters):
+                  </label>
+                  <textarea 
+                    rows={2} 
+                    value={loc.metaDesc} 
+                    onChange={(e) => {
+                      const u = [...locationsData];
+                      u[idx].metaDesc = e.target.value;
+                      setLocationsData(u);
+                    }} 
+                    placeholder="Summary for Google SERP snippet..." 
+                  />
+
+                  <label style={{ fontSize: '0.72rem', color: '#d4a373', fontWeight: 800 }}>
+                    LOCAL TELEMETRY STATS:
+                  </label>
+                  <div className="admin-inline-split">
+                    <input 
+                      type="text" 
+                      value={loc.stat1Val} 
+                      onChange={(e) => { const u = [...locationsData]; u[idx].stat1Val = e.target.value; setLocationsData(u); }} 
+                      placeholder="Stat 1 (e.g. +340%)" 
+                    />
+                    <input 
+                      type="text" 
+                      value={loc.stat2Val} 
+                      onChange={(e) => { const u = [...locationsData]; u[idx].stat2Val = e.target.value; setLocationsData(u); }} 
+                      placeholder="Stat 2 (e.g. < 24h)" 
+                    />
+                    <input 
+                      type="text" 
+                      value={loc.stat3Val} 
+                      onChange={(e) => { const u = [...locationsData]; u[idx].stat3Val = e.target.value; setLocationsData(u); }} 
+                      placeholder="Stat 3 (e.g. ₹20Cr+)" 
+                    />
+                  </div>
+                  <input 
+                    type="text" 
+                    value={loc.stat1Desc} 
+                    onChange={(e) => { const u = [...locationsData]; u[idx].stat1Desc = e.target.value; setLocationsData(u); }} 
+                    placeholder="Stat 1 Label" 
+                  />
+                  <input 
+                    type="text" 
+                    value={loc.stat2Desc} 
+                    onChange={(e) => { const u = [...locationsData]; u[idx].stat2Desc = e.target.value; setLocationsData(u); }} 
+                    placeholder="Stat 2 Label" 
+                  />
+                  <input 
+                    type="text" 
+                    value={loc.stat3Desc} 
+                    onChange={(e) => { const u = [...locationsData]; u[idx].stat3Desc = e.target.value; setLocationsData(u); }} 
+                    placeholder="Stat 3 Label" 
+                  />
+                </div>
+              ))}
+            </div>
+
+            <button
+              className="admin-save-section-btn"
+              disabled={savingKey === 'seo_locations_data'}
+              onClick={() => saveSectionToSheet('seo_locations_data', locationsData)}
+            >
+              {savingKey === 'seo_locations_data' ? 'Saving...' : 'Save All SEO Locations to Sheet ➔'}
             </button>
           </div>
         )}
