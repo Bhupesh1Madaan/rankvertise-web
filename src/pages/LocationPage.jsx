@@ -1,9 +1,10 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useData } from '../context/DataContext';
 import './LocationPage.css';
 
+// Default starter locations (Jab tak sheet load na ho)
 const DEFAULT_FALLBACK_LOCATIONS = [
   {
     slug: "mumbai",
@@ -37,54 +38,77 @@ const DEFAULT_FALLBACK_LOCATIONS = [
 
 export default function LocationPage() {
   const { locationSlug } = useParams();
-  const { getVal } = useData();
+  const { getVal, loading } = useData();
 
+  // Pick live array from Google Sheet CMS
   const locationsArray = getVal('seo_locations_data', DEFAULT_FALLBACK_LOCATIONS);
+
+  // Clean slug
   const activeSlug = (locationSlug || '').toLowerCase().trim();
 
-  const loc = useMemo(() => {
-    const matched = locationsArray.find(item => item.slug === activeSlug);
-    if (matched) return matched;
+  // STRICT VALIDATION: Check if slug exists in the database
+  const loc = locationsArray.find(item => item.slug === activeSlug);
 
-    const cleanCityName = activeSlug
-      .split('-')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ');
-
-    return {
-      slug: activeSlug,
-      cityName: cleanCityName || "Your Region",
-      heroTitle: `Top Digital Marketing Agency in ${cleanCityName || "Your City"}`,
-      heroSub: `Architecting algorithmic SEO, conversion-focused web architecture, and hyper-targeted attention capture for companies in ${cleanCityName || "your city"}.`,
-      metaTitle: `Best Digital Marketing Agency in ${cleanCityName || "Your City"} | Rankvertise`,
-      metaDesc: `Looking for a high-performance marketing agency in ${cleanCityName || "your city"}? Rankvertise builds scalable SEO, paid funnels, and conversion platforms.`,
-      stat1Val: "+310%",
-      stat1Desc: `Organic Growth Acceleration in ${cleanCityName || "Your Region"}`,
-      stat2Val: "< 24h",
-      stat2Desc: "Real-Time Telemetry and Support Intercept",
-      stat3Val: "₹12Cr+",
-      stat3Desc: "Client Growth Compounded"
-    };
-  }, [locationsArray, activeSlug]);
-
+  // SEO Title & Meta Management
   useEffect(() => {
-    document.title = loc.metaTitle;
-
-    let metaDescTag = document.querySelector('meta[name="description"]');
-    if (!metaDescTag) {
-      metaDescTag = document.createElement('meta');
-      metaDescTag.name = "description";
-      document.head.appendChild(metaDescTag);
+    let robotsMeta = document.querySelector('meta[name="robots"]');
+    if (!robotsMeta) {
+      robotsMeta = document.createElement('meta');
+      robotsMeta.name = "robots";
+      document.head.appendChild(robotsMeta);
     }
-    metaDescTag.content = loc.metaDesc;
+
+    if (loc) {
+      // Valid Location found
+      document.title = loc.metaTitle || `${loc.heroTitle} | Rankvertise`;
+      robotsMeta.content = "index, follow";
+
+      let metaDescTag = document.querySelector('meta[name="description"]');
+      if (!metaDescTag) {
+        metaDescTag = document.createElement('meta');
+        metaDescTag.name = "description";
+        document.head.appendChild(metaDescTag);
+      }
+      metaDescTag.content = loc.metaDesc;
+    } else {
+      // Invalid Location -> Block indexing immediately (Prevents Google Soft 404 Penalty)
+      document.title = "404 - Location Node Not Found | Rankvertise";
+      robotsMeta.content = "noindex, nofollow";
+    }
 
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, [loc]);
 
+  // ── IF LOCATION DOES NOT EXIST, RENDER LUXURY 404 SCREEN ──
+  if (!loc) {
+    return (
+      <div className="loc-master-stage loc-404-container">
+        <div className="loc-grid-background-overlay" />
+        <div className="loc-404-content">
+          <span className="loc-404-code">404 // COORDINATE INVALID</span>
+          <h1 className="loc-404-title">Location Protocol Not Found</h1>
+          <p className="loc-404-desc">
+            The target sector <code>/{activeSlug}</code> is not an authorized deployment node in our operational matrix.
+          </p>
+          <div className="loc-hero-action-row" style={{ marginTop: '30px' }}>
+            <Link to="/" className="loc-btn-primary">
+              Return to Base Core (Home) ➔
+            </Link>
+            <Link to="/services" className="loc-btn-secondary">
+              Inspect Capabilities Matrix ↗
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // ── IF LOCATION EXISTS, RENDER THE ACTUAL SEO LANDING PAGE ──
   return (
     <div className="loc-master-stage">
       <div className="loc-grid-background-overlay" />
 
+      {/* ── SECTION 1: HERO VIEWPORT ── */}
       <section className="loc-hero-viewport">
         <motion.div 
           className="loc-hero-content-box"
@@ -110,6 +134,7 @@ export default function LocationPage() {
         </motion.div>
       </section>
 
+      {/* ── SECTION 2: TELEMETRY NUMBERS ── */}
       <section className="loc-telemetry-strip">
         <div className="loc-telemetry-container">
           <div className="loc-stat-node">
@@ -127,34 +152,51 @@ export default function LocationPage() {
         </div>
       </section>
 
+      {/* ── SECTION 3: LOCALIZED DEPLOYMENT PILLARS ── */}
       <section className="loc-pillars-section">
         <div className="loc-pillars-container">
           <span className="loc-section-tag">ENGINEERED ADVANTAGE</span>
           <h2>Dominating The {loc.cityName} Search & Attention Ecosystem</h2>
           <p className="loc-pillars-lead">
-            Traditional agencies in {loc.cityName} charge retainers for vanity impressions. We deploy composable marketing architectures engineered to capture high-intent users.
+            Traditional agencies in {loc.cityName} charge retainers for vanity impressions. We deploy composable marketing architectures engineered to capture high-intent users before competitors can even bid on them.
           </p>
 
           <div className="loc-cards-grid">
-            <motion.div className="loc-feature-card" whileHover={{ y: -6, borderColor: "#d4a373" }}>
+            <motion.div 
+              className="loc-feature-card"
+              whileHover={{ y: -6, borderColor: "#d4a373" }}
+            >
               <span className="loc-feature-code">// 01 / SEARCH DOMINANCE</span>
               <h3>Entity-Based SEO in {loc.cityName}</h3>
-              <p>We build semantic citation graphs and local Google Maps dominance across {loc.cityName}.</p>
+              <p>
+                We build semantic citation graphs and local Google Maps dominance, locking your website into the top organic search coordinates across {loc.cityName}.
+              </p>
             </motion.div>
 
-            <motion.div className="loc-feature-card" whileHover={{ y: -6, borderColor: "#d4a373" }}>
+            <motion.div 
+              className="loc-feature-card"
+              whileHover={{ y: -6, borderColor: "#d4a373" }}
+            >
               <span className="loc-feature-code">// 02 / HIGH RETENTION MEDIA</span>
               <h3>Social Media & Viral Content Strategy</h3>
-              <p>Capture local cultural intent with predictive hook matrices and high-retention short-form assets.</p>
+              <p>
+                Capture local cultural intent with predictive hook matrices and high-retention short-form assets that turn {loc.cityName} audiences into qualified pipelines.
+              </p>
             </motion.div>
 
-            <motion.div className="loc-feature-card" whileHover={{ y: -6, borderColor: "#d4a373" }}>
+            <motion.div 
+              className="loc-feature-card"
+              whileHover={{ y: -6, borderColor: "#d4a373" }}
+            >
               <span className="loc-feature-code">// 03 / HEADLESS INFRASTRUCTURE</span>
               <h3>High-Velocity Digital Canvases</h3>
-              <p>Lightning-fast website rendering that eliminates mobile lag and captures transactions instantly.</p>
+              <p>
+                Lightning-fast website rendering that eliminates mobile lag. Shave 1.8 seconds off your loading times and capture drop-off transactions instantly.
+              </p>
             </motion.div>
           </div>
 
+          {/* ── LOCALIZED CTA ANCHOR BANNER ── */}
           <div className="loc-cta-banner">
             <h3>Ready to outpace competing brands in {loc.cityName}?</h3>
             <p>Deploy a dedicated cross-functional core built to compound your brand's growth trajectory.</p>

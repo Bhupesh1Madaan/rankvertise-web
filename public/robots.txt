@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /portal-admin
+
+Sitemap: https://rankvertise.com/sitemap.xml

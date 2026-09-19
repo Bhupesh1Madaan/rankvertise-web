@@ -176,3 +176,56 @@
     padding: 50px 24px;
   }
 }
+
+/* ── 404 ERROR STATE STYLES ── */
+.loc-404-container {
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 140px 20px 80px 20px;
+}
+
+.loc-404-content {
+  position: relative;
+  z-index: 5;
+  max-width: 650px;
+  background: rgba(245, 235, 224, 0.02);
+  border: 1px solid rgba(245, 235, 224, 0.1);
+  padding: 55px 40px;
+  border-radius: 28px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+}
+
+.loc-404-code {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #ff4d4d;
+  letter-spacing: 3px;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.loc-404-title {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 900;
+  color: #f5ebe0;
+  margin: 0 0 16px 0;
+  letter-spacing: -1px;
+}
+
+.loc-404-desc {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba(245, 235, 224, 0.7);
+  margin: 0;
+}
+
+.loc-404-desc code {
+  color: #d4a373;
+  background: rgba(212, 163, 115, 0.1);
+  padding: 3px 8px;
+  border-radius: 6px;
+}
