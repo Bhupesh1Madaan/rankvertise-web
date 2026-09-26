@@ -1,28 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- ========================================================
+       CORE PLATFORM PAGES
+       ======================================================== -->
   <url>
-    <loc>https://rankvertise.com/</loc>
+    <loc>https://www.rankvertise.com/</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
   <url>
-    <loc>https://rankvertise.com/about</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rankvertise.com/services</loc>
+    <loc>https://www.rankvertise.com/services</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+
   <url>
-    <loc>https://rankvertise.com/contact</loc>
+    <loc>https://www.rankvertise.com/portfolio</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <!-- Programmatic Location Pages -->
+
   <url>
-    <loc>https://rankvertise.com/mumbai</loc>
-    <priority>0.7</priority>
+    <loc>https://www.rankvertise.com/about</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://rankvertise.com/new-delhi</loc>
-    <priority>0.7</priority>
+    <loc>https://www.rankvertise.com/pricing</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
+
+  <url>
+    <loc>https://www.rankvertise.com/contact</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ========================================================
+       PROGRAMMATIC LOCAL SEO LANDING PAGES (PRIMARY CITIES)
+       ======================================================== -->
+  <url>
+    <loc>https://www.rankvertise.com/services/new-delhi</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.rankvertise.com/new-delhi</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.rankvertise.com/services/mumbai</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.rankvertise.com/mumbai</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.rankvertise.com/services/bangalore</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.rankvertise.com/bangalore</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
 </urlset>

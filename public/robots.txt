@@ -1,5 +1,43 @@
 User-agent: *
-Allow: /
 Disallow: /portal-admin
+Allow: /
 
-Sitemap: https://rankvertise.com/sitemap.xml
+# OpenAI Crawlers (ChatGPT & Search)
+User-agent: GPTBot
+Disallow: /portal-admin
+Allow: /
+
+User-agent: OAI-SearchBot
+Disallow: /portal-admin
+Allow: /
+
+User-agent: ChatGPT-User
+Disallow: /portal-admin
+Allow: /
+
+# Anthropic Crawlers (Claude)
+User-agent: ClaudeBot
+Disallow: /portal-admin
+Allow: /
+
+User-agent: Claude-SearchBot
+Disallow: /portal-admin
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Disallow: /portal-admin
+Allow: /
+
+# Google AI Training & Search
+User-agent: Google-Extended
+Disallow: /portal-admin
+Allow: /
+
+# Common Crawl
+User-agent: CCBot
+Disallow: /portal-admin
+Allow: /
+
+# Metadata & Indexing References
+Sitemap: https://www.rankvertise.com/sitemap.xml
