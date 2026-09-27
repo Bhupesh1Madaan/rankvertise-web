@@ -108,7 +108,7 @@ const Footer = () => {
                         <div className="footer-location-box">
                             <p className="location-line">Rankvertise Studios</p>
                             <p className="location-sub">Punjabi Bagh, New Delhi</p>
-                            <p className="location-sub">Delhi — 110026, India</p>
+                            <p className="location-sub">Delhi , 110026, India</p>
                         </div>
                     </div>
 

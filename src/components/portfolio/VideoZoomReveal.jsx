@@ -132,7 +132,7 @@ export default function VideoZoomReveal() {
           </h2>
           
           <p style={{ fontSize: 'clamp(1.1rem, 1.5vw, 1.3rem)', lineHeight: '1.7', color: 'rgba(245, 235, 224, 0.8)', marginBottom: '1.5rem' }}>
-            At Rankvertise, we discard conventional vanity metrics. True digital marketing isn't about generating arbitrary clicks—it is about orchestrating premium consumer acquisition funnels that optimize enterprise yield.
+            At Rankvertise, we discard conventional vanity metrics. True digital marketing isn't about generating arbitrary clicks,it is about orchestrating premium consumer acquisition funnels that optimize enterprise yield.
           </p>
           
           <p style={{ fontSize: 'clamp(1.1rem, 1.5vw, 1.3rem)', lineHeight: '1.7', color: 'rgba(245, 235, 224, 0.8)', marginBottom: '2.5rem' }}>

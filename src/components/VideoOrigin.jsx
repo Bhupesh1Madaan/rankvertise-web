@@ -83,7 +83,7 @@ export default function VideoOrigin() {
 
                 {/* LEGIBLE JOURNEY CONTENT OVERLAY */}
                 <div ref={textContentRef} className="origin-text-overlay-content">
-                    <span className="origin-section-label">OUR JOURNEY — THE ORIGIN STORY</span>
+                    <span className="origin-section-label">OUR JOURNEY , THE ORIGIN STORY</span>
 
                     <h2 className="origin-main-paragraph">
                         We didn't start this agency to do things the "normal" way. We started it
@@ -95,7 +95,7 @@ export default function VideoOrigin() {
                         What began as a refusal to settle for boring marketing has turned into a
                         full-scale creative takeover. We combined the speed of the internet with the
                         discipline of business strategy to build a space where brands don't just
-                        survive — they thrive.
+                        survive , they thrive.
                     </p>
                 </div>
 

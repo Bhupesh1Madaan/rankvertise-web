@@ -4,8 +4,16 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/rv_logo.png" />
     
-    <!-- Standard Mobile Responsive Viewport (Fixed scale from 1.5 to 1.0) -->
+    <!-- Standard Mobile Responsive Viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M4RWCSLQ');</script>
+    <!-- End Google Tag Manager -->
 
     <!-- Primary Search Engine Tags -->
     <title>Rankvertise | Growth Marketing & Tech Architecture Agency</title>
@@ -14,7 +22,9 @@
     <meta name="keywords" content="digital marketing agency, growth marketing, technical SEO, programmatic SEO, web architecture, conversion optimization, headless websites" />
     <meta name="author" content="Rankvertise" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://rankvertise.com/" />
+
+    <!-- Canonical URL (React CanonicalSEO component will dynamically update this per route) -->
+    <link rel="canonical" id="canonical-url" href="https://rankvertise.com/" />
 
     <!-- Open Graph / Facebook / WhatsApp Preview -->
     <meta property="og:type" content="website" />
@@ -32,14 +42,6 @@
 
     <!-- Theme Color matching your Dark-Maroon Palette -->
     <meta name="theme-color" content="#1a0508" />
-
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-M4RWCSLQ');</script>
-    <!-- End Google Tag Manager -->
 
     <!-- Organization Schema Markup (JSON-LD for Google Rich Results) -->
     <script type="application/ld+json">
@@ -74,6 +76,7 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4RWCSLQ"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

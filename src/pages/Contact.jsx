@@ -54,7 +54,7 @@ export default function Contact() {
                         </div>
                         <div className="channel-box">
                             <span className="channel-label">// HEADQUARTERS</span>
-                            <span className="channel-value-static">Punjabi Bagh, New Delhi — 110026</span>
+                            <span className="channel-value-static">Punjabi Bagh, New Delhi , 110026</span>
                         </div>
                     </div>
 

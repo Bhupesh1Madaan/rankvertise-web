@@ -109,7 +109,7 @@ const ScrollRevealHero = () => {
                 <div className="parallax-inner-content">
                     <p className="s2-tagline">Not Your Regular Digital Marketing Agency</p>
                     <ScrollReveal baseOpacity={0.15} textClassName="premium-reveal-paragraph">
-                        We build brands that look good, talk smart, and show up where it matters. We combined the speed of the internet with the discipline of business strategy to build a space where brands don't just survive — they thrive.
+                        We build brands that look good, talk smart, and show up where it matters. We combined the speed of the internet with the discipline of business strategy to build a space where brands don't just survive , they thrive.
                     </ScrollReveal>
                 </div>
             </div>

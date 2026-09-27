@@ -13,7 +13,7 @@ import Contact from './pages/Contact';
 import PortfolioPage from './pages/PortfolioPage';
 import LocationPage from './pages/LocationPage';
 import AdminPortal from './pages/AdminPortal';
-
+import CanonicalSEO from './components/CanonicalSEO';
 import { DataProvider } from './context/DataContext';
 import { initMobileOptimizer } from './utils/mobileOptimizer';
 import './ResponsiveMaster.css';
@@ -55,6 +55,7 @@ function App() {
     <DataProvider>
       <Router>
         <ScrollToTop />
+        <CanonicalSEO />
         <div className="app-container">
           <Navbar />
           <AnimatedRoutes />

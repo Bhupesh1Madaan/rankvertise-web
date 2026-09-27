@@ -63,7 +63,7 @@ export default function AdminPortal() {
     s2Counter2Text: "Latent bounce velocity drops tracking micro-frontend structural refactors.",
     s2Image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop",
     s3Heading: "The Cross-Functional Growth Core",
-    s3Desc: "We don't assign isolated freelancers or leave your scaling assets unsupervised. Rankvertise deploys a dedicated structural unit mapping directly to your brand ecosystems—ensuring end-to-end integration across every protocol.",
+    s3Desc: "We don't assign isolated freelancers or leave your scaling assets unsupervised. Rankvertise deploys a dedicated structural unit mapping directly to your brand ecosystems,ensuring end-to-end integration across every protocol.",
     pillars: [
       { code: "// SYSTEM ENGINEERS", title: "Infrastructure Specialists", desc: "Handling micro-frontend architectural speeds, Core Web Vitals structural loops, and absolute zero latent processing pipeline optimization." },
       { code: "// DATA ARCHITECTS", title: "Algorithmic Engineers", desc: "Deconstructed tracking matrices manipulating intent keywords, semantic graph matching, and indexing overrides for permanent organic gravity." },
@@ -118,7 +118,7 @@ export default function AdminPortal() {
           { name: "Technical SEO Audits", desc: "Deconstructing core web vitals, rendering pipelines, and automated crawling graphs." },
           { name: "Pay-Per-Click (PPC) Frameworks", desc: "High-yield instant monetization frameworks capturing real-time traffic." }
         ],
-        example: "Real-Time Dominance: Imagine an elite fintech platform scaling from zero to 4.2 Million monthly hits without spending a single dollar on ad networks—pure algorithmic authority captures the highest intent users before competitors awake."
+        example: "Real-Time Dominance: Imagine an elite fintech platform scaling from zero to 4.2 Million monthly hits without spending a single dollar on ad networks,pure algorithmic authority captures the highest intent users before competitors awake."
       },
       {
         id: "smm",
@@ -130,7 +130,7 @@ export default function AdminPortal() {
           { name: "Influencer Pragmatic Alliances", desc: "Programmatic node tracking to align your product with high-authority cultural creators." },
           { name: "Social Listening Frameworks", desc: "Real-time parsing of market sentiment waves to optimize copy assets instantly." }
         ],
-        example: "Real-Time Dominance: A modern D2C brand triggers a structured viral loop across Gen Z demographics—garnering 45,000 orders within 48 hours by executing predictive hook matrices instead of standard corporate posts."
+        example: "Real-Time Dominance: A modern D2C brand triggers a structured viral loop across Gen Z demographics,garnering 45,000 orders within 48 hours by executing predictive hook matrices instead of standard corporate posts."
       },
       {
         id: "content",

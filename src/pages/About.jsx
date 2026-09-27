@@ -232,7 +232,7 @@ function About() {
             <span className="gold-about-subtag">Human-in-the-loop Matrix // 03</span>
             <h2>The Cross-Functional Growth Core</h2>
             <p className="about-section-desc-brief">
-              We don't assign isolated freelancers or leave your scaling assets unsupervised. Rankvertise deploys a dedicated structural unit mapping directly to your brand ecosystems—ensuring end-to-end integration across every protocol.
+              We don't assign isolated freelancers or leave your scaling assets unsupervised. Rankvertise deploys a dedicated structural unit mapping directly to your brand ecosystems,ensuring end-to-end integration across every protocol.
             </p>
           </motion.div>
           
