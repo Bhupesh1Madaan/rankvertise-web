@@ -1,23 +1,41 @@
 /* ==========================================================================
-   RANKVERTISE UNIVERSAL MOBILE PERFORMANCE & SUBTLE FADE-IN ENGINE
+   RANKVERTISE UNIVERSAL RESPONSIVE ENGINE (ZERO-LAG & SMOOTH SCROLL)
    ========================================================================== */
 
-@media (max-width: 768px) {
-  /* ── 1. GLOBAL SCROLL & VIEWPORT STABILIZATION ── */
-  html, body {
-    overflow-x: hidden !important;
-    width: 100% !important;
-    position: relative !important;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-  }
+/* ── 1. GLOBAL LAYOUT STABILIZATION ── */
+/* Body ko clean rakhna zaroori hai taaki GSAP window offsets freeze na hon */
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
 
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Screen bounds contain karne ke liye overflow clip app wrapper par set karein */
+.app-container {
+  width: 100%;
+  overflow-x: clip;
+  position: relative;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ── 2. TABLET & MOBILE VIEWPORT NORMALIZATION ── */
+@media (max-width: 768px) {
   * {
     -webkit-tap-highlight-color: transparent;
   }
 
-  /* ── 2. ELIMINATE GPU BOTTLENECKS (HEAVY BLURS & 3D MATRIX) ── */
-  /* Mobile par multi-layered blur filters aur continuous transforms lag create karte hain */
+  /* GPU-Heavy Ambient Effects Disabled for 60FPS Performance */
   .telemetry-scroll-vector-mesh,
   .roadmap-abstract-swirl-bg,
   .protocol-card-glow-flare,
@@ -25,7 +43,7 @@
     display: none !important;
   }
 
-  /* Flatten all complex 3D perspectives to plain 2D */
+  /* Flatten complex nested 3D spaces into lightweight native layers */
   .about-master-parallax-wrapper,
   .services-master-parallax-wrapper,
   .asymmetric-comparison-engine-grid,
@@ -35,8 +53,7 @@
     transform-style: flat !important;
   }
 
-  /* ── 3. SUBTLE VIEWPORT FADE-IN SYSTEM ── */
-  /* Sections scroll view me aane par subtle fade-in transition execute karenge */
+  /* Sections Flow: Natural height with no layout jumping */
   section,
   .about-overlap-curtain-panel,
   .about-team-matrix-section,
@@ -53,17 +70,14 @@
   .orbit-showcase-section {
     opacity: 1 !important;
     transform: none !important;
-    transition: opacity 0.5s ease, transform 0.5s ease !important;
-    content-visibility: auto; /* Offscreen elements ko tabhi render karega jab zarurat ho */
-    contain-intrinsic-size: 1px 500px;
   }
 
-  /* ── 4. SECTION 1 (HERO/MANIFESTO) - CLEAN CENTERED PRESENTATION ── */
+  /* ── 3. HERO & MANIFESTO SECTIONS ── */
   .about-sticky-section-wrapper,
   .services-parallax-trigger-box {
     position: relative !important;
     height: auto !important;
-    min-height: 85vh !important;
+    min-height: 80vh !important;
     z-index: 2 !important;
   }
 
@@ -71,14 +85,13 @@
   .hero-frozen-canvas {
     position: relative !important;
     height: auto !important;
-    min-height: 85vh !important;
+    min-height: 80vh !important;
     padding: 100px 20px 60px 20px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
   }
 
-  /* Word-by-word blur reels remain completely readable without layout shift */
   .reveal-content-box-custom,
   .about-manifesto-center-box {
     opacity: 1 !important;
@@ -90,31 +103,30 @@
 
   .manifesto-rotating-headline-box,
   .services-cinematic-headline {
-    font-size: clamp(2.1rem, 7vw, 2.7rem) !important;
+    font-size: clamp(2rem, 6.5vw, 2.6rem) !important;
     line-height: 1.2 !important;
     letter-spacing: -0.5px !important;
   }
 
-  /* ── 5. SECTION 2: SLIDING CURTAIN OVERLAP BYPASS ── */
-  /* Curtain overlap scroll pull ko natural vertical stack me convert karta hai */
+  /* ── 4. CURTAIN OVERLAP & GRIDS ── */
   .about-overlap-curtain-panel,
   .overlay-curtain-panel {
     margin-top: 0 !important;
     position: relative !important;
     box-shadow: none !important;
-    padding: 70px 20px !important;
+    padding: 60px 20px !important;
     min-height: auto !important;
   }
 
   .editorial-split-grid-viewport {
     display: flex !important;
     flex-direction: column !important;
-    gap: 40px !important;
+    gap: 36px !important;
   }
 
   .luxury-parallax-frame-mask {
     max-width: 100% !important;
-    height: 340px !important;
+    height: 320px !important;
     transform: none !important;
   }
 
@@ -124,11 +136,11 @@
     height: 100% !important;
   }
 
-  /* ── 6. SCROLLSTACK & BENTO - 1-COLUMN LIGHTWEIGHT FLOW ── */
+  /* ── 5. SCROLLSTACK & BENTO: CLEAN VERTICAL STACK ── */
   .scroll-stack-master {
     height: auto !important;
     min-height: auto !important;
-    padding: 60px 20px !important;
+    padding: 50px 20px !important;
     position: relative !important;
     display: block !important;
   }
@@ -148,7 +160,7 @@
     transform: none !important;
     height: auto !important;
     min-height: auto !important;
-    padding: 30px 24px !important;
+    padding: 28px 22px !important;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4) !important;
   }
 
@@ -171,12 +183,12 @@
     width: 100% !important;
     min-height: auto !important;
     transform: none !important;
-    padding: 30px 22px !important;
+    padding: 26px 20px !important;
   }
 
-  /* ── 7. SECTION 5: TIMELINE STRAIGHTENING ── */
+  /* ── 6. TIMELINE NORMALIZATION ── */
   .chronicle-timeline-spine-wrapper {
-    margin-top: 40px !important;
+    margin-top: 36px !important;
     padding: 0 !important;
   }
 
@@ -186,7 +198,7 @@
   }
 
   .timeline-active-laser-fill {
-    height: 100% !important; /* Static clean line without scroll calc lag */
+    height: 100% !important;
   }
 
   .timeline-node-pointer-dot {
@@ -195,10 +207,10 @@
   }
 
   .chronicle-timeline-node-row {
-    padding-left: 35px !important;
+    padding-left: 36px !important;
     padding-right: 0 !important;
     justify-content: flex-start !important;
-    margin-bottom: 30px !important;
+    margin-bottom: 26px !important;
     width: 100% !important;
     box-sizing: border-box !important;
   }
@@ -206,10 +218,10 @@
   .chronicle-event-card {
     width: 100% !important;
     transform: none !important;
-    padding: 24px 20px !important;
+    padding: 22px 18px !important;
   }
 
-  /* ── 8. SERVICES SECTION 2 SPATIAL CROSS GRID ── */
+  /* ── 7. SERVICES SPATIAL CROSS GRID ── */
   .spatial-cross-grid-layout {
     display: flex !important;
     flex-direction: column !important;
@@ -221,46 +233,46 @@
     grid-column: auto !important;
     grid-row: auto !important;
     transform: none !important;
-    padding: 24px 20px !important;
+    padding: 22px 18px !important;
   }
 
   .deep-flow-row-viewport {
-    padding: 50px 16px !important;
+    padding: 40px 16px !important;
     min-height: auto !important;
   }
 
   .immersive-scale-card {
-    padding: 35px 22px !important;
+    padding: 30px 20px !important;
     transform: none !important;
   }
 
   .pointers-inner-sub-grid {
     display: flex !important;
     flex-direction: column !important;
-    gap: 20px !important;
+    gap: 18px !important;
   }
 
-  /* ── 9. REDUCE ASYMMETRIC SLOPES HEIGHT TO AVOID BLANK HOLES ── */
   .section-asymmetric-transition-slope {
     height: 35px !important;
   }
 
-  /* ── 10. TYPOGRAPHY SCALING ── */
-  h1 { font-size: 2.2rem !important; line-height: 1.2 !important; }
-  h2 { font-size: 1.7rem !important; line-height: 1.25 !important; }
-  h3 { font-size: 1.3rem !important; line-height: 1.3 !important; }
+  /* ── 8. SCALED TYPOGRAPHY ── */
+  h1 { font-size: 2.15rem !important; line-height: 1.2 !important; }
+  h2 { font-size: 1.65rem !important; line-height: 1.25 !important; }
+  h3 { font-size: 1.25rem !important; line-height: 1.3 !important; }
   p { font-size: 0.95rem !important; line-height: 1.55 !important; }
 }
 
 @media (max-width: 480px) {
-  h1 { font-size: 1.95rem !important; }
-  h2 { font-size: 1.5rem !important; }
+  h1 { font-size: 1.9rem !important; }
+  h2 { font-size: 1.45rem !important; }
+  
   .about-overlap-curtain-panel,
   .overlay-curtain-panel,
   .about-team-matrix-section,
   .about-graphs-telemetry-section,
   .about-anti-agency-section,
   .loc-pillars-section {
-    padding: 60px 16px !important;
+    padding: 50px 16px !important;
   }
 }

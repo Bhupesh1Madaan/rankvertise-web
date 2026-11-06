@@ -44,17 +44,17 @@ const Footer = () => {
                 <div className="footer-hero-cta-grid">
                     <div className="footer-brand-side">
                         <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })} className="footer-logo-anchor">
-                            <span className="footer-brand-main">Rank<span>vertise.in</span></span>
+                            <span className="footer-brand-main">Rank<span>vertise</span></span>
                         </Link>
                         <p className="footer-tagline-desc">
-                            We don't build generic marketing retainers. We engineer conversion-driven digital architectures that accelerate growth velocity and capture permanent attention.
+                            We don't build generic marketing retainers. We engineer conversion-driven digital architectures, programmatic SEO, and performance growth layers to scale platforms and capture permanent market intent.
                         </p>
                     </div>
 
                     <div className="footer-newsletter-card">
-                        <span className="newsletter-tagline">// INTELLIGENCE LOOP</span>
-                        <h3>Join the Growth Matrix</h3>
-                        <p>Get exclusive conversion blueprints and algorithmic disruption tactics.</p>
+                        <span className="newsletter-tagline">// GROWTH INTELLIGENCE</span>
+                        <h3>Join the Growth Briefing</h3>
+                        <p>Get actionable insights on modern search strategies, conversion optimization, and digital marketing execution.</p>
                         
                         <form onSubmit={handleNewsletterSubmit} className="footer-subscribe-form">
                             <input 
@@ -65,14 +65,14 @@ const Footer = () => {
                                 required 
                             />
                             <button type="submit" className="footer-newsletter-btn">
-                                {subscribed ? 'INTERCEPTED ✓' : 'Subscribe ➔'}
+                                {subscribed ? 'SUBSCRIBED ✓' : 'Subscribe ➔'}
                             </button>
                         </form>
-                        {subscribed && <span className="newsletter-confirm-msg">Transmission received. Welcome aboard.</span>}
+                        {subscribed && <span className="newsletter-confirm-msg">Thank you for subscribing. Welcome aboard.</span>}
                     </div>
                 </div>
 
-                {/* ── MIDDLE GRID: TELEMETRY & CHANNELS ── */}
+                {/* ── MIDDLE GRID: NAVIGATION & CHANNELS ── */}
                 <div className="footer-channels-grid">
                     
                     {/* Column 1: Quick Navigation */}
@@ -80,24 +80,25 @@ const Footer = () => {
                         <span className="footer-col-head">NAVIGATION</span>
                         <div className="footer-links-list">
                             <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })}>Home</Link>
-                            <Link to="/about" onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })}>About Architecture</Link>
-                            <Link to="/services" onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })}>Capabilities</Link>
-                            <Link to="/portfolio" onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })}>Portfolio Matrix</Link>
-                            <Link to="/contact" onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })}>Direct Ingestion (Contact)</Link>
+                            <Link to="/about" onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })}>About Us</Link>
+                            <Link to="/services" onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })}>Our Services</Link>
+                            <Link to="/portfolio" onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })}>Portfolio & Case Studies</Link>
+                            <a href="https://blogs.rankvertise.com" target="_blank" rel="noopener noreferrer">Blogs & Insights ↗</a>
+                            <Link to="/contact" onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })}>Contact Us</Link>
                         </div>
                     </div>
 
                     {/* Column 2: Direct Contact */}
                     <div className="footer-col-block">
-                        <span className="footer-col-head">CONNECT DESK</span>
+                        <span className="footer-col-head">CONTACT DESK</span>
                         <div className="footer-contact-nodes">
                             <div className="contact-node-item">
                                 <span className="contact-node-label">EMAIL DESK</span>
-                                <a href="mailto:hello@rankvertise.in" className="contact-node-value">hello@rankvertise.in</a>
+                                <a href="mailto:hello@rankvertise.com" className="contact-node-value">hello@rankvertise.com</a>
                             </div>
                             <div className="contact-node-item">
-                                <span className="contact-node-label">DIRECT / WHATSAPP</span>
-                                <a href="https://wa.me/919999999999" target="_blank" rel="noreferrer" className="contact-node-value">+91 99999 99999</a>
+                                <span className="contact-node-label">PHONE / WHATSAPP</span>
+                                <a href="https://wa.me/919870502656" target="_blank" rel="noopener noreferrer" className="contact-node-value">+91 98705 02656</a>
                             </div>
                         </div>
                     </div>
@@ -108,25 +109,25 @@ const Footer = () => {
                         <div className="footer-location-box">
                             <p className="location-line">Rankvertise Studios</p>
                             <p className="location-sub">Punjabi Bagh, New Delhi</p>
-                            <p className="location-sub">Delhi , 110026, India</p>
+                            <p className="location-sub">Delhi, 110026, India</p>
                         </div>
                     </div>
 
                     {/* Column 4: Social Footprint */}
                     <div className="footer-col-block">
-                        <span className="footer-col-head">STALK PROTOCOLS</span>
+                        <span className="footer-col-head">CONNECT WITH US</span>
                         <div className="footer-social-stack">
-                            <a href="https://www.instagram.com/rankvertise/" target="_blank" rel="noreferrer">Instagram ↗</a>
-                            <a href="https://www.linkedin.com/company/rankvertise/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-                            <a href="https://www.youtube.com/@Rankvertise" target="_blank" rel="noreferrer">YouTube ↗</a>
+                            <a href="https://www.instagram.com/rankvertise/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+                            <a href="https://www.linkedin.com/company/rankvertise/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+                            <a href="https://www.youtube.com/@Rankvertise" target="_blank" rel="noopener noreferrer">YouTube ↗</a>
                         </div>
                     </div>
 
                 </div>
 
-                {/* ── BOTTOM BAR: COPYRIGHT & MODAL TRIGGERS ── */}
+                {/* ── BOTTOM BAR: COPYRIGHT & LEGAL TRIGGERS ── */}
                 <div className="footer-bottom-bar">
-                    <p>© 2026 Rankvertise. All rights reserved into internet culture.</p>
+                    <p>© 2026 Rankvertise. All rights reserved.</p>
                     
                     <div className="footer-legal-triggers">
                         <button type="button" onClick={() => setActiveModal('privacy')} className="legal-link-btn">
@@ -157,7 +158,7 @@ const Footer = () => {
                             animate={{ scale: 1, y: 0, opacity: 1 }}
                             exit={{ scale: 0.92, y: 30, opacity: 0 }}
                             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                            onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside card
+                            onClick={(e) => e.stopPropagation()}
                         >
                             <div className="glass-modal-header">
                                 <div className="modal-title-wrap">
@@ -196,7 +197,7 @@ const Footer = () => {
 
                                         <section>
                                             <h3>5. Inquiries Desk</h3>
-                                            <p>For any privacy requests or data revocation, contact: <a href="mailto:hello@rankvertise.in">hello@rankvertise.in</a></p>
+                                            <p>For any privacy requests or data revocation, contact: <a href="mailto:hello@rankvertise.com">hello@rankvertise.com</a></p>
                                         </section>
                                     </div>
                                 ) : (
@@ -205,7 +206,7 @@ const Footer = () => {
                                         
                                         <section>
                                             <h3>1. Engagement Protocol</h3>
-                                            <p>By browsing Rankvertise.in or commissioning marketing and tech architectures, you agree to comply with our delivery timelines, milestone schedules, and scopes defined in service proposals.</p>
+                                            <p>By browsing rankvertise.com or commissioning marketing and tech architectures, you agree to comply with our delivery timelines, milestone schedules, and scopes defined in service proposals.</p>
                                         </section>
 
                                         <section>
@@ -225,7 +226,7 @@ const Footer = () => {
 
                                         <section>
                                             <h3>5. Formal Notices</h3>
-                                            <p>Direct all contractual and legal inquiries to: <a href="mailto:hello@rankvertise.in">hello@rankvertise.in</a></p>
+                                            <p>Direct all contractual and legal inquiries to: <a href="mailto:hello@rankvertise.com">hello@rankvertise.com</a></p>
                                         </section>
                                     </div>
                                 )}

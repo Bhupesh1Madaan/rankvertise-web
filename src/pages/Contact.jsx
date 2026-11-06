@@ -23,7 +23,7 @@ export default function Contact() {
             <div className="contact-grid-background" />
 
             <div className="contact-container">
-                {/* ── LEFT COLUMN: BRAND DIRECTIVE & TELEMETRY ── */}
+                {/* ── LEFT COLUMN: BRAND DIRECTIVE & CONTACT INFO ── */}
                 <motion.div 
                     className="contact-info-column"
                     initial={{ opacity: 0, x: -40 }}
@@ -31,11 +31,11 @@ export default function Contact() {
                     transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                 >
                     <span className="contact-status-pill">
-                        <span className="pulse-indicator" /> INGESTION PIPELINE ACTIVE
+                        <span className="pulse-indicator" /> CLIENT INTAKE OPEN
                     </span>
 
                     <h1 className="contact-main-headline">
-                        Let’s Build Something That <span className="highlight-text">Breaks The Feed.</span>
+                        Let’s Build Something That <span className="highlight-text">Scales Your Revenue.</span>
                     </h1>
 
                     <p className="contact-sub-description">
@@ -46,25 +46,25 @@ export default function Contact() {
                     <div className="contact-channels-matrix">
                         <div className="channel-box">
                             <span className="channel-label">// DIRECT DESK</span>
-                            <a href="mailto:info@rankvertise.in" className="channel-value">info@rankvertise.in</a>
+                            <a href="mailto:hello@rankvertise.com" className="channel-value">hello@rankvertise.com</a>
                         </div>
                         <div className="channel-box">
                             <span className="channel-label">// PHONE / WHATSAPP</span>
-                            <a href="https://wa.me/919870502656" target="_blank" rel="noreferrer" className="channel-value">+91 98705 02656</a>
+                            <a href="https://wa.me/919870502656" target="_blank" rel="noopener noreferrer" className="channel-value">+91 98705 02656</a>
                         </div>
                         <div className="channel-box">
                             <span className="channel-label">// HEADQUARTERS</span>
-                            <span className="channel-value-static">Punjabi Bagh, New Delhi , 110026</span>
+                            <span className="channel-value-static">Punjabi Bagh, New Delhi, 110026</span>
                         </div>
                     </div>
 
                     {/* Social Footprint */}
                     <div className="contact-social-row">
-                        <span className="social-row-label">STALK OUR PROTOCOLS:</span>
+                        <span className="social-row-label">FOLLOW US:</span>
                         <div className="social-links-wrap">
-                            <a href="https://www.instagram.com/rankvertise/" target="_blank" rel="noreferrer">Instagram ↗</a>
-                            <a href="https://www.linkedin.com/company/rankvertise/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-                            {/* <a href="https://www.youtube.com/@Rankvertise" target="_blank" rel="noreferrer">YouTube ↗</a> */}
+                            <a href="https://www.instagram.com/rankvertise/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+                            <a href="https://www.linkedin.com/company/rankvertise/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+                            <a href="https://www.youtube.com/@Rankvertise" target="_blank" rel="noopener noreferrer">YouTube ↗</a>
                         </div>
                     </div>
                 </motion.div>
@@ -83,20 +83,20 @@ export default function Contact() {
                                 <span />
                                 <span />
                             </div>
-                            <span className="hud-title">ENCRYPTED TRANSMISSION PORTAL</span>
+                            <span className="hud-title">SECURE TRANSMISSION PORTAL</span>
                         </div>
 
                         {/* Loader while Wix form initializes */}
                         {iframeLoading && (
                             <div className="wix-form-loading-state">
                                 <div className="spinner-orbit" />
-                                <p>INITIALIZING SECURE FORM MATRIX...</p>
+                                <p>INITIALIZING SECURE FORM...</p>
                             </div>
                         )}
 
                         <iframe 
-                            src={wixFormUrl}
-                            title="Rankvertise Ingestion Form"
+                            src={wixFormUrl} 
+                            title="Rankvertise Contact Form"
                             className="wix-embedded-iframe"
                             onLoad={() => setIframeLoading(false)}
                             frameBorder="0"

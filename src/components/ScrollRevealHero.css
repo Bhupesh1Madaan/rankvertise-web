@@ -55,7 +55,7 @@
 }
 
 /* ==========================================================================
-   GLOBAL SPOTLIGHT INTEGRATION STYLES (Fixed outside Media Query)
+   GLOBAL SPOTLIGHT INTEGRATION STYLES
    ========================================================================== */
 .plate-spotlight-container {
     position: absolute;
@@ -181,41 +181,103 @@
     box-shadow: 0 15px 30px rgba(128, 26, 36, 0.4);
 }
 
+/* ==========================================================================
+   PANEL TWO: SPLIT STORY & TEAM IMAGE LAYOUT
+   ========================================================================== */
 .parallax-inner-content {
-    max-width: 1100px;
-    padding: 0 6%;
-    text-align: left;
+    max-width: 1400px;
     width: 100%;
+    padding: 0 6%;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: center;
+    will-change: transform;
+}
+
+.text-narrative-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .s2-tagline {
     color: #d4a373;
-    font-size: 1rem;
-    font-weight: 700;
+    font-size: 0.95rem;
+    font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     margin-bottom: 25px;
 }
 
 .premium-reveal-paragraph {
-    font-size: clamp(1.6rem, 3.8vw, 3rem) !important;
+    font-size: clamp(1.4rem, 2.8vw, 2.5rem) !important;
     line-height: 1.35 !important;
     font-weight: 800;
     letter-spacing: -0.5px;
     display: block;
+    color: #f5ebe0 !important;
     flex-wrap: wrap;
     word-break: break-word;
-    white-space: normal; /* Allow text to wrap normally */
+    white-space: normal;
 }
 
 .premium-reveal-paragraph span {
     display: inline-block;
-    white-space: pre-wrap; /* This preserves spaces AND wraps text */
+    white-space: pre-wrap;
+}
+
+/* VISUAL ELEMENT WRAPPER */
+.parallax-visual-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(245, 235, 224, 0.1);
+    background-color: #0b0203;
+}
+
+.parallax-visual-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(26, 5, 8, 0.45) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.dynamic-parallax-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    will-change: transform, filter;
+    transition: filter 0.5s ease-out;
+}
+
+.parallax-visual-wrap:hover .dynamic-parallax-img {
+    filter: brightness(1.08) contrast(1.02);
 }
 
 /* ==========================================================================
-   RESPONSIVE MEDIA QUERIES (Only for adjustments)
+   RESPONSIVE MEDIA QUERIES (Split configuration adjustments)
    ========================================================================== */
+@media (max-width: 1024px) {
+    .parallax-inner-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    
+    .parallax-visual-wrap {
+        max-width: 700px;
+        margin: 0 auto;
+        aspect-ratio: 1.5;
+    }
+}
+
 @media (max-width: 768px) {
     .half-text {
         font-size: clamp(2rem, 15vw, 4.5rem);
@@ -226,7 +288,11 @@
     }
 
     .premium-reveal-paragraph {
-        font-size: clamp(1.2rem, 5vw, 1.7rem) !important;
+        font-size: clamp(1.2rem, 4.2vw, 1.8rem) !important;
         line-height: 1.4 !important;
+    }
+
+    .parallax-visual-wrap {
+        aspect-ratio: 16 / 10;
     }
 }

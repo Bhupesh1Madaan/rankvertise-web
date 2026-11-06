@@ -2,9 +2,21 @@ import React, { useState, useEffect } from 'react';
 import { useData, GOOGLE_SHEET_API_URL } from '../context/DataContext';
 import './AdminPortal.css';
 
-const CLOUDINARY_CLOUD_NAME = "YOUR_CLOUDINARY_CLOUD_NAME";
-const CLOUDINARY_UPLOAD_PRESET = "YOUR_UNSIGNED_PRESET";
-const ADMIN_SECURITY_PIN = "rank2026";
+// Cloudinary config via Vite environment variables with graceful fallback
+const CLOUDINARY_CLOUD_NAME = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME || "YOUR_CLOUDINARY_CLOUD_NAME";
+const CLOUDINARY_UPLOAD_PRESET = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET || "YOUR_UNSIGNED_PRESET";
+
+// SHA-256 hash of "rank2026"
+// generated via: crypto.subtle.digest('SHA-256', new TextEncoder().encode('rank2026'))
+const DEFAULT_PIN_HASH = "8b51d8b6ec42da6bf807bbf9e472659e3ddcbf0a9fa93e9ad549cc44f8087968";
+const EXPECTED_PIN_HASH = import.meta.env.VITE_ADMIN_PIN_HASH || DEFAULT_PIN_HASH;
+
+async function hashInput(text) {
+  const msgUint8 = new TextEncoder().encode(text.trim());
+  const hashBuffer = await crypto.subtle.digest('SHA-256', msgUint8);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map((b) => b.toString(16).padStart(2, '0')).join('');
+}
 
 export default function AdminPortal() {
   const { data, refreshData } = useData();
@@ -238,28 +250,35 @@ export default function AdminPortal() {
     }
   }, [data]);
 
-  useEffect(() => {
-    const authSession = sessionStorage.getItem('admin_auth');
-    if (authSession === 'true') setIsAuthenticated(true);
-  }, []);
+useEffect(() => {
+  const authSession = sessionStorage.getItem('admin_auth_token');
+  if (authSession === 'true') setIsAuthenticated(true);
+}, []);
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    if (pinInput === ADMIN_SECURITY_PIN) {
-      setIsAuthenticated(true);
-      sessionStorage.setItem('admin_auth', 'true');
-      setLoginError('');
-    } else {
-      setLoginError('Invalid Security PIN');
-    }
-  };
+const handleLogin = (e) => {
+  e.preventDefault();
+  setLoginError('');
+  
+  // Direct text match (Bina hash ke test karne ke liye)
+  if (pinInput.trim() === "rank2026") {
+    setIsAuthenticated(true);
+    sessionStorage.setItem('admin_auth_token', 'true');
+    setLoginError('');
+  } else {
+    setLoginError('Invalid Security PIN');
+  }
+};
 
   const handleLogout = () => {
-    sessionStorage.removeItem('admin_auth');
+    sessionStorage.removeItem('admin_auth_token');
     setIsAuthenticated(false);
   };
 
   const uploadToCloudinary = async (file) => {
+    if (CLOUDINARY_CLOUD_NAME.includes('YOUR_') || CLOUDINARY_UPLOAD_PRESET.includes('YOUR_')) {
+      throw new Error('Cloudinary environment credentials are not configured in .env');
+    }
+
     const formData = new FormData();
     formData.append("file", file);
     formData.append("upload_preset", CLOUDINARY_UPLOAD_PRESET);
@@ -268,6 +287,12 @@ export default function AdminPortal() {
       method: "POST",
       body: formData
     });
+
+    if (!res.ok) {
+      const errorJson = await res.json().catch(() => ({}));
+      throw new Error(errorJson.error?.message || `Upload failed with status ${res.status}`);
+    }
+
     const result = await res.json();
     return result.secure_url;
   };
@@ -276,11 +301,14 @@ export default function AdminPortal() {
     setSavingKey(key);
     setStatusMsg(`Saving ${key} to Google Sheets...`);
     try {
-      await fetch(GOOGLE_SHEET_API_URL, {
+      const res = await fetch(GOOGLE_SHEET_API_URL, {
         method: "POST",
         headers: { "Content-Type": "text/plain;charset=utf-8" },
         body: JSON.stringify({ key, value: JSON.stringify(payload) })
       });
+
+      if (!res.ok) throw new Error(`HTTP error ${res.status}`);
+
       setStatusMsg(`Successfully saved ${key}!`);
       refreshData();
     } catch (err) {
@@ -516,7 +544,6 @@ export default function AdminPortal() {
           <div className="admin-section-box">
             <h3>About Us Page Configuration</h3>
 
-            {/* SECTION 1: THE HERO MANIFESTO & OPERATIONS TAGLINE */}
             <div className="admin-edit-row-card" style={{ marginBottom: '24px' }}>
               <span className="admin-badge">Section 1: The Hero Manifesto & Operations Tagline</span>
               <input 
@@ -539,7 +566,6 @@ export default function AdminPortal() {
               />
             </div>
 
-            {/* SECTION 2: VELOCITY OPERATIONS ARCHITECTURE */}
             <div className="admin-edit-row-card" style={{ marginBottom: '24px' }}>
               <span className="admin-badge">Section 2: Velocity Operations Architecture</span>
               <input 
@@ -613,7 +639,6 @@ export default function AdminPortal() {
               />
             </div>
 
-            {/* SECTION 3: THE CROSS-FUNCTIONAL GROWTH CORE */}
             <div className="admin-edit-row-card" style={{ marginBottom: '24px' }}>
               <span className="admin-badge">Section 3: The Cross-Functional Growth Core</span>
               <input 
@@ -680,7 +705,6 @@ export default function AdminPortal() {
               />
             </div>
 
-            {/* SECTION 4: PERFORMANCE ANALYTICS & TELEMETRY */}
             <div className="admin-edit-row-card" style={{ marginBottom: '24px' }}>
               <span className="admin-badge">Section 4: Performance Analytics & Telemetry</span>
               <input 
@@ -736,7 +760,6 @@ export default function AdminPortal() {
               />
             </div>
 
-            {/* SECTION 5: GENESIS TO MARKET DOMINANCE */}
             <div className="admin-edit-row-card" style={{ marginBottom: '24px' }}>
               <div className="admin-inline-split">
                 <span className="admin-badge">Section 5: Genesis to Market Dominance</span>
@@ -812,7 +835,6 @@ export default function AdminPortal() {
               ))}
             </div>
 
-            {/* SECTION 6: STRATEGIC DIVERGENCE */}
             <div className="admin-edit-row-card" style={{ marginBottom: '24px' }}>
               <span className="admin-badge">Section 6: Strategic Divergence</span>
               <input 
@@ -1011,7 +1033,7 @@ export default function AdminPortal() {
                       Routes: /{loc.slug} & /services/{loc.slug}
                     </span>
                     <button 
-                      className="admin-delete-btn"
+                      className="admin-delete-btn" 
                       onClick={() => setLocationsData(locationsData.filter((_, i) => i !== idx))}
                     >
                       Delete

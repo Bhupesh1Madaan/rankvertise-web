@@ -26,6 +26,7 @@ const Navbar = ({
             links: [
                 { label: "Home", to: "/" },
                 { label: "About Us", to: "/about" },
+                { label: "Free Growth Audit", to: "/contact" },
                 { label: "Plans & Pricing", to: "/contact" }
             ]
         },
@@ -34,9 +35,9 @@ const Navbar = ({
             bgColor: "#3d0f16",
             textColor: "#f5ebe0",
             links: [
-                { label: "Portfolio", to: "/portfolio" },
+                { label: "Portfolio & Case Studies", to: "/portfolio" },
                 { label: "Services", to: "/services" },
-                { label: "Blogs", href: "https://www.rankvertise.in/blogs", isExternal: true }
+                { label: "Blogs & Insights", href: "https://blogs.rankvertise.com", isExternal: true }
             ]
         },
         {
@@ -44,6 +45,7 @@ const Navbar = ({
             bgColor: "#54141e",
             textColor: "#f5ebe0",
             links: [
+                { label: "Contact Us", to: "/contact" },
                 { label: "Instagram", href: "https://www.instagram.com/rankvertise/", isExternal: true },
                 { label: "LinkedIn", href: "https://www.linkedin.com/company/rankvertise/", isExternal: true }
             ]
@@ -182,6 +184,7 @@ const Navbar = ({
         <div className={`card-nav-container ${className}`}>
             <nav ref={navRef} className={`card-nav ${isExpanded ? 'open' : ''}`} style={{ backgroundColor: baseColor }}>
                 <div className="card-nav-top">
+                    {/* Hamburger Button */}
                     <div
                         className={`hamburger-menu ${isHamburgerOpen ? 'open' : ''}`}
                         onClick={toggleMenu}
@@ -194,17 +197,24 @@ const Navbar = ({
                         <div className="hamburger-line" />
                     </div>
 
+                    {/* Brand Logo with Icon & Typography */}
                     <div className="logo-container">
                         <a 
                             href="/" 
                             onClick={(e) => handleLinkClick(e, "/")}
-                            style={{ textDecoration: 'none', color: 'inherit', outline: 'none' }}
+                            style={{ textDecoration: 'none', color: 'inherit', outline: 'none', display: 'flex', alignItems: 'center', gap: '10px' }}
                         >
+                            <img 
+                                src="/rv_logo.png" 
+                                alt="Rankvertise" 
+                                onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                                style={{ width: '28px', height: '28px', objectFit: 'contain' }}
+                            />
                             <span className="logo-text">Rank<span>vertise</span></span>
                         </a>
                     </div>
 
-                    {/* Consultation link replaced with /contact */}
+                    {/* "Get Started" replaced directly with Contact CTA redirecting to /contact */}
                     <a
                         href="/contact"
                         onClick={(e) => handleLinkClick(e, "/contact")}
@@ -215,10 +225,11 @@ const Navbar = ({
                             textDecoration: 'none' 
                         }}
                     >
-                        Get Started
+                        Contact Us
                     </a>
                 </div>
 
+                {/* Dropdown Navigation Cards */}
                 <div className="card-nav-content" aria-hidden={!isExpanded}>
                     {(items || []).slice(0, 3).map((item, idx) => (
                         <div

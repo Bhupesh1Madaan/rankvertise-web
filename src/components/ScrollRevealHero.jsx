@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ScrollReveal from './ScrollReveal';
 import LightRays from './LightRays'; 
+import heroImg from '../assets/image_1.jpg'; // <-- Import the image
 import './ScrollRevealHero.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -13,6 +14,7 @@ const ScrollRevealHero = () => {
     const rightGlassRef = useRef(null);
     const section1ContentRef = useRef(null);
     const section2ParallaxRef = useRef(null);
+    const visualFrameRef = useRef(null);
 
     useEffect(() => {
         let ctx = gsap.context(() => {
@@ -41,6 +43,18 @@ const ScrollRevealHero = () => {
                 ease: "none"
             }, "+=0.2");
 
+            // Adds dynamic parallax zoom & fade-in to creative team image
+            tl.fromTo(visualFrameRef.current, {
+                scale: 1.15,
+                opacity: 0.3,
+                yPercent: 15
+            }, {
+                scale: 1,
+                opacity: 1,
+                yPercent: 0,
+                ease: "power2.out"
+            }, "+=0.1");
+
         }, masterContainerRef);
 
         return () => ctx.revert();
@@ -60,18 +74,18 @@ const ScrollRevealHero = () => {
                         Welcome to the place where ideas transform into results. We're the Gen Z-powered, business-savvy creative agency helping brands break the scroll, break the rules, and break into culture.
                     </p>
                     <div className="hero-cta-wrapper">
-                        <a href="https://www.rankvertise.in/consultation" target="_blank" rel="noreferrer" className="hero-primary-btn">Free Audit →</a>
+                        <a href="/contact" rel="noreferrer" className="hero-primary-btn">Free Audit →</a>
                     </div>
                 </div>
 
                 {/* GLASS SPLIT OVERLAY */}
                 <div className="glass-split-overlay">
                     
-                    {/* LEFT PLATE (Contains half background + half light setup) */}
+                    {/* LEFT PLATE */}
                     <div ref={leftGlassRef} className="glass-plate left-plate">
                         <div className="plate-spotlight-container left-spot">
                             <LightRays
-                                raysOrigin="top-right" /* Angle adjustment for left side */
+                                raysOrigin="top-right"
                                 raysColor="#f5ebe0"
                                 raysSpeed={1.5}
                                 lightSpread={0.7}
@@ -84,11 +98,11 @@ const ScrollRevealHero = () => {
                         <div className="half-text left-text">RANKV</div>
                     </div>
 
-                    {/* RIGHT PLATE (Contains half background + half light setup) */}
+                    {/* RIGHT PLATE */}
                     <div ref={rightGlassRef} className="glass-plate right-plate">
                         <div className="plate-spotlight-container right-spot">
                             <LightRays
-                                raysOrigin="top-left" /* Angle adjustment for right side */
+                                raysOrigin="top-left"
                                 raysColor="#f5ebe0"
                                 raysSpeed={1.5}
                                 lightSpread={0.7}
@@ -107,10 +121,19 @@ const ScrollRevealHero = () => {
             {/* SECTION VIEWPORT 2 */}
             <div ref={section2ParallaxRef} className="section-viewport panel-two">
                 <div className="parallax-inner-content">
-                    <p className="s2-tagline">Not Your Regular Digital Marketing Agency</p>
-                    <ScrollReveal baseOpacity={0.15} textClassName="premium-reveal-paragraph">
-                        We build brands that look good, talk smart, and show up where it matters. We combined the speed of the internet with the discipline of business strategy to build a space where brands don't just survive , they thrive.
-                    </ScrollReveal>
+                    <div className="text-narrative-block">
+                        <p className="s2-tagline">Not Your Regular Digital Marketing Agency</p>
+                        <ScrollReveal baseOpacity={0.15} textClassName="premium-reveal-paragraph">
+                            We build brands that look good, talk smart, and show up where it matters. We combined the speed of the internet with the discipline of business strategy to build a space where brands don't just survive, they thrive.
+                        </ScrollReveal>
+                    </div>
+                    <div ref={visualFrameRef} className="parallax-visual-wrap">
+                        <img 
+                            src={heroImg} 
+                            alt="Rankvertise Creative Campaign Team Working in Dark Ambient Agency Workspace" 
+                            className="dynamic-parallax-img" 
+                        />
+                    </div>
                 </div>
             </div>
 

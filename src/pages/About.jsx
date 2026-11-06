@@ -5,34 +5,46 @@ import { useData } from '../context/DataContext';
 import './About.css';
 
 const DEFAULT_ABOUT_DATA = {
-  tag: "Rankvertise Operations",
-  rotatingTexts: ["Disrupt Markets.", "Scale Platforms.", "Override Algorithms.", "Capture Intent."],
-  manifestoDesc: "Traditional advertising frameworks are fundamentally lazy. They optimize for vanity metrics while capital evaporates. Rankvertise builds composable technology layers to acquire permanent attention models. Scroll to inspect our internal architecture benchmarks.",
-  s2Subtag: "System Telemetry // 02",
-  s2Heading: "Velocity Operations Architecture",
-  s2Lead: "We replace human processing delay fields with high-performance automated ingestion components.",
+  tag: "About Rankvertise",
+  rotatingTexts: ["Scale Visibility.", "Drive Conversions.", "Dominate Search.", "Build Authority."],
+  manifestoDesc: "Traditional agency models focus on vanity metrics like impressions and clicks while actual acquisition costs spiral. Rankvertise engineers bespoke, conversion-driven digital marketing frameworks, programmatic SEO architectures, and modern web platforms that capture real commercial intent.",
+  s2Subtag: "Our Methodology // 02",
+  s2Heading: "Data-Driven Growth Execution",
+  s2Lead: "We replace manual guesswork with rigorous technical audits, intent mapping, and continuous conversion rate optimization.",
   s2Counter1Val: "+310%",
-  s2Counter1Text: "Average organic domain footprint authority growth acceleration across clients.",
+  s2Counter1Text: "Average organic traffic growth achieved across client search campaigns within 6 months.",
   s2Counter2Val: "-42%",
-  s2Counter2Text: "Latent bounce velocity drops tracking micro-frontend structural refactors.",
+  s2Counter2Text: "Average reduction in bounce rate following technical SEO and page speed optimizations.",
   s2Image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop",
   pillars: [
-    { code: "// SYSTEM ENGINEERS", title: "Infrastructure Specialists", desc: "Handling micro-frontend architectural speeds, Core Web Vitals structural loops, and absolute zero latent processing pipeline optimization." },
-    { code: "// DATA ARCHITECTS", title: "Algorithmic Engineers", desc: "Deconstructed tracking matrices manipulating intent keywords, semantic graph matching, and indexing overrides for permanent organic gravity." },
-    { code: "// OPERATIONS CORES", title: "Dedicated Account Custodians", desc: "Your centralized interface node. Synchronizing telemetry updates, asset delivery layers, and absolute high-fidelity priority project management." }
+    { code: "// TECHNICAL SEO", title: "Technical SEO Strategists", desc: "Specializing in website rendering pipelines, Core Web Vitals optimization, schema architectures, and crawl budget governance to dominate search rankings." },
+    { code: "// PERFORMANCE MEDIA", title: "Performance Media Buyers", desc: "Engineering high-ROI paid acquisition funnels across Meta, Google Ads, and LinkedIn with laser-focused audience targeting and creative testing." },
+    { code: "// GROWTH LEADS", title: "Dedicated Growth Leads", desc: "Your direct point of contact. Ensuring transparent reporting, weekly sprint alignment, and dedicated accountability for all campaign deliverables." }
   ],
-  priorityBannerHero: "\"Your scaling vectors aren't passed down a generic assembly line. You are the absolute engineering priority.\"",
-  priorityBannerSub: "From continuous optimization loops to enterprise-wide infrastructure deployment, your assets are managed by a cohesive, dedicated operational core built to protect and compound your growth.",
-  metric1Val: "94.2%",
-  metric1Title: "Algorithmic Retain Efficiency",
-  metric1Desc: "Continuous indexing structures anchoring nodes against core update fluctuations.",
-  metric2Val: "0.18s",
-  metric2Title: "Edge Content Delivery Max Latency",
-  metric2Desc: "Global edge caching overrides bypassing traditional proxy rendering bottlenecks.",
+  priorityBannerHero: "\"We don't hand your project off to junior freelancers. You work directly with proven digital growth specialists.\"",
+  priorityBannerSub: "From day-one audits to continuous optimization, your marketing infrastructure is actively managed by a dedicated team focused solely on driving measurable business revenue.",
+  metric1Val: "+310%",
+  metric1Title: "Organic Search Growth",
+  metric1Desc: "Compound organic visibility increases across client domains through semantic entity targeting.",
+  metric2Val: "Top 3",
+  metric2Title: "Search Ranking Target",
+  metric2Desc: "Capturing high-converting, commercial intent keywords on Google's top positions.",
   timeline: [
-    { dateTag: "Phase Alpha // 2023", title: "The Core Script Sandbox", desc: "Deconstructed conventional scraper pipelines to engineer an automated micro-script infrastructure that autonomously indexed and matched complex user search patterns." },
-    { dateTag: "Scale Engine // 2024", title: "Algorithmic Projections Expansion", desc: "Transitioned from isolated testing sandboxes into active enterprise deployments. Launched real-time telemetry processing overlays to track user retention footprints dynamically." },
-    { dateTag: "Dominance Matrix // 2026", title: "Multi-Vertical Enterprise Core", desc: "Today, Rankvertise transforms raw search architecture. Overriding modern programmatic restrictions to build permanent authority structures for globally scaling clients." }
+    { 
+      dateTag: "2023", 
+      title: "Our Beginning", 
+      desc: "Rankvertise started with a simple observation: most agencies sold outdated keyword checklists that failed to convert. We developed custom Python data scrapers and semantic entity models to rank client pages faster through technical search relevance." 
+    },
+    { 
+      dateTag: "2024", 
+      title: "Expanding Our Digital Capabilities", 
+      desc: "Transitioned from technical search consultancy to a full-service digital growth partner. We expanded our capabilities to include performance social advertising, custom headless web development, and automated CRM retention systems." 
+    },
+    { 
+      dateTag: "2026", 
+      title: "Our Current Focus", 
+      desc: "Today, Rankvertise partners with scaling D2C brands, B2B enterprises, and modern technology companies globally, delivering measurable organic growth, sub-second web experiences, and predictable customer acquisition funnels." 
+    }
   ]
 };
 
@@ -45,7 +57,7 @@ const RotatingText = forwardRef((props, ref) => {
     initial = { y: '100%', opacity: 0 },
     animate = { y: 0, opacity: 1 },
     exit = { y: '-120%', opacity: 0 },
-    rotationInterval = 2200,
+    rotationInterval = 2400,
     staggerDuration = 0.03,
     splitBy = 'characters',
     mainClassName
@@ -104,7 +116,7 @@ const RotatingText = forwardRef((props, ref) => {
                     {char}
                   </motion.span>
                 ))}
-                {wordObj.needsSpace && <span className="about-text-rotate-space">&nbsp;</span>}
+                {wordObj.needsSpace && <span className="about-text-rotate-space"> </span>}
               </span>
             );
           })}
@@ -169,7 +181,7 @@ function About() {
             <span className="maroon-about-tag">{pageData.tag}</span>
             
             <h1 className="manifesto-rotating-headline-box">
-              <span>We are engineered to&nbsp;</span>
+              <span>We help modern brands </span>
               <RotatingText 
                 texts={pageData.rotatingTexts} 
                 mainClassName="highlight-rotating-span"
@@ -213,7 +225,7 @@ function About() {
                 }}
               />
               <div className="frame-data-hud-overlay">
-                <span>NODE INTERCEPT ACTIVE // SECURITY VERIFIED</span>
+                <span>DATA-BACKED CAMPAIGN BENCHMARK // VERIFIED</span>
               </div>
             </motion.div>
           </div>
@@ -229,10 +241,10 @@ function About() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <span className="gold-about-subtag">Human-in-the-loop Matrix // 03</span>
-            <h2>The Cross-Functional Growth Core</h2>
+            <span className="gold-about-subtag">Cross-Functional Team // 03</span>
+            <h2>Our Dedicated Growth Team</h2>
             <p className="about-section-desc-brief">
-              We don't assign isolated freelancers or leave your scaling assets unsupervised. Rankvertise deploys a dedicated structural unit mapping directly to your brand ecosystems,ensuring end-to-end integration across every protocol.
+              We don't outsource your campaigns to inexperienced interns or unvetted contractors. Rankvertise deploys a dedicated, cross-functional squad tailored to your industry, ensuring full technical alignment across SEO, creative assets, and development.
             </p>
           </motion.div>
           
@@ -248,7 +260,7 @@ function About() {
           >
             {(pageData.pillars || DEFAULT_ABOUT_DATA.pillars).map((pillar, idx) => (
               <motion.div 
-                key={idx}
+                key={idx} 
                 className="syndicate-node-card"
                 variants={{
                   hidden: { opacity: 0, y: 40 },
@@ -297,10 +309,10 @@ function About() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            <span className="maroon-about-tag-light">Performance Analytics // 04</span>
-            <h2>Visualizing Disruption Trajectories</h2>
+            <span className="maroon-about-tag-light">Performance Tracking // 04</span>
+            <h2>Our SEO & Digital Marketing Performance</h2>
             <p className="about-section-desc-brief">
-              Raw mathematical projections and operational scaling curves outperforming legacy marketing indices. We optimize vectors in real-time.
+              We use data-driven SEO strategies, performance tracking, and conversion analytics to help businesses improve online visibility and achieve measurable commercial growth.
             </p>
           </motion.div>
 
@@ -308,7 +320,7 @@ function About() {
             <div className="telemetry-chart-simulation-box">
               <div className="chart-hud-header">
                 <span className="hud-pulse-dot"></span>
-                <span>LIVE TRACKING MATRIX // OPTIMIZATION_LOOP_ACTIVE</span>
+                <span>AGGREGATE CLIENT PERFORMANCE METRICS</span>
               </div>
               
               <div className="mock-vector-axis-container">
@@ -384,10 +396,10 @@ function About() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
           >
-            <span className="gold-about-subtag">Chronicle Logs // 05</span>
-            <h2>Genesis to Market Dominance</h2>
+            <span className="gold-about-subtag">Our Journey // 05</span>
+            <h2>Our Story & Milestone Timeline</h2>
             <p className="about-section-desc-brief">
-              How we evolved from an automated micro-script experiment into a multi-vertical strategic enterprise engine.
+              How we evolved from custom search data automation experiments into a comprehensive growth marketing and technology partner.
             </p>
           </motion.div>
 
@@ -430,9 +442,9 @@ function About() {
             transition={{ duration: 0.6 }}
           >
             <span className="maroon-about-tag-light">Strategic Divergence // 06</span>
-            <h2>Why We are Fundamentally Different</h2>
+            <h2>Why Businesses Partner With Us</h2>
             <p className="about-section-desc-brief">
-              Conventional agencies lock you into restrictive contracts to optimize for vanity metrics. Rankvertise builds composable technology layers to acquire permanent market gravity.
+              Most conventional marketing agencies lock brands into long retainers while delivering vanity metrics. We construct permanent organic search assets, high-converting creative engines, and custom web infrastructure.
             </p>
           </motion.div>
 
@@ -447,12 +459,12 @@ function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <div className="column-system-indicator">// LEGACY FRAMEWORKS</div>
-              <h3>The Traditional Agency Retainer</h3>
+              <div className="column-system-indicator">// TRADITIONAL AGENCIES</div>
+              <h3>The Conventional Agency Model</h3>
               <ul className="divergence-matrix-points-list">
-                <li><strong>Vanity Metric Tuning:</strong> Optimizing for surface-level impressions, likes, and soft-clicks while capital efficiency and real pipelines evaporate.</li>
-                <li><strong>Human Delay Triggers:</strong> Asset execution relies entirely on siloed manual processing, introducing immense latency and communication barriers.</li>
-                <li><strong>Leased Traction Models:</strong> The moment you stop paying their monthly retainer fee, your visibility footprint instantly zeroes out.</li>
+                <li><strong>Vanity Metric Focus:</strong> Prioritizing surface-level impressions and clicks over actual customer acquisition and qualified pipeline value.</li>
+                <li><strong>Manual Execution Delays:</strong> Slow revision cycles, fragmented communication, and work quietly handed off to junior freelancers.</li>
+                <li><strong>Temporary Visibility:</strong> The moment you reduce or stop your monthly retainer fee, your digital traction and leads evaporate.</li>
               </ul>
             </motion.div>
 
@@ -464,12 +476,12 @@ function About() {
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             >
               <div className="protocol-card-glow-flare"></div>
-              <div className="column-system-indicator active-gold">// RANKVERTISE OPERATIONAL LAYER</div>
-              <h3>The Algorithmic Ingestion Core</h3>
+              <div className="column-system-indicator active-gold">// THE RANKVERTISE ADVANTAGE</div>
+              <h3>Data-Backed Growth Partnership</h3>
               <ul className="divergence-matrix-points-list protocol-active-list">
-                <li><strong>Intent Capture Frameworks:</strong> We isolate and capture high-converting search coordinates directly before your competitors can bid on them.</li>
-                <li><strong>Automated Ingestion Loops:</strong> Deploying direct machine micro-scripts that continuously inject, map, and track web vitals around the clock.</li>
-                <li><strong>Permanent Asset Assets:</strong> We construct self-sustaining micro-frontend architectures that compound authority, making your traffic permanent.</li>
+                <li><strong>Commercial Intent First:</strong> Targeting high-converting commercial keywords and qualified buyer segments that directly generate revenue.</li>
+                <li><strong>Agile Tech Integration:</strong> Fast turnaround on technical audits, schema implementation, landing page deployments, and speed optimization.</li>
+                <li><strong>Compounding Domain Assets:</strong> Building sustainable organic search rankings and custom web platforms that continue to produce leads over time.</li>
               </ul>
             </motion.div>
           </motion.div>

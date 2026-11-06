@@ -1,117 +1,110 @@
-import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { useData } from '../context/DataContext';
 import './PortfolioPage.css';
 
-gsap.registerPlugin(ScrollTrigger);
+const DEFAULT_PORTFOLIO_DATA = {
+  heroTag: "CASE STUDIES & DELIVERABLES",
+  heroTitle: "Our Digital Marketing Work & Results",
+  heroDesc: "Discover our data-backed SEO campaigns, high-retention content marketing, and headless web platforms built to scale client revenue.",
+  projects: [
+    {
+      id: "fintech-seo",
+      client: "FinTech Matrix",
+      category: "Search Engine Optimization (SEO)",
+      metrics: "+310% Organic Traffic",
+      summary: "Deconstructed legacy search patterns and deployed technical entity optimization to rank #1 for high-intent financial keywords within 90 days.",
+      tags: ["Technical SEO", "Content Strategy", "Speed Optimization"],
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop"
+    },
+    {
+      id: "d2c-growth",
+      client: "Aura Lifestyle D2C",
+      category: "Social Media & Performance Ads",
+      metrics: "4.8x Return on Ad Spend (ROAS)",
+      summary: "Engineered high-retention short-form video hooks across Meta and TikTok ad algorithms, generating 45,000 orders in 48 hours.",
+      tags: ["Paid Ads", "Reels Production", "Creative Strategy"],
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop"
+    },
+    {
+      id: "headless-commerce",
+      client: "Urban Global Goods",
+      category: "Web & Headless Tech Architecture",
+      metrics: "-42% Bounce Rate",
+      summary: "Replaced an outdated, slow WordPress store with an ultra-fast headless React interface, reducing checkout latency by 1.8 seconds.",
+      tags: ["Headless Next.js", "Core Web Vitals", "UI/UX Design"],
+      image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1000&auto=format&fit=crop"
+    }
+  ]
+};
 
-const trailImages = [
-  'https://picsum.photos/400/300?random=1',
-  'https://picsum.photos/400/300?random=2',
-  'https://picsum.photos/400/300?random=3',
-  'https://picsum.photos/400/300?random=4',
-  'https://picsum.photos/400/300?random=5',
-  'https://picsum.photos/400/300?random=6',
-  'https://picsum.photos/400/300?random=7',
-  'https://picsum.photos/400/300?random=8',
-];
-
-const PortfolioPage = () => {
-  const compRef = useRef(null);
-
-  useEffect(() => {
-    let ctx = gsap.context(() => {
-      // ── SECTION 1: TRAIL LOOP ──
-      gsap.to('.trail-track', {
-        x: '-50%',
-        ease: 'none',
-        duration: 22,
-        repeat: -1,
-      });
-
-      const singleImages = document.querySelectorAll('.trail-card');
-      singleImages.forEach((img, index) => {
-        gsap.to(img, {
-          y: '+=20',
-          duration: 2.5 + (index % 3) * 0.3,
-          repeat: -1,
-          yoyo: true,
-          ease: 'sine.inOut',
-          delay: index * 0.15,
-        });
-      });
-
-      // ── SECTION 2: SMOOTH FADE & SLIDE REVEAL ON SCROLL ──
-      gsap.fromTo(
-        '.under-construction-card',
-        {
-          opacity: 0,
-          y: 60,
-          scale: 0.95,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 1.2,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '.sec-under-construction',
-            start: 'top 75%',
-            toggleActions: 'play none none reverse',
-          },
-        }
-      );
-    }, compRef);
-
-    return () => ctx.revert();
-  }, []);
+export default function PortfolioPage() {
+  const { getVal } = useData();
+  const portfolio = getVal('portfolio_page_data', DEFAULT_PORTFOLIO_DATA);
 
   return (
-    <div className="revamp-master-box" ref={compRef}>
-      {/* SECTION 1: HERO VIEWPORT (AS IS) */}
-      <section className="sec-one-hero">
-        <div className="wavy-trail-viewport">
-          <div className="trail-track">
-            {[...trailImages, ...trailImages].map((src, i) => (
-              <div className="trail-card" key={i}>
-                <img src={src} alt="Stream Grid" />
-              </div>
+    <div className="portfolio-master-stage">
+      {/* Background Grid */}
+      <div className="portfolio-grid-overlay" />
+
+      {/* Hero Header */}
+      <section className="portfolio-hero-section">
+        <motion.div 
+          className="portfolio-hero-container"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <span className="portfolio-hero-tag">{portfolio.heroTag}</span>
+          <h1 className="portfolio-hero-title">{portfolio.heroTitle}</h1>
+          <p className="portfolio-hero-desc">{portfolio.heroDesc}</p>
+        </motion.div>
+      </section>
+
+      {/* Projects Grid */}
+      <section className="portfolio-showcase-section">
+        <div className="portfolio-container">
+          <div className="portfolio-cards-grid">
+            {(portfolio.projects || []).map((item, idx) => (
+              <motion.div 
+                key={item.id || idx}
+                className="portfolio-project-card"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.6, delay: idx * 0.15 }}
+                whileHover={{ y: -8 }}
+              >
+                <div className="project-thumbnail-wrapper">
+                  <img src={item.image} alt={item.client} className="project-thumbnail" />
+                  <span className="project-metric-badge">{item.metrics}</span>
+                </div>
+
+                <div className="project-card-body">
+                  <span className="project-category-label">{item.category}</span>
+                  <h3 className="project-client-name">{item.client}</h3>
+                  <p className="project-summary-text">{item.summary}</p>
+
+                  <div className="project-tags-wrap">
+                    {(item.tags || []).map((tag, tIdx) => (
+                      <span key={tIdx} className="project-pill-tag">{tag}</span>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
-        <div className="hero-content-front">
-          <span className="gold-accent-pill">RANKVERTISE MATRIX</span>
-          <h1 className="hero-main-title">WE PROVE THE VALUE</h1>
-          <p className="hero-sub-para">
-            Custom dynamic strategy tracking built for high-scale marketing deployment.
-          </p>
-        </div>
       </section>
 
-      {/* SECTION 2: COMING SOON / INSTAGRAM REDIRECT */}
-      <section className="sec-under-construction">
-        <div className="under-construction-glow"></div>
-        <div className="under-construction-card">
-          <span className="gold-accent-tag">✦ UNDER REFINEMENT</span>
-          <h2 className="construction-headline">
-            Good things take time, but time is valuable.
-          </h2>
-          <p className="construction-desc">
-            Till we complete our full portfolio experience, explore our live campaigns, creatives, and performance updates directly on our Instagram.
-          </p>
-          <a
-            href="https://www.instagram.com/rankvertise/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="instagram-cta-btn"
-          >
-            Visit Our Instagram ➔
-          </a>
+      {/* Bottom Consultation CTA */}
+      <section className="portfolio-cta-section">
+        <div className="portfolio-cta-box">
+          <h2>Ready to Scale Your Brand to These Numbers?</h2>
+          <p>Book a strategic consultation call with our core digital performance team today.</p>
+          <a href="/contact" className="portfolio-primary-btn">Schedule Strategy Call ➔</a>
         </div>
       </section>
     </div>
   );
-};
-
-export default PortfolioPage;
+}

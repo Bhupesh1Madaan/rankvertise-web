@@ -1,179 +1,184 @@
-/* ── ORBIT MAIN MODULE STAGE ARCHITECTURE ── */
+/* ==========================================================================
+   RANKVERTISE CLIENT COLLAGE & INTERACTIVE LOGO GRID
+   ========================================================================== */
+
 .orbit-showcase-section {
-    position: relative;
-    width: 100vw;
-    background-color: #1a0508;
-    padding: 120px 0;
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  background-color: #0b0203;
+  padding: 100px 24px 110px 24px;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
+/* ── HEADER STYLING ── */
 .orbit-section-header {
-    max-width: 800px;
-    margin: 0 auto 60px auto;
-    text-align: center;
-    padding: 0 4%;
-    box-sizing: border-box;
+  max-width: 820px;
+  margin: 0 auto 55px auto;
+  text-align: center;
+  padding: 0 16px;
+  box-sizing: border-box;
 }
 
 .orbit-label {
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: #d4a373;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 16px;
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #d4a373;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  background: rgba(128, 26, 36, 0.25);
+  border: 1px solid rgba(212, 163, 115, 0.3);
+  border-radius: 50px;
+  margin-bottom: 18px;
 }
 
 .orbit-main-title {
-    font-size: clamp(2rem, 4.5vw, 3.5rem);
-    font-weight: 900;
-    color: #f5ebe0;
-    letter-spacing: -1px;
-    line-height: 1.15;
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-family: serif;
+  font-weight: 700;
+  color: #f5ebe0;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  margin: 0 0 16px 0;
 }
 
 .orbit-sub-text {
-    font-size: clamp(0.95rem, 1.5vw, 1.2rem);
-    color: rgba(245, 235, 224, 0.7);
-    line-height: 1.6;
-    margin-top: 18px;
+  font-size: clamp(0.95rem, 1.6vw, 1.12rem);
+  color: rgba(245, 235, 224, 0.75);
+  line-height: 1.65;
+  margin: 0 auto;
+  max-width: 640px;
 }
 
-/* ── MATRIX WRAPPER FRAMES ── */
-.orbit-container {
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
+/* ── COLLAGE GRID ── */
+.collage-grid-viewport {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 24px;
+  position: relative;
+  z-index: 2;
 }
 
-.orbit-scaling-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transform-origin: center center;
+/* Single Brand Card */
+.collage-brand-card {
+  position: relative;
+  background: #140407;
+  border: 1px solid rgba(212, 163, 115, 0.16);
+  border-radius: 20px;
+  padding: 34px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 150px;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  box-sizing: border-box;
 }
 
-.orbit-scaling-container--responsive {
-    top: 50%;
-    left: 50%;
+.collage-card-inner {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.orbit-rotation-wrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
+/* Black & White by Default */
+.collage-brand-image {
+  max-width: 135px;
+  max-height: 65px;
+  object-fit: contain;
+  filter: grayscale(100%) opacity(0.55);
+  transform: scale(0.96);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
 }
 
-.orbit-path-svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    opacity: 0.9; /* Made path line highly visible and crisp */
+.collage-card-action {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #d4a373;
+  margin-top: 12px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
 }
 
-.orbit-item {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    offset-path: none;
-    z-index: 5;
+/* ── HOVER STATE: FULL COLOR POP-UP & GLOW ── */
+.collage-brand-card:hover {
+  background: #1c060a;
+  border-color: rgba(212, 163, 115, 0.55);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(128, 26, 36, 0.3);
 }
 
-/* Hover karne par focused card pooray loop ke upar dikhna chahiye */
-.orbit-item:hover {
-    z-index: 50; 
+.collage-brand-card:hover .collage-brand-image {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.12);
 }
 
-/* ── BRAND LOGOS FLOATING LAYER (REAL ORIGINAL COLORS FIXED) ── */
-.orbit-image-wrapper {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(245, 235, 224, 0.03);
-    /* Clean micro-glass frame */
-    border: 1.5px solid rgba(245, 235, 224, 0.15);
-    border-radius: 20px;
-    padding: 16px;
-    box-sizing: border-box;
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s, background-color 0.3s, box-shadow 0.3s;
-    cursor: pointer;
-    backdrop-filter: blur(4px);
+.collage-brand-card:hover .collage-card-action {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* HOVER POPUP WITH ORIGINAL COLOR PRESERVED */
-.orbit-image-wrapper:hover {
-    transform: scale(1.45) translateZ(30px);
-    /* Bada hover boost locked */
-    border-color: #f5ebe0;
-    background: #fff;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 15px rgba(245, 235, 224, 0.1);
+/* ── FLOATING TOOLTIP FOLLOWER ── */
+.collage-floating-tooltip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #801a24;
+  color: #f5ebe0;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  padding: 8px 16px;
+  border-radius: 50px;
+  border: 1px solid rgba(212, 163, 115, 0.5);
+  pointer-events: none;
+  z-index: 50;
+  white-space: nowrap;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+  transition: transform 0.08s ease-out;
 }
 
-.orbit-image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    user-select: none;
-
-    /* ── BBD BALANCE FIXED: FALTU BLACK/WHITE FILTERS REMOVED ── */
-    filter: none !important;
-    /* Forces original asset graphics/colors */
-    opacity: 0.9;
-    /* Base opacity standard kept high */
-    transition: opacity 0.3s, transform 0.3s;
-}
-
-.orbit-image-wrapper:hover .orbit-image {
-    opacity: 1;
-    /* Pure 100% solid lighting on focus */
-}
-/* ── CORE CENTER ANCHOR PILL ── */
-.orbit-center-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-    text-align: center;
-    pointer-events: auto;
-}
-
-.orbit-center-capsule {
-    background: rgba(26, 5, 8, 0.9);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    padding: 18px 36px;
-    border-radius: 100px;
-    border: 1px solid rgba(212, 163, 115, 0.3);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-}
-
-.orbit-center-text {
-    font-size: 0.9rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: #f5ebe0;
-    display: block;
-}
-
+/* ── RESPONSIVE MOBILE FIXES ── */
 @media (max-width: 768px) {
-    .orbit-showcase-section { padding: 80px 0; }
-    .orbit-center-capsule { padding: 12px 24px; }
-    .orbit-center-text { font-size: 0.75rem; letter-spacing: 2px; }
-    .orbit-image-wrapper:hover { transform: scale(1.25); } /* Balanced mobile pop-out scale */
+  .orbit-showcase-section {
+    padding: 70px 18px 80px 18px;
+  }
+
+  .collage-grid-viewport {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .collage-brand-card {
+    padding: 24px 16px;
+    min-height: 130px;
+  }
+
+  .collage-brand-image {
+    max-width: 110px;
+    max-height: 50px;
+    filter: grayscale(70%) opacity(0.85); /* Mobile touch devices par clearly legible */
+  }
+
+  .collage-floating-tooltip {
+    display: none !important; /* Mobile screens par cursor tooltip avoid karein */
+  }
+}
+
+@media (max-width: 420px) {
+  .collage-grid-viewport {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
